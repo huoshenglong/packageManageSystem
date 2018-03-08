@@ -15,23 +15,34 @@
 	 
 		$.ajax({ 
 			 
-			url: "${pageContext.request.contextPath}/springmvc/login.do",
+			url: "http://localhost:8080/springmvc/login.do",
 			type: "post",
 			dateType:"json",
 			data: $('#form1').serialize(),
 			 
+			headers:{
+					'Access-Control-Allow-Origin': '*'
+			},
 			success: function(data){
 				data = data
-				console.log(data)
+				 
+				if (data=="success") {
+					window.open('success.html');
+					window.close();
+				} 
+				 if(data=="faile"){
+					alert('用户名或者密码错误！')
+					document.getElementById('user').value="";
+					document.getElementById('psw').value="";
+				}
+				
 			},
 			error: function(error){
 				console.log(error)
 			}
 		})
 		 
-	 }
-
-	
+	 }	
 </script>
 </head>
 
