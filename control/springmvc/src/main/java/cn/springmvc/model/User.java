@@ -1,7 +1,5 @@
 package cn.springmvc.model;
 
-import java.sql.Date;
-
 /**
  * 用户表
  
