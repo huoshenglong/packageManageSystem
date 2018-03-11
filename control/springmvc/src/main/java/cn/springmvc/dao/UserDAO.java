@@ -13,6 +13,9 @@ public interface UserDAO {
 	 * @return
 	 */
 	public int insertUser(User user);
+	/*
+	 * 登录时验证
+	 * */
 	public User findUserByNameAndPsw(@Param("username") String username,@Param("password") String password);
 	
 }

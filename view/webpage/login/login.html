@@ -5,7 +5,9 @@
 	<title>快递管理系统-登录</title>
 	<script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
 	<link rel="stylesheet" type="text/css" href="../../mycss/loginView.css" />
+	<script src="../../layui/layui.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script>
+
 	let data = ''
 	 
 	 function sendInfo(){
@@ -51,10 +53,10 @@
 		<div id="view1">
 			<label id="view_title">用户登录</label>
 			<div id="info">			 
-			 	<label class="info_input"><img src="../../images/user.png" alt="用户名" title="用户名"><input id="user" type="text" name="username" placeholder="Username"  autofocus="autofocus" value=""></label>
+			 	<label class="info_input"><img src="../../images/user.png" alt="用户名" title="用户名"><input id="user" type="text"  lay-verify="username" name="username" placeholder="Username"  autofocus="autofocus" value=""></label>
 			 
 				 <br> <br>  
-			 	<label class="info_input"><img src="../../images/psw.png" alt="密码" title="密码"><input id="psw" type="password" placeholder="Password"   name="password" value=""></label>
+			 	<label class="info_input"><img src="../../images/psw.png" alt="密码" title="密码"><input id="psw" type="password" lay-verify="pass" placeholder="Password"   name="password" value=""></label>
 			 	<br>
 			 	<label id="register">没有身份？|点击注册</label>
 			 	 <br><br>
@@ -70,5 +72,31 @@
 		 <label>霍胜龙</label>
 	</div>
 </body>
-
+<script  type="text/javascript" charset="utf-8" async defer>
+	layui.use('form', function(){
+  var form = layui.form;
+  
+  //各种基于事件的操作，下面会有进一步介绍
+});
+	form.verify({
+  username: function(value, item){ //value：表单的值、item：表单的DOM对象
+    if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+      return '用户名不能有特殊字符';
+    }
+    if(/(^\_)|(\__)|(\_+$)/.test(value)){
+      return '用户名首尾不能出现下划线\'_\'';
+    }
+    if(/^\d+\d+\d$/.test(value)){
+      return '用户名不能全为数字';
+    }
+  }
+  
+  //我们既支持上述函数式的方式，也支持下述数组的形式
+  //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+  ,pass: [
+    /^[\S]{6,12}$/
+    ,'密码必须6到12位，且不能出现空格'
+  ] 
+}); 
+</script>
 </html>
