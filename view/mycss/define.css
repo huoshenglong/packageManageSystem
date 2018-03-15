@@ -1,0 +1,10 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.imgg{
+	height: 500px; 
+	  
+	text-align: center;
+	border: 1px solid blue;
+}
