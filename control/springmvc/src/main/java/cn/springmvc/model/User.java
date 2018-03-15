@@ -6,6 +6,7 @@ package cn.springmvc.model;
  */
 public class User {
 
+	public User(){};
 	private int id;
 	private String username;
 	private String password;
