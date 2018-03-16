@@ -2,9 +2,20 @@ body{
 	margin: 0;
 	padding: 0;
 }
-.imgg{
-	height: 500px; 
-	  
-	text-align: center;
-	border: 1px solid blue;
+.layui-nav{
+	opacity: 0.8;
+	z-index: 99;
+}
+.layui-nav-item{
+	margin-left: 50px;
+	z-index: 99; 
+}
+.layui-icon{
+	font-size: 35px; 
+	color: white;
+	line-height: 40px;
+}
+.layui-icon a{ 
+	font-size: 20px;
+	vertical-align:middle;
 }

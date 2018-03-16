@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>layui在线调试</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <script src="../js/jquery.min.js" title="1.11.3"></script>
+  
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+  <li class="layui-nav-item"><a href="">最新活动</a></li>
+  <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+  <li class="layui-nav-item"><a href="">大数据</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">解决方案</a>
+    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+      <dd><a href="">移动模块</a></dd>
+      <dd><a href="">后台模版</a></dd>
+      <dd><a href="">电商平台</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">社区</a></li>
+</ul>
+<input type="button" id="focu"   name="" value="点击测试提示框">
+<input type="text" name="" id="mytext" value="" placeholder="">
+<input type="button" id="view01" name="" value="测试弹出框">
+<input type="text" name=""   id="mydate"  placeholder="在这里选择日期">
+
+</body>
+<script src="../layui/layui.js" type="text/javascript" charset="utf-8"  ></script>
+<script type="text/javascript">
+	layui.use(['layer','laydate','form','element'],function(){
+		var layer=layui.layer,
+		form=layui.form,
+		element=layui.element,
+		laydate=layui.laydate;
+ 			$("#mydate").mousedown(function(event) {
+ 				laydate.render({ 
+				  elem: '#mydate'
+				  //,type: 'date' //默认，可不填
+				});/* Act on the event */
+ 			}); 
+			$("#focu").click(function(){
+				alert('hello');
+				layer.confirm('您是如何看待前端开发？', {
+				  btn: ['重要','奇葩'] //按钮
+				}, function(){
+				  layer.msg('的确很重要', {icon: 1});
+				}, function(){
+				  layer.msg('也可以这样', {
+				    time: 20000, //20s后自动关闭
+				    btn: ['明白了', '知道了']
+				  });
+				});
+				alert('my world');
+			});
+			$("#mytext").focus(function(){
+				layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '#mytext', {
+				  tips: [1, '#3595CC'],
+				  time: 1000
+				});
+			});
+			$("#view01").click(function(){
+				layer.open({
+				  type: 2,
+				  title: false,
+				  closeBtn: 0, //不显示关闭按钮
+				  shade: [0],
+				  area: ['340px', '215px'],
+				  offset: 'rb', //右下角弹出
+				  time: 2000, //2秒后自动关闭
+				  anim: 2,
+				  content: ['../webpage/login/login.html', 'no'], //iframe的url，no代表不显示滚动条
+				  end: function(){ //此处用于演示
+				    layer.open({
+				      type: 2,
+				      title: '很多时候，我们想最大化看，比如像这个页面。',
+				      shadeClose: true,
+				      shade: false,
+				      maxmin: true, //开启最大化最小化按钮
+				      area: ['893px', '600px'],
+				      content: '../webpage/login/login.html'
+				    });
+				  }
+				});
+			})
+	});
+   
+	
+</script>
+</html> 
