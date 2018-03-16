@@ -1,15 +1,16 @@
 $(document).ready(function(){
-	   layui.use(['layer','element','carousel'],function(){
+	   layui.use(['layer','element','carousel','form'],function(){
 			var layer=layui.layer,
 			element=layui.element,
-			carousel = layui.carousel;
+			carousel = layui.carousel,
+			form=layui.form;
 
 			//显示图片轮播
 			carousel.render({
 		    elem: '#test1'
 		    ,width: '100%' //设置容器宽度
 		    ,height:'600px'
-		    ,arrow: 'always' //始终显示箭头
+		    //,arrow: 'always' //始终显示箭头
 		     
 	  		});
 		});
@@ -24,5 +25,31 @@ $(document).ready(function(){
 			  
 			});
 		   });
+	   $("#infomation1").mouseover(function(){
+	   	layer.tips('我司会密切关注天气情况，合理调配资源，尽快将快件送达客户手中。给您带来不便敬请谅解，谢谢！', '#infomation1', {
+				  tips: [2, '#EE2C2C'],
+				  time: 3000
+				});
+	   });
+	   $("#infomation2").mouseover(function(){
+	   	layer.tips('为了保护客户切身利益，特提醒广大客户，增强风险防范意识，遇到此类电话或短信，建议通过顺丰速运官方途径咨询确认，以免上当受骗，损失财物。', '#infomation2', {
+				  tips: [2, '#EE2C2C'],
+				  time: 3000
+				});
+	   });
+	   $("#layui-btn").click(function(){
+	   	alert('aaa');
+	   	 if ($("#input_radio_info1").checked()) {
+	   	 	//选中以快递单号为查询方式
+	   	 }
+	   	  else if ($("#input_radio_info2").checked()) {
+	   	 	//选中以手机号码为查询方式
+	   	 }else{
+	   	 	layer.msg('请选择一种查询方式！', {
+	        time: 2000, //20s后自动关闭
+	        //btn: ['明白了']
+	      });
+	   	 }
+	   });
 });
 	  

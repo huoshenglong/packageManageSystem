@@ -3,8 +3,9 @@ body{
 	padding: 0;
 }
 .layui-nav{
-	opacity: 0.8;
+	 
 	z-index: 99;
+	 background-color: rgba(238,44,44,0.8);
 }
 .layui-nav-item{
 	margin-left: 50px;

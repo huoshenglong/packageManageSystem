@@ -4,6 +4,7 @@
     body{
         background-color: #f6f6f9;
         overflow: hidden;
+        position: relative;
     }
     .clear{
         display: block;
@@ -23,6 +24,8 @@
     }
     #logo{
         margin-left: 50px;
+        height: 64px;
+        width: 64px;
     }
     .service{
         height: 80px;
@@ -32,20 +35,27 @@
     .service div:hover *{
         color:#FF0000;
     }
-
+.service_01{
+    margin-left: 80px;
+}
+.service_05{
+    border-right: solid white 1px;
+}
     .service div{
         height: 50%;
         float: left;
-        width: 14%;
+        width: 15%;
         padding: 20px;
         text-align: center;
         color:red;
-         
+        border-left: solid white 1px;
+        
     }
     .service div a{
         text-decoration: none;
         color: white;
         font-size: 20px;
+       
 
     }
    
@@ -57,4 +67,42 @@
       color: red;
       z-index: 99;
   } 
-  
+#infomation1,#infomation2{
+    height: 78px;
+    width: 60px;
+    position: absolute;
+    background-color: rgba(238,44,44,0.8);
+    z-index: 200;
+    right:0;
+    top:270px;
+    margin:2px;
+    float: right;
+     color:white;
+     text-align: center;
+}  
+#infomation2{
+    top: 350px;
+}
+.search{
+    height: 30%;
+    width: 35.5%;
+    border-radius: 10px 10px 0 0;
+    z-index: 999;
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    background-color: rgba(238,44,44,0.8);
+}
+.layui-input{
+    width: 200px;
+  }
+#layui-btn{
+    width: 60%;
+}
+#input_value{
+    margin-top: 20px;
+    width: 80%;
+}
+#input_radio{
+    color:white;
+}
