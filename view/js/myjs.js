@@ -1,10 +1,11 @@
 $(document).ready(function(){
+	$("#login_div").hide();
 	   layui.use(['layer','element','carousel','form'],function(){
 			var layer=layui.layer,
 			element=layui.element,
 			carousel = layui.carousel,
 			form=layui.form;
-
+			
 			//显示图片轮播
 			carousel.render({
 		    elem: '#test1'
@@ -51,19 +52,20 @@ $(document).ready(function(){
 	      });
 	   	 }
 	   });
+	   $("button").click(function(){
+			  $("div").animate({
+			    left:'250px',
+			    opacity:'0.5',
+			    height:'150px',
+			    width:'150px'
+			  });
+			});
 	   $("#login_button_admin").click(function(
 	   	){
-	   	  layer.open({
-	   	  		  anim:4,//弹出动画样式
-			      type: 1,
-			      title: '登录界面',
-			      shadeClose: true,
-			      shade:[0.4,'#000'],
-			      maxmin: true, //开启最大化最小化按钮
-			      area: ['600px', '400px'],
-			      scrollbar:false,
-			      content:$('#login_div')
-			    });
+	    
+	    $("#login_div").fadeIn('2000');
+	    
+	  
 	   });
 });
 	  
