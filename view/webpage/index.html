@@ -42,7 +42,7 @@
 		  	<a   id="about">关于我们</a>
 		  </li>
 		  <li class="layui-nav-item" id="login_button">
-		  	<a href="javascript:;">管理员登录</a>
+		  	<a href="javascript:;" id="login_button_admin">管理员登录</a>
 		  </li>
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">会员注册</a>
@@ -50,11 +50,11 @@
 	</ul>
 	<div class="layui-carousel" id="test1">
 	  <div carousel-item>
-	    <div><img src="../images/001.png" alt=""></div>
-	    <div><img src="../images/002.png" alt=""></div>
-	    <div><img src="../images/004.png" alt=""></div>
-	    <div><img src="../images/11.png" alt=""></div>
+	    <div><img src="../images/005.jpg" alt=""></div>
 	    <div><img src="../images/login.jpg" alt=""></div>
+	    <div><img src="../images/007.jpg" alt=""></div>
+	    <div><img src="../images/008.jpg" alt=""></div>
+	    <div><img src="../images/009.jpg" alt=""></div>
 	  </div>
 	</div>
  	<div class="service ">
@@ -110,6 +110,27 @@
 	  </div>
 	</form>
 	</div>
+<div id="login_div">
+	<form id="form1" action="#" method="post" accept-charset="utf-8">
+		<div id="view1">
+			<label id="view_title">用户登录</label>
+			<div id="info">			 
+			 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名"><input id="user" type="text"  lay-verify="username" name="username" placeholder="Username"  autofocus="autofocus" value=""></label>
+			 
+				 <br> <br>  
+			 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw" type="password" lay-verify="pass" placeholder="Password"   name="password" value=""></label>
+			 	<br>
+			 	<label id="register">没有身份？|点击注册</label>
+			 	 <br><br>
+
+			 	<input id="submit" type="button"   onclick="sendInfo()"  value="登录">	 
+			 	 
+			</div>
+		</div>
+	</form>
+</div>
+
+
 </body>
 <script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script>
  <script src="../js/myjs.js" type="text/javascript" charset="utf-8" async defer></script>

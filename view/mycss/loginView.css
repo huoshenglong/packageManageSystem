@@ -1,10 +1,4 @@
-body{
-	margin:0px;
-	padding: 0px;
-	background-image: url(../images/login1.jpg);
-	background-size: 100%;
-	position: fixed;
-}
+ 
 #view1{
 	background-color: rgba(0,0,0,0.5);
 	text-align: center;
@@ -12,11 +6,12 @@ body{
 	height: 300px;
 	width: 500px; 
 	border: 1px solid white;
-	margin:200px 0 0 800px ;
+	margin:200px auto;
 	color: white;
 	font-size: 1.2em;
 	font-family: "楷体";
 	border-radius: 10px;
+	text-align: center;
 }
  
 #view_title{ 
@@ -25,7 +20,7 @@ body{
 	margin-left: -200px;
 }
 #info{
-	margin:auto;
+	margin: 100px auto;
 	margin-top: 50px;
 	width: 300px;
 	height: 200px;

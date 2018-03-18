@@ -15,8 +15,8 @@ $(document).ready(function(){
 	  		});
 		});
 
-	   //显示关于框
-	   $("#about").click(function(){
+	    
+	   $("#about").click(function(){//显示关于框
 		  layer.open({
 			  type: 2,
 			  shade: false,
@@ -25,19 +25,19 @@ $(document).ready(function(){
 			  
 			});
 		   });
-	   $("#infomation1").mouseover(function(){
+	   $("#infomation1").mouseover(function(){//提示框内容
 	   	layer.tips('我司会密切关注天气情况，合理调配资源，尽快将快件送达客户手中。给您带来不便敬请谅解，谢谢！', '#infomation1', {
 				  tips: [2, '#EE2C2C'],
 				  time: 3000
 				});
 	   });
-	   $("#infomation2").mouseover(function(){
+	   $("#infomation2").mouseover(function(){//提示框内容
 	   	layer.tips('为了保护客户切身利益，特提醒广大客户，增强风险防范意识，遇到此类电话或短信，建议通过顺丰速运官方途径咨询确认，以免上当受骗，损失财物。', '#infomation2', {
 				  tips: [2, '#EE2C2C'],
 				  time: 3000
 				});
 	   });
-	   $("#layui-btn").click(function(){
+	   $("#layui-btn").click(function(){//查询快递信息
 	   	alert('aaa');
 	   	 if ($("#input_radio_info1").checked()) {
 	   	 	//选中以快递单号为查询方式
@@ -50,6 +50,20 @@ $(document).ready(function(){
 	        //btn: ['明白了']
 	      });
 	   	 }
+	   });
+	   $("#login_button_admin").click(function(
+	   	){
+	   	  layer.open({
+	   	  		  anim:4,//弹出动画样式
+			      type: 1,
+			      title: '登录界面',
+			      shadeClose: true,
+			      shade:[0.4,'#000'],
+			      maxmin: true, //开启最大化最小化按钮
+			      area: ['600px', '400px'],
+			      scrollbar:false,
+			      content:$('#login_div')
+			    });
 	   });
 });
 	  
