@@ -2,8 +2,7 @@
     *{margin: 0;padding: 0;}
     .body{ margin: 0 auto;  }
     body{
-        background-color: #f6f6f9;
-        
+     
         position: relative;
     }
     .clear{
@@ -29,7 +28,10 @@
     }
     .service{
         height: 80px;
-        background-color: #EE2C2C;
+        /*background-color: #EE2C2C;*/
+        /*background:linear-gradient(#4169E1,#1E90FF,#00BFFF);*/
+        /*background-color:   #1E90FF;*/
+         background:#009688;
     }
     .service div:hover *{
         color:#FF0000;
@@ -70,7 +72,8 @@
     height: 78px;
     width: 60px;
     position: absolute;
-    background-color: rgba(238,44,44,0.8);
+    /*background:linear-gradient(#5D8CE9,#344E82,#26395F);*/
+    background-color: #FF5722;
     z-index: 200;
     right:0;
     top:270px;
@@ -81,39 +84,65 @@
 }  
 #infomation2{
     top: 350px;
+    /*background:linear-gradient(#26395F,#344E82,#5D8CE9);*/
+    background-color: #FF5722;
 }
 .search{
     height: 30%;
-    width: 35.5%;
+    width: 25%;
     border-radius: 10px 10px 0 0;
-    z-index: 999;
+    z-index: 399;
     position: absolute;
     bottom: 80px;
-    left: 80px;
-    background-color: rgba(238,44,44,0.8);
+    left: 150px;
+    /*background-color: #2F4056;*/
+    background-color: rgba(47,64,86,0.8);/*#30B8B0*/
+    text-align: center;
 }
 .layui-input{
     width: 200px;
   }
+#layui-form-item1{
+    margin-left: -100px;
+}
 #layui-btn{
-    width: 60%;
+    background:#009688;
+    width: 70%;
+    border-radius: 5px;
 }
 #input_value{
     margin-top: 20px;
     width: 80%;
+    border-bottom:solid 1px blue;
 }
 #input_radio{
     color:white;
 }
 
 #login_div{
-      
-     position: absolute;
-     top: 20px;
-     left:700px;
-   
+   border:1px solid black;
+   position: absolute;
+   top: -50px;
+   position: fixed;
+   width: 100%;
+   height: 200%;
+   z-index: 499;
+   background: rgba(0,0,0,0.8);
 }
-
+#close_btn{
+    position: absolute;
+    top: 200px;
+    left: 80.5%;
+    z-index: 499;
+    height: 32px;
+    width: 32px;
+    background:url(../images/close1.png);
+    background-size: 100%;
+}
+#close_btn:hover{
+    background:url(../images/close2.png);
+     background-size: 100%;
+} 
 #view1{
     background-color: rgba(0,0,0,0.5);
     text-align: center;
@@ -127,6 +156,7 @@
     font-family: "楷体";
     border-radius: 10px;
     text-align: center;
+    left:50%;
 }
  
 #view_title{ 
@@ -155,13 +185,13 @@ input[type="text"],input[type="password"]{
 
 .info_input{
     height: 50px;
-    border-bottom: 1px solid white;
     position: relative;
 }
 .info_input img{
     width: 32px;
     height: 32px;
 }
+
 #submit{
     height: 30px;
     width: 200px;

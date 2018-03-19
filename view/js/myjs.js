@@ -10,13 +10,14 @@ $(document).ready(function(){
 			carousel.render({
 		    elem: '#test1'
 		    ,width: '100%' //设置容器宽度
-		    ,height:'600px'
+		    ,height:'500px'
 		    //,arrow: 'always' //始终显示箭头
 		     
 	  		});
-		});
 
-	    
+		 });
+
+	   
 	   $("#about").click(function(){//显示关于框
 		  layer.open({
 			  type: 2,
@@ -48,24 +49,19 @@ $(document).ready(function(){
 	   	 }else{
 	   	 	layer.msg('请选择一种查询方式！', {
 	        time: 2000, //20s后自动关闭
-	        //btn: ['明白了']
+	        btn: ['明白了']
 	      });
 	   	 }
 	   });
-	   $("button").click(function(){
-			  $("div").animate({
-			    left:'250px',
-			    opacity:'0.5',
-			    height:'150px',
-			    width:'150px'
-			  });
-			});
+	  
 	   $("#login_button_admin").click(function(
 	   	){
 	    
 	    $("#login_div").fadeIn('2000');
-	    
-	  
+	   });
+
+	   $("#close_btn").click(function(){
+	   	 $("#login_div").fadeOut()('2000');
 	   });
 });
 	  

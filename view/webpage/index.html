@@ -50,11 +50,12 @@
 	</ul>
 	<div class="layui-carousel" id="test1">
 	  <div carousel-item>
-	    <div><img src="../images/005.jpg" alt=""></div>
-	    <div><img src="../images/login.jpg" alt=""></div>
-	    <div><img src="../images/007.jpg" alt=""></div>
-	    <div><img src="../images/008.jpg" alt=""></div>
-	    <div><img src="../images/009.jpg" alt=""></div>
+	    <div><img src="../images/1.png" alt=""></div>
+	    <div><img src="../images/2.png" alt=""></div>
+	    <div><img src="../images/3.png" alt=""></div>
+	    <div><img src="../images/4.png" alt=""></div>
+	    <div><img src="../images/5.png" alt=""></div>
+	    <div><img src="../images/6.png" alt=""></div>
 	  </div>
 	</div>
  	<div class="service ">
@@ -83,8 +84,8 @@
     </div>
 
 	<div class="search">
-	<form class="layui-form" action="">
-	  <div class="layui-form-item">
+	<form class="layui-form" id="layui-form1" action="">
+	  <div class="layui-form-item" id="layui-form-item1">
 	    
 	    <div class="layui-input-block">
 	      <input type="text" name="title" id="input_value" required  lay-verify="required" 
@@ -92,7 +93,7 @@
 	    </div>
 	  </div>
 	 
-	  <div class="layui-form-item">
+	  <div class="layui-form-item" id="layui-form-item1">
 	    
 	    <div class="layui-input-block" id="input_radio">
 	    
@@ -102,7 +103,7 @@
 	    </div>
 	  </div>
 	   
-	  <div class="layui-form-item">
+	  <div class="layui-form-item" id="layui-form-item1">
 	    <div class="layui-input-block">
 	      <button class="layui-btn" id="layui-btn"  lay-submit lay-filter="formDemo">立即查找</button>
 	      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
@@ -111,12 +112,14 @@
 	</form>
 	</div>
 <div id="login_div">
+	 <div id="close_btn" id="close_btn"   title="关闭窗口"><!--关闭按钮--></div>  
 	<form id="form1" action="#" method="post" accept-charset="utf-8">
 		<div id="view1">
 			<label id="view_title">用户登录</label>
 			<div id="info">			 
-			 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名"><input id="user" type="text"  lay-verify="username" name="username" placeholder="Username"  autofocus="autofocus" value=""></label>
-			 
+			 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
+			 		<input id="user" type="text"  lay-verify="username" name="username" placeholder="Username"  autofocus="autofocus" value=""></label>		 
+			  
 				 <br> <br>  
 			 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw" type="password" lay-verify="pass" placeholder="Password"   name="password" value=""></label>
 			 	<br>

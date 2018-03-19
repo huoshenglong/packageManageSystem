@@ -5,7 +5,8 @@ body{
 .layui-nav{
 	 
 	z-index: 99;
-	 background-color: rgba(238,44,44,0.8);
+	/*background:linear-gradient(#00BFFF,#1E90FF,#4169E1);*/
+	 	background-color: #008080;
 }
 .layui-nav-item{
 	margin-left: 50px;
