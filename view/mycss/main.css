@@ -1,4 +1,4 @@
-/*公共css样式开始*/
+公共css样式开始*/
     *{margin: 0;padding: 0;}
     .body{ margin: 0 auto;  }
     body{
@@ -18,7 +18,8 @@
     }
 /*公共css样式结束	*/
 
-     /*修改layui样式*/
+
+/*修改layui样式*/
 .layui-nav{
      
     z-index: 99;
@@ -42,7 +43,7 @@
 /*layui样式子修改结束*/
 
 
-
+/*index.html首页样式设计*/
     #login_button{
         margin-left: 350px;
     }
@@ -67,7 +68,7 @@
 .service_05{
     border-right: solid white 1px;
 }
-    .service div{
+.service div{
         height: 50%;
         float: left;
         width: 15%;
@@ -76,23 +77,23 @@
         color:red;
         border-left: solid white 1px;
         
-    }
-    .service div a{
+}
+.service div a{
         text-decoration: none;
         color: white;
         font-size: 20px;
        
 
-    }
+}
    
-     .service div a:hover{
+.service div a:hover{
       color: #EE2C2C;
-  }
-  .service div:hover{
+}
+.service div:hover{
       background-color: white;
       color: red;
       z-index: 99;
-  } 
+} 
 #infomation1,#infomation2{
     height: 78px;
     width: 60px;
@@ -400,4 +401,15 @@ input[type="text"],input[type="password"]{
     background: rgba(0,0,0,0.5);
     margin-top: 55px;
 }
+ /*index.html首页样式设计结束*/
+
+ /*localtion 百度地图API样式设计*/
  
+#allmap{
+    margin:100px 100px ;
+    float: right;
+    width:50%;
+    height:500px;
+}
+       
+ /*localtion 百度地图API样式设计结束*/
