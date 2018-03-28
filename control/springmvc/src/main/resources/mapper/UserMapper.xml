@@ -5,8 +5,12 @@
 <mapper namespace="cn.springmvc.dao.UserDAO">
         
           <select id="findUserByNameAndPsw" parameterType="String" resultType="User">
-           select * from users_table where username=#{username} and password=#{password}
+        select * from users_table where username=#{username} and password=#{password}* 
+          
          </select> 
+          <!--  
+           match (n:Users) where n.name=#{username} and n.password=#{password} return n
+           select * from users_table where username=#{username} and password=#{password}*/ --> 
 <!--          <delete id="deleteStudent" parameterType="int">
              delete from users_name where id = #{id}
          </delete>
