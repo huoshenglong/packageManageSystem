@@ -17,7 +17,32 @@
         list-style-type:none;
     }
 /*公共css样式结束	*/
+
+     /*修改layui样式*/
+.layui-nav{
      
+    z-index: 99;
+    /*background:linear-gradient(#00BFFF,#1E90FF,#4169E1);*/
+        background-color: #008080;
+}
+.layui-nav-item{
+    margin-left: 50px;
+    z-index: 99; 
+}
+.layui-icon{
+    font-size: 35px; 
+    color: white;
+    line-height: 40px;
+}
+.layui-icon a{ 
+    font-size: 20px;
+    vertical-align:middle;
+}
+
+/*layui样式子修改结束*/
+
+
+
     #login_button{
         margin-left: 350px;
     }
@@ -81,6 +106,7 @@
     float: right;
      color:white;
      text-align: center;
+     cursor:pointer;
 }  
 #infomation2{
     top: 350px;
@@ -88,12 +114,12 @@
     background-color: #FF5722;
 }
 .search{
-    height: 30%;
+    height: 200px;
     width: 25%;
     border-radius: 10px 10px 0 0;
     z-index: 399;
     position: absolute;
-    bottom: 80px;
+    top: 415px;
     left: 150px;
     /*background-color: #2F4056;*/
     background-color: rgba(47,64,86,0.8);/*#30B8B0*/
@@ -131,13 +157,24 @@
 }
 #close_btn{
     position: absolute;
-    top: 200px;
-    left: 80.5%;
+    top: 196px;
+    right: 256px;
     z-index: 499;
     height: 32px;
-    width: 32px;
+    width: 32px; 
     background:url(../images/close1.png);
     background-size: 100%;
+}
+#img_info{
+    width: 100px;
+    height: 120px;
+    text-align: center;
+    margin:60px 0 0 320px;
+    
+}
+#img_info img{
+    width: 100px;
+    height: 100px;
 }
 #close_btn:hover{
     background:url(../images/close2.png);
@@ -162,6 +199,7 @@
 #view_title{ 
     font-size: 1.4em;
     color: white;
+
     margin-left: -200px;
 }
 #info{
@@ -177,7 +215,7 @@ input[type="text"],input[type="password"]{
     outline: none;
     height: 30px;
     margin-left: 10px;
-    border: 0px;
+    border:0px;
     background: none;
     color: white;
     font-size: 1em;
@@ -186,13 +224,23 @@ input[type="text"],input[type="password"]{
 .info_input{
     height: 50px;
     position: relative;
+   
+}
+#user_login,#psw_login{
+     border-bottom:1px solid white;
+}
+#psw_login{
+    margin-left: 20px
 }
 .info_input img{
     width: 32px;
     height: 32px;
 }
-
-#submit{
+#iden_code{
+    color: #20b2aa;
+    font-size: 1.3em;
+}
+#submit_login{
     height: 30px;
     width: 200px;
     background: #20b2aa;
@@ -211,4 +259,149 @@ input[type="text"],input[type="password"]{
     position: fixed;
     bottom: 0;
     left: 0;
+}
+#introduce{
+   
+    width: 90%;
+    height: 300px;
+    text-align: center;   
+  
+    margin:auto;
+}
+#intro1,#intro2,#intro3{
+    float: left;
+    
+    width: 30%;
+    height: 100%;
+    margin-left: 30px;
+}
+ 
+#return-top{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 30px;
+    background-image:url(..//images/top1.png);
+    background-size: 100%;
+    cursor: pointer;
+}
+#return-top:hover{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 30px; 
+    cursor: pointer;
+    background-size: 100%;
+    background-image:url(..//images/top2.png);
+}
+#introduce .layui-carousel img {
+    height: 200px;
+    width: 400px;
+}
+
+#something{
+    width: 90%;
+    height: 300px;
+    margin: auto;
+}
+#s-left{ 
+    width: 30%;
+    height: 280px;
+    float: left;
+   
+    margin: 10px 5px 0 50px;
+}
+.s-left-icon{
+    width: 30%;
+    height: 80px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 30px;
+    text-align: center;
+   
+}
+.s-left-icon:hover *{
+    color: red;
+}
+.s-left-icon i{
+    font-size: 4em;
+    color: gray;
+}
+
+#s-right{
+    width: 60%;
+    height: 280px;
+    float: left;
+   
+    margin: 10px 5px 0 20px;
+}
+#s-middle{
+    height: 280px;
+    float: left;
+     margin: 10px 5px 0 20px;
+    border-right:1px solid gray;
+}
+#s-news{
+    margin-left: 120px;
+    font-size: 1.2em;
+    
+    height: 220px;
+    overflow: hidden;
+}
+.news-span{
+    margin-top: 5px;
+}
+.news-span i{
+    font-size: 1em;
+    color: #009688;
+}
+#s-news a:hover{
+    color: red;
+}
+#rights{
+    text-align: center;
+    color: #009688;
+    margin:10px;
+}
+#mask{   
+    display: none;  
+    color: white;
+
+}
+#intro1:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+#intro2:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+#intro3:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+.navbar{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
 }
