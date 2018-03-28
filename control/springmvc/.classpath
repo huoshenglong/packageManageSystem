@@ -33,6 +33,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Neo4j_java3.3.0_jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

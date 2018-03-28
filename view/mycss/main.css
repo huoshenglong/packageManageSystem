@@ -400,8 +400,4 @@ input[type="text"],input[type="password"]{
     background: rgba(0,0,0,0.5);
     margin-top: 55px;
 }
-.navbar{
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-}
+ 
