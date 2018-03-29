@@ -5,7 +5,7 @@
 <mapper namespace="cn.springmvc.dao.UserDAO">
         
           <select id="findUserByNameAndPsw" parameterType="String" resultType="User">
-        select * from users_table where username=#{username} and password=#{password}* 
+        select * from users_table where username=#{username} and password=#{password}
           
          </select> 
           <!--  

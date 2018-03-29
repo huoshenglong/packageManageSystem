@@ -30,17 +30,19 @@
     map.addControl(new BMap.NavigationControl());     //左上角，添加默认缩放平移控件 
 
     map.addEventListener("click",function(e){
-        // alert(e.point.lng+','+e.point.lat);
+     alert(e.point.lng+','+e.point.lat);
         var mPoint = new BMap.Point(e.point.lng,e.point.lat);
+        var circle = new BMap.Circle(mPoint,3000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.5});
+        map.addOverlay(circle);//这里将圆形区域划出
         var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, autoViewport: false}});  
-        local.searchNearby('景点',mPoint,3000);
+        local.searchNearby('圆通快递',mPoint,3000);
     });//点击显示该地点的经纬度
      
-    map.centerAndZoom(new BMap.Point(113.826639,34.787905), 13);
+    map.centerAndZoom(new BMap.Point(121.36132,37.526191), 13);
     map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
     
     var data_info = [
-    [121.381746,37.524145,"地址：山东省烟台市红旗中路186号鲁东大学"],
+    [121.36132,37.526191,"地址：山东省烟台市红旗中路186号鲁东大学逸夫实验楼"],
                      // [121.46554,37.482606,"地址：山东省烟台市莱山区清泉路30号烟台大学"],
                      // [121.382178,37.549927,"地址：山东省烟台市西大街86号"],
                      // [121.374704,37.537337,"地址：山东省烟台市青年南路116号"]

@@ -155,7 +155,7 @@ $(document).ready(function(){
 			}
 		 
 			if (user_value.length<5||user_value.length>12) {
-				layer.tips('请输入4-12用户名！', '#user_login', {
+				layer.tips('请输入4-18位用户名！', '#user_login', {
 				  tips: [2, '#EE2C2C'],
 				  time: 1000
 				});	
@@ -192,6 +192,43 @@ $(document).ready(function(){
 		   			layer.msg('验证码错误！');
 		   		}else{
 		   			//ajax提交表单信息进行验证
+		   		 
+		   		$.ajax({
+	                type: "POST",//方法类型
+	                dataType: "json",//预期服务器返回的数据类型
+	                url: "http://localhost:8080/springmvc/login.do" ,//url
+	                data: $('#form1').serialize(),
+					// contentType: "application/json; charset=utf-8",
+	                success: function (result) {	                   
+	                    if (result=="success") {
+	                        // alert("SUCCESS");
+	                        window.location.href="../webpage/result/console.html";
+	                    }
+	                    ;
+	                },
+	                error : function(result) {	                	 
+	                    alert("异常！");
+	                }
+
+
+				 // function addBox(result){
+				 //            //result是一个集合,所以需要先遍历
+				 //            $.each(result,function(index,obj){
+				 //                $("#box").append("<div class='product'>"+//获得图片地址
+				 //                    "<div><img class='img' src="+obj['url']+"/></div>"+
+				 //                    //获得名字
+				 //                    "<div class='p1 p'>"+obj['name']+"</div>"+
+				 //                    //获得性别
+				 //                    "<div class='p2 p'>"+obj['sex']+"</div>"+
+				 //                    //获得邮箱地址
+				 //                    "<div class='p3 p'>"+obj['email']+"</div>"+
+				 //                    "</div>");
+				 //            });
+				 //        }
+
+
+	            });
+
 		   			 layer.close(index);
 		   		}
 				 
@@ -216,7 +253,9 @@ $(document).ready(function(){
 	   $("#img_info").mouseover(function(){
 	   		layer.tips('微信扫码关注我！了解更多资讯吧！', '#img_info');
 	   });
-
+		$("#user_login").mouseover(function(){
+	   		layer.tips('手机号码/QQ号/QQ邮箱/字母数字组合', '#user_login');
+	   });
 	   $("#iden_code").mouseover(function(){
 	   		layer.tips('点我更换验证码！', '#iden_code');
 	   });

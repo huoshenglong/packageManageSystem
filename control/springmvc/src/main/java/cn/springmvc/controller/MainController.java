@@ -28,14 +28,17 @@ public class MainController {
 	@RequestMapping("login")
 	@ResponseBody//将success转换成json传到前台
 	public String login(HttpServletRequest request) {
+	
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username+"*********"+password);
 		boolean result=uss.loginByName(username, password);
 		if (result) {
+			System.out.println("success");
 			return "success";
 		}else{
 			//request.setAttribute("message","用户名密码错误");
+			System.out.println("faile");
 			return "faile";
 		}	 
 	}

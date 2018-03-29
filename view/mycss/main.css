@@ -411,5 +411,13 @@ input[type="text"],input[type="password"]{
     width:50%;
     height:500px;
 }
+
+#localtion{
+    border:1px solid blue;
+    height: 500px;
+    width: 30%;
+    float: left;
+    margin: 100px 0 0 100px;
+}
        
  /*localtion 百度地图API样式设计结束*/
