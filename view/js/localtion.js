@@ -6,12 +6,8 @@
             var layer=layui.layer,
             element=layui.element,
             carousel = layui.carousel,
-            form=layui.form;
-            
-        
+            form=layui.form; 
          });
-
-       
        $("#about").click(function(){//显示关于框
           layer.alert('<center>'+'信息与电气工程学院'+'<br>'+'软件工程1402'+'<br>'+
           '霍胜龙'+'<br>'+'</center>', {

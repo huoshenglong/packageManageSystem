@@ -1,29 +1,43 @@
 $(document).ready(function(){
- 
+//页面开始初始化，进行验证码的生成、各div的隐藏，加载登录页面并将其隐藏
+	$('body').append(`
+
+				<div id="login_div">
+					 <div id="close_btn" id="close_btn"   title="关闭窗口"><!--关闭按钮--></div>  
+					<form id="form1" action="#" method="post" accept-charset="utf-8">
+						<div id="view1">
+							<label id="view_title">管理员登录</label>
+							<div id="info">			 
+							 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
+							 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value=""></label>		 
+							  
+								 <br> <br>  
+							 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value=""></label>
+							 	<br>
+							  <br>
+								<label for="iden_code">验证码： </label><label id="iden_code"> </label>
+								 
+							  <br><br>
+							 	<input id="submit_login" type="button" lay-submit value="登录">	 
+							 	 
+							</div>
+							<div id="img_info">
+								<img src="../images/info.png"  alt="">
+								<label for="">关注微信<br>
+								看更多资讯</label>
+								 
+							</div>
+						</div>
+					</form>
+				</div>
+	`);
 	$("#login_div").hide();
 	$("#intro1",).hide();
 	$("#intro2").hide();
 	$("#intro3").hide();
 	$("#s-left").hide();
 	$("#s-middle").hide();
-	$("#s-right").hide();
-	var h3_height = $("#introduce").offset().top;
-	var hh=$("#something").offset().top;
-	$(window).scroll(function(){
-        var this_scrollTop = $(this).scrollTop();
-
-        if(this_scrollTop>h3_height ){
-            $("#intro1").show(2000);
-            $("#intro2").show(1500);
-            $("#intro3").show(1000);
-        }
-        if (this_scrollTop>hh) {
-        	$("#s-middle").show(1000);
-        	$("#s-left").slideDown(1500);
-            $("#s-right").slideDown(2000);
-        }
-    });
-	 
+	$("#s-right").hide(); 
 	var identcode="";
 
 	//生成4位数验证码
@@ -49,13 +63,22 @@ $(document).ready(function(){
 	   
 	    $("#iden_code").text(identcode);
 	   });
+
+
+
+	// 页面初始化完毕
 	//以下是layui得代码
 	   layui.use(['layer','element','carousel','form'],function(){
 			var layer=layui.layer,
 			element=layui.element,
 			carousel = layui.carousel,
 			form=layui.form;
-			
+		 
+			  element.on('docDemoTabBrief', function(data){
+				  console.log(this); //当前Tab标题所在的原始DOM元素
+				  console.log(data.index); //得到当前Tab的所在下标
+				  console.log(data.elem); //得到当前的Tab大容器
+				});
 			//显示图片轮播
 			carousel.render({
 		    elem: '#test1'
@@ -133,7 +156,40 @@ $(document).ready(function(){
 
 	   $("#login_button_admin").click(function(
 	   	){//弹出登录窗口
-	   		$("#login_div").fadeIn('2000');
+	   	    // $("#divId").after("<div>这个是新增的div</div>");
+	   // 	     $('body').append(`
+
+				// <div id="login_div">
+				// 	 <div id="close_btn" id="close_btn"   title="关闭窗口"><!--关闭按钮--></div>  
+				// 	<form id="form1" action="#" method="post" accept-charset="utf-8">
+				// 		<div id="view1">
+				// 			<label id="view_title">管理员登录</label>
+				// 			<div id="info">			 
+				// 			 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
+				// 			 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value=""></label>		 
+							  
+				// 				 <br> <br>  
+				// 			 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value=""></label>
+				// 			 	<br>
+				// 			  <br>
+				// 				<label for="iden_code">验证码： </label><label id="iden_code"> </label>
+								 
+				// 			  <br><br>
+				// 			 	<input id="submit_login" type="button" lay-submit value="登录">	 
+							 	 
+				// 			</div>
+				// 			<div id="img_info">
+				// 				<img src="../images/info.png"  alt="">
+				// 				<label for="">关注微信<br>
+				// 				看更多资讯</label>
+								 
+				// 			</div>
+				// 		</div>
+				// 	</form>
+				// </div>
+	   // 	     	`);
+	   		  $("#login_div").fadeIn('2000');
+
 	   });
 
 	   $("#close_btn").click(function(){//关闭登录窗口

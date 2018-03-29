@@ -2,8 +2,12 @@
     *{margin: 0;padding: 0;}
     .body{ margin: 0 auto;  }
     body{
+     /*background-image: url(../images/bac2.jpg);
+     background-size: 100%;
+     background-repeat: no-repeat;
      
-        position: relative;
+     background-attachment: fixed;*/
+     position: relative;
     }
     .clear{
         display: block;
@@ -21,10 +25,8 @@
 
 /*修改layui样式*/
 .layui-nav{
-     
-    z-index: 99;
-    /*background:linear-gradient(#00BFFF,#1E90FF,#4169E1);*/
-        background-color: #008080;
+    z-index: 99;  
+    background-color: #008080;
 }
 .layui-nav-item{
     margin-left: 50px;
@@ -421,3 +423,65 @@ input[type="text"],input[type="password"]{
 }
        
  /*localtion 百度地图API样式设计结束*/
+
+
+
+ /*以下都是sendpack的样式*/
+ #left-chose{ 
+    width: 10%;
+    height: 100%;
+    float: left;
+    margin-left: 200px;
+ }
+ #find-more{
+    margin-top: 10px;
+ }
+  #left-chose .chose{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px dashed black;
+    text-align: left;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .morechose{
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    margin-top: 10px; 
+  }
+  #cp{
+    margin-left: 20px;
+  }
+#right-display{
+    border:1px solid blue;
+    width: 70%;
+    height: 600px;
+    float: left;
+     
+}
+#right-input{
+    color: black;
+    border-bottom:1px solid gray;
+}
+#right-input-address{
+    color: black;
+    border-bottom:1px solid gray;
+    width: 350px;
+}
+#sender,#receive{
+    height: 350px;
+    width: 49%;
+    
+    float: left;
+}
+ #receive{
+     
+    float: right;
+ }
+
+
+
+
+
+ /*sendpack样式结束*/
