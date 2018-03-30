@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>快递会员注册页面</title>
+	<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../mycss/main.css">
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" ></script>
+	<style type="text/css">
+		#register{
+		    width: 1000px;
+		    height: 800px;
+		    border:1px solid blue;
+		    margin:100px auto;
+		}
+		#reg-left{
+			width: 55%;
+			margin-top:50px;
+			 
+			float: left;
+		}
+		#reg-right{
+			width: 300px;
+			height: 375px;
+			 
+			float: right;
+			margin:200px 50px 0 50px;
+			background: url(../images/right-reg.png);
+			background-size: 100%;
+		}
+ 
+	</style>
+</head>
+<body>
+	<ul class="layui-nav"   lay-filter="" name="ss">
+		  <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+		  <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+		  <li class="layui-nav-item">
+		  	<a href="javascript:;">物流服务</a>
+				<dl class="layui-nav-child"> <!-- 二级菜单 -->
+			      <dd><a href="">快递查询</a></dd>
+			      <dd><a href="">订单查询</a></dd>
+			      <dd><a href="">网点查询</a></dd>
+			    </dl>
+		  </li>
+		  <li class="layui-nav-item">
+		    <a href="javascript:;">服务中心</a>
+		    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+		      <dd><a href="">快递服务</a></dd>
+		      <dd><a href="">冷运服务</a></dd>
+		      <dd><a href="">仓储服务</a></dd>
+		    </dl>
+		  </li>
+		  <li class="layui-nav-item">
+		  	<a href="javascript:;">快购链接</a>
+			<dl class="layui-nav-child"> <!-- 二级菜单 -->
+		      <dd><a href="http://www.sfbest.com/">顺丰商城</a></dd>
+		      <dd><a href="http://www.stomall.com/">申通商城</a></dd>
+		      <dd><a href="https://www.taobao.com/">淘宝商城</a></dd>
+		    </dl>
+		  </li>
+		   <li class="layui-nav-item">
+		  	<a   id="about">关于我们</a>
+		  </li>
+		  <li class="layui-nav-item" id="login_button">
+		  	<a href="javascript:;" id="login_button_admin">管理员登录</a>
+		  </li>
+		  <li class="layui-nav-item">
+		  	<a href="javascript:;">会员注册</a>
+		  </li>
+	</ul>
+	<div id="register">
+
+	<div id="reg-left">
+		<div class="layui-tab layui-tab-card">
+	  <ul class="layui-tab-title">
+	    <li class="layui-this">个人会员</li>
+	    <li>公司注册</li>	   
+	  </ul>
+  <div class="layui-tab-content" style="height: 400px;">
+    <div class="layui-tab-item layui-show">
+		<form class="layui-form layui-form-pane" action="">
+		   
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">手机号：</label>
+		    <div class="layui-input-inline">
+		      <input type="text" name="username"  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input" >		       
+		    </div>
+		  </div>		  
+		  <div class="layui-form-item">		     
+		    <div class="layui-inline">
+		      <label class="layui-form-label">验证码：</label>
+		      <div class="layui-input-inline"  >
+		        <input type="text" name="number" autocomplete="off" class="layui-input" >		        
+		      </div>
+		    </div>
+		     <div class="layui-inline">		      
+		      <div class="layui-input-inline" style="display: inline;">		       
+		        <button class="layui-btn"  lay-filter="demo1">获取验证码</button>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">密码：</label>
+		    <div class="layui-input-inline">
+		      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+		    </div>
+		    <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">确认密码：</label>
+		    <div class="layui-input-inline">
+		      <input type="password" name="password" placeholder="请确认密码" autocomplete="off" class="layui-input">
+		    </div>
+		    <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">绑定邮箱：</label>
+		    <div class="layui-input-inline">
+		      <input type="text" name="username"  lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input" >		       
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <button class="layui-btn" lay-submit="" lay-filter="demo1">点击注册</button>
+		  </div>
+		</form>
+    </div>
+    <div class="layui-tab-item">
+    	2
+    </div>
+   
+  </div>
+</div>
+		
+	</div>
+	<div id="reg-right">
+		
+	</div>
+	
+</div>
+</body>
+<script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script> 
+<script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+</html>

@@ -68,17 +68,20 @@ $(document).ready(function(){
 
 	// 页面初始化完毕
 	//以下是layui得代码
-	   layui.use(['layer','element','carousel','form'],function(){
+	   layui.use(['layer','element','carousel','form','laydate'],function(){
 			var layer=layui.layer,
 			element=layui.element,
 			carousel = layui.carousel,
-			form=layui.form;
-		 
+			form=layui.form,
+		 	laydate = layui.laydate;
 			  element.on('docDemoTabBrief', function(data){
 				  console.log(this); //当前Tab标题所在的原始DOM元素
 				  console.log(data.index); //得到当前Tab的所在下标
 				  console.log(data.elem); //得到当前的Tab大容器
 				});
+			   laydate.render({
+			    elem: '#senddate'
+			  });
 			//显示图片轮播
 			carousel.render({
 		    elem: '#test1'
@@ -155,39 +158,7 @@ $(document).ready(function(){
 	  
 
 	   $("#login_button_admin").click(function(
-	   	){//弹出登录窗口
-	   	    // $("#divId").after("<div>这个是新增的div</div>");
-	   // 	     $('body').append(`
-
-				// <div id="login_div">
-				// 	 <div id="close_btn" id="close_btn"   title="关闭窗口"><!--关闭按钮--></div>  
-				// 	<form id="form1" action="#" method="post" accept-charset="utf-8">
-				// 		<div id="view1">
-				// 			<label id="view_title">管理员登录</label>
-				// 			<div id="info">			 
-				// 			 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
-				// 			 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value=""></label>		 
-							  
-				// 				 <br> <br>  
-				// 			 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value=""></label>
-				// 			 	<br>
-				// 			  <br>
-				// 				<label for="iden_code">验证码： </label><label id="iden_code"> </label>
-								 
-				// 			  <br><br>
-				// 			 	<input id="submit_login" type="button" lay-submit value="登录">	 
-							 	 
-				// 			</div>
-				// 			<div id="img_info">
-				// 				<img src="../images/info.png"  alt="">
-				// 				<label for="">关注微信<br>
-				// 				看更多资讯</label>
-								 
-				// 			</div>
-				// 		</div>
-				// 	</form>
-				// </div>
-	   // 	     	`);
+	   	){ 
 	   		  $("#login_div").fadeIn('2000');
 
 	   });
@@ -319,6 +290,88 @@ $(document).ready(function(){
 	   	$("html,body").animate({scrollTop:0}, 500);
 	   });
 	   
+
+
+	   //次页面的设计js
+	    $('#form-send').hide();
+	    $('#find-order').hide();
+	    $('#time-order').hide();
+	    $('#allmap').hide();
+		$('#cp1').hide();
+		$('#cp2').hide();
+		$('#cp3').hide();
+		$('#cp4').hide();
+		$('#find-more').click(function(){
+			var l_he=$('#lots').height();
+			if (l_he<190) {
+				$('#lots').height(190);
+			}
+			if (l_he==190) {
+				$('#lots').height(30);
+			}
+			$('#cp1').fadeToggle( );
+			$('#cp2').fadeToggle( );
+			$('#cp3').fadeToggle( );
+			$('#cp4').fadeToggle( );
+		});
+
+		$('#scope1').mouseenter(function(event) {
+			$("#scope1").attr("src","../images/m2.png");
+		}).mouseleave(function(event) {
+			$("#scope1").attr("src","../images/m1.png");
+		});
+		
+		$('#scope2').mouseenter(function(event) {
+			$("#scope2").attr("src","../images/add2.png");
+		}).mouseleave(function(event) {
+			$("#scope2").attr("src","../images/add1.png");
+		});
+
+		$('#scope1').click(function(event) {
+			var num=$("#right-input-weight").val();
+			if (num>1) {
+				num=num*1-1*1;
+				$("#right-input-weight").val(num);
+			}
+			
+		});
+		$('#scope2').click(function(event) {
+			var num=$("#right-input-weight").val();
+			num=num*1+1*1;
+			$("#right-input-weight").val(num)
+		});
+// send-btu
+// find-btu
+// time-btu
+// neets-btu
+// strand-btu
+		 $('#send-btu').click(function(){
+		 	$('#form-send').show();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		 });
+		 $('#find-btu').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').show();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		 });
+		 $('#time-btu').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').show();
+		    $('#allmap').hide();
+		 });
+		 $('#neets-btu').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').show();
+		 });
+		 $('#strand-btu').click(function(){
+		 	
+		 });
 	    
 });
 	  
