@@ -416,7 +416,7 @@
 
 
 
- /*以下都是sendpack的样式*/
+ /*以下都是logistics的样式*/
  #left-chose{ 
     width: 10%;
     height: 100%;
@@ -492,7 +492,7 @@
     color:#008080;
     font-size: 1.4em;
 }
- /*sendpack样式结束*/
+ /*logistics样式结束*/
 
  /*regiest样式开始*/
  #register{
@@ -522,3 +522,12 @@
     width: 200px;
 }
 /*regiest样式结束*/
+
+
+/*forbid样式开始*/
+#forbid{
+    width: 70%;
+    height: 100%;
+    margin:auto;
+    margin:100px auto;
+}

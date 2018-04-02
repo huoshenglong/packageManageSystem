@@ -30,9 +30,9 @@
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">物流服务</a>
 				<dl class="layui-nav-child"> <!-- 二级菜单 -->
-			      <dd><a id="query-pack">我要寄件</a></dd>
-			      <dd><a id="query-books">订单查询</a></dd>
-			      <dd><a id="query-neets">网点查询</a></dd>
+			      <dd><a class="query-pack">我要寄件</a></dd>
+			      <dd><a class="query-books">订单查询</a></dd>
+			      <dd><a class="query-neets">网点查询</a></dd>
 			    </dl>
 		  </li>
 		  <li class="layui-nav-item">
@@ -55,7 +55,7 @@
 		  	<a   id="about">关于我们</a>
 		  </li>
 		  <li class="layui-nav-item" id="login_button">
-		  	<a   id="login_button_admin">管理员登录</a>
+		  	<a href="javascript:;" id="login_button_admin">管理员登录</a>
 		  </li>
 		  <li class="layui-nav-item">
 		  	<a href="../webpage/register.html">会员注册</a>
@@ -313,9 +313,9 @@
 	</div>
 	<!-- 时效查询 -->
 	<div id="time-order">
-		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+		<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>运单时效查询</legend>
-	 	<form class="layui-form" action="" >
+	 	<form class="layui-form" action="" style="margin-top: 50px;">
 	        <div class="layui-form-item">
 			    <label class="layui-form-label">始发地：</label>
 			    <div class="layui-input-inline"  >
@@ -411,7 +411,8 @@
 		</form>
 	</div>
 	<!-- 网点查询 -->
-	<div id="allmap"></div>
+	<div id="allmap">
+	</div>
 	<!-- 收寄标准查询 -->
 	<div id="strand-div">
 		<h3 style="color: red">收寄原则：</h3>
@@ -497,12 +498,9 @@
   		</form>		
   			<div style="width: 216px; margin-left: 200px;">			     
 			   <button class="layui-btn layui-btn-fluid" id="exchange-cash">点击查询</button>
-			</div> 
-			 
+			</div> 		 
 	</div>
-  
 	<!-- 常用表格 -->
-	 
 	<div id="com-table">
 		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
 	  		<legend>相关表格-下载</legend>
@@ -618,9 +616,10 @@
 </div>
 
 </body>
-<script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script> 
-<script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
-<script src="../js/localtion.js" type="text/javascript" charset="utf-8"  ></script>
+<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script> 
+<script src="../js/indexjs.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/localtion.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/logistics.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		var index=window.location.href.split("=")[1];
