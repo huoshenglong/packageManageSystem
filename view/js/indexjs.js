@@ -240,23 +240,6 @@ $(document).ready(function(){
 	                    alert("密码或用户名错误！");
 	                }
 
-
-				 // function addBox(result){
-				 //            //result是一个集合,所以需要先遍历
-				 //            $.each(result,function(index,obj){
-				 //                $("#box").append("<div class='product'>"+//获得图片地址
-				 //                    "<div><img class='img' src="+obj['url']+"/></div>"+
-				 //                    //获得名字
-				 //                    "<div class='p1 p'>"+obj['name']+"</div>"+
-				 //                    //获得性别
-				 //                    "<div class='p2 p'>"+obj['sex']+"</div>"+
-				 //                    //获得邮箱地址
-				 //                    "<div class='p3 p'>"+obj['email']+"</div>"+
-				 //                    "</div>");
-				 //            });
-				 //        }
-
-
 	            });
 
 		   			 layer.close(index);
@@ -302,6 +285,10 @@ $(document).ready(function(){
 	    $('#allmap').hide();
 	    $('#strand-div').hide();
 	    $('#exchange').hide();
+	    $('#result-cash').hide();
+	    $('#com-table').hide();
+	    $('#cashquery').hide();
+	    
 		$('#cp1').hide();
 		$('#cp2').hide();
 		$('#cp3').hide();
@@ -352,6 +339,8 @@ $(document).ready(function(){
 		    $('#allmap').hide();
 		    $('#strand-div').hide();
 		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
 		 $('#find-btu').click(function(){
 		 	$('#form-send').hide();
@@ -360,6 +349,8 @@ $(document).ready(function(){
 		    $('#allmap').hide();
 		    $('#strand-div').hide();
 		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
 		 $('#time-btu').click(function(){
 		 	$('#form-send').hide();
@@ -368,6 +359,8 @@ $(document).ready(function(){
 		    $('#allmap').hide();
 		    $('#strand-div').hide();
 		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
 		 $('#neets-btu').click(function(){
 		 	$('#form-send').hide();
@@ -376,6 +369,8 @@ $(document).ready(function(){
 		    $('#allmap').show();
 		    $('#strand-div').hide();
 		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
 		 $('#strand-btu').click(function(){
 		 	$('#form-send').hide();
@@ -384,6 +379,8 @@ $(document).ready(function(){
 		    $('#allmap').hide();
 		    $('#strand-div').show();
 		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
 		 $('#exchange-query').click(function(){
 		 	$('#form-send').hide();
@@ -392,8 +389,56 @@ $(document).ready(function(){
 		    $('#allmap').hide();
 		    $('#strand-div').hide();
 		    $('#exchange').show();
+		    $('#com-table').hide();
+		    $('#cashquery').hide();
 		 });
-		 
+		 $('#comment-table').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
+		    $('#com-table').show();
+		    $('#cashquery').hide();
+		 });
+
+		 $('#cash-query').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
+		    $('#com-table').hide();
+		    $('#cashquery').show();
+		 });
+
+		 $('#exchange-cash').click(function() {
+			var start_cash=$('#start-cash').children('option:selected').val();
+			var end_cash=$('#end-cash').children('option:selected').val();
+			var count=$('#input-number-cash').val();
+			if (start_cash==end_cash) {
+				alert("请选择不同的币种！")
+				$('#cash-result-number').text(1);
+			}
+			$.ajax({
+	            type: "POST",//方法类型
+	            dataType: "json",//预期服务器返回的数据类型
+	            url: "http://localhost:8080/springmvc/cash.do" ,//url
+	            data: $('#form-cash').serialize(),
+	            success: function (result) {
+	            var value=count*1*result;                                         
+	                $('#cash-result-number').text(value);
+	            },
+	            error : function(result) {	                	 
+	                
+	            }
+	        });
+				$('#result-cash').show();
+				
+		    });
+	     
 	    
 });
 	  

@@ -7,8 +7,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAliases>
          <typeAlias alias="User" type="cn.springmvc.model.User"/> 
     </typeAliases>
-
+	 
     <!-- 映射map -->
     <mappers>
     </mappers>
 </configuration>
+ 

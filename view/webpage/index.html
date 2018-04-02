@@ -30,9 +30,9 @@
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">物流服务</a>
 				<dl class="layui-nav-child"> <!-- 二级菜单 -->
-			      <dd><a id="query-pack">我要寄件</a></dd>
-			      <dd><a id="query-books">订单查询</a></dd>
-			      <dd><a id="query-neets">网点查询</a></dd>
+			      <dd><a class="query-pack">我要寄件</a></dd>
+			      <dd><a class="query-books">订单查询</a></dd>
+			      <dd><a class="query-neets">网点查询</a></dd>
 			    </dl>
 		  </li>
 		  <li class="layui-nav-item">
@@ -72,18 +72,18 @@
 	    <div><img src="../images/6.png" alt=""></div>
 	  </div>
 	</div>
- 	<div class="service ">
+ 	<div class="service">
          <div class="service_01"  >
-         <i class="layui-icon" >&#xe615;<a id="pack_find">运单追踪</a>
+         <i class="layui-icon" >&#xe615;<a class="query-books">运单追踪</a>
          </i></div>             
          <div class="service_02" ><i class="layui-icon" >&#xe609; 
-        <a id="query-pack">我要寄件</a></i></div>              
+        <a class="query-pack">我要寄件</a></i></div>              
          <div class="service_03"><i class="layui-icon"  >&#xe65e;
-        <a id="time-express">运费时效查询</a></i></div>         
+        <a class="select-time">运费时效查询</a></i></div>         
          <div class="service_04"><i class="layui-icon"  >&#xe715;
-         <a id="query-neets">服务网点查询</a></i></div>          
+         <a class="query-neets">服务网点查询</a></i></div>          
         <div class="service_05"  ><i class="layui-icon"  >&#xe857; 
-         <a id="scope-express">收寄范围查询</a></i></div>          
+         <a class="select-strand">收寄标准须知</a></i></div>          
     </div>
     <div id="infomation1">
     	<i class="layui-icon" style="margin-left: 10%;" >&#xe630;
@@ -266,6 +266,27 @@
 	            $("#s-right").slideDown(2000);
 	        }
 	    });  
+	    var index1="query_pack";//我要寄件
+	    var index2="query_books";//订单查询
+	    var index3="query_neets";//网点查询
+	    var index4="query_time";//时效查询
+	    var index5="query_strand";//收寄标准查询
+	    $('.query-pack').click(function(){//我要寄件
+	    	window.location.href = 'logistics.html?index='+index1;
+	    });
+	    $('.query-books').click(function(){//订单查询
+	    	window.location.href = 'logistics.html?index='+index2;
+	    });
+
+	    $('.select-time').click(function(){//时效查询
+	    	window.location.href = 'logistics.html?index='+index4;
+	    });
+	    $('.query-neets').click(function(){//网点查询
+	    	window.location.href = 'logistics.html?index='+index3;
+	    });
+	    $('.select-strand').click(function(){//收寄标准查询
+	    	window.location.href = 'logistics.html?index='+index5;
+	    });
     });
  </script>
 </html>

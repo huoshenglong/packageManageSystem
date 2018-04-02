@@ -313,6 +313,8 @@
 	</div>
 	<!-- 时效查询 -->
 	<div id="time-order">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			  <legend>运单时效查询</legend>
 	 	<form class="layui-form" action="" >
 	        <div class="layui-form-item">
 			    <label class="layui-form-label">始发地：</label>
@@ -457,26 +459,26 @@
 			    <div class="layui-input-inline">
 			      <select name="startcash" id="start-cash">
 			        <option value="" >请选择币种</option>
-			        <option value="rmb" selected="">人民币</option>
+			        <option value="rmb"  >人民币</option>
 			        <option value="dollor">美元</option>
-			        <option value="euro">欧元</option>
-			        <option value="hkdollor">港币</option>
-			        <option value="won">韩元</option>
-			        <option value="yen">日元</option>
-			        <option value="pound">英镑</option>
+			        <option value="eur">欧元</option>
+			        <option value="hkd">港币</option>
+			        <option value="krw">韩元</option>
+			        <option value="jpy">日元</option>
+			        <option value="gbp">英镑</option>
 			      </select>
 			    </div>
 			    <div class="layui-form-mid layui-word-aux" style="margin-left: 30px;">···></div>
 			    <div class="layui-input-inline">
 			      <select name="endcash" id="end-cash">
 			        <option value="">请选择币种</option>
-			        <option value="rmb" >人民币</option>
-			        <option value="dollor" selected="">美元</option>
-			        <option value="euro">欧元</option>
-			        <option value="hkdollor">港币</option>
-			        <option value="won">韩元</option>
-			        <option value="yen">日元</option>
-			        <option value="pound">英镑</option>
+			         <option value="rmb"  >人民币</option>
+			        <option value="dollor">美元</option>
+			        <option value="eur">欧元</option>
+			        <option value="hkd">港币</option>
+			        <option value="krw">韩元</option>
+			        <option value="jpy">日元</option>
+			        <option value="gbp">英镑</option>
 			      </select>
 			    </div>
 			    <div class="layui-form-item">
@@ -489,19 +491,129 @@
 			    <label class="layui-form-label"></label>
 			    <div id="result-cash">
 				    <label class="layui-form-label">查询结果··></label>
-				    <label class="layui-form-label" id="cash-result-number"></label>
+				    <label class="layui-form-label" id="cash-result-number" ></label>
 			    </div>
 	  		</div>
   		</form>		
   			<div style="width: 216px; margin-left: 200px;">			     
-			    <button class="layui-btn layui-btn-primary" id="exchange-cash">点击查询</button>
+			   <button class="layui-btn layui-btn-fluid" id="exchange-cash">点击查询</button>
 			</div> 
+			 
 	</div>
   
 	<!-- 常用表格 -->
-	<!-- <div id="com-table"></div> -->
+	 
+	<div id="com-table">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+	  		<legend>相关表格-下载</legend>
+		</fieldset>
+		<table class="layui-table" lay-even="" lay-skin="row">
+		  <colgroup>
+		    <col width="150">
+		    <col>
+		    <col width="150">     
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>序号</th>
+		      <th>表格目录内容</th>
+		      <th>操作</th>  
+		    </tr> 
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>1</td>
+		      <td>正式报关单证（合同、商业发票、报关委托书、装箱单）</td>
+		      <td><a href="../downloadfiles/Declaration1.zip"  download="Declaration1">下载</a></td>
+		     
+		    </tr>
+		    <tr>
+		      <td>2</td>
+		      <td>委托收件表格（国内取件）-中文版</td>
+		      <td><a href="../downloadfiles/Declaration2-.doc" download="Declaration2">下载</a></td>		    
+		    </tr>
+		    <tr>
+		      <td>3</td>
+		      <td>委托收件表格（国内取件）-英文版</td>
+		      <td><a href="../downloadfiles/Declaration3-English-.doc" download="Declaration3">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>4</td>
+		      <td> 委托表格（香港取件）-英文版</td>
+		      <td><a href="../downloadfiles/Pickup_HK_en.doc" download="Pickup_HK_en">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>5</td>
+		      <td> 委托表格（香港取件）</td>
+		      <td><a href="../downloadfiles/Pickup_HK_sc.doc" download="Pickup_HK_sc">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>6</td>
+		      <td>委托表格（澳门取件）-英文版 </td>
+		      <td><a href="../downloadfiles/Pickup_MC_en.doc" download="Pickup_MC_en">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>7</td>
+		      <td>委托表格（澳门取件） </td>
+		      <td><a href="../downloadfiles/Pickup_MC_sc.doc" download="Pickup_MC_sc">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>8</td>
+		      <td>国际件普通形式发票模板 </td>
+		      <td><a href="../downloadfiles/11092.docx" download="International">下载</a></td>
+		    </tr>
+		    <tr>
+		      <td>9</td>
+		      <td> 欧洲件专用形式发票模板</td>
+		      <td><a href="../downloadfiles/11091.docx" download="Europe">下载</a></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<h3>尊敬的客户：</h3>
+
+		<p>在您下载表格并填写相关内容后，请回传至相应服务区域传真号码查询。</p>
+	</div>
 	<!-- 代收款查询 -->
-	<!-- <div id="cashquery"></div>  -->
+	<div id="cashquery">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+		  <legend>代收款-服务</legend>
+		</fieldset>
+		<div class="layui-form">
+		  <table class="layui-table" >
+		    <colgroup>
+		      <col>
+		    </colgroup>
+		    <thead>
+		      <tr>
+		        <th>代收货款电子账单</th> 
+		      </tr> 
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>
+		        	<h3 style="color:#008080">服务介绍</h3>
+					<p>作为一家具有高度社会责任感的物流综合服务公司，顺丰倡导环保生活，绿色地球，并致力于为客户提供更便捷的电子账单服务，以减少纸质账单的使用。</p>
+
+					<p>•电子对账单是您纸质账单的电子版本。开通电子账单服务后，次月为您生成本月的电子账单，每月2号起发送账单至您的邮箱。</p>
+
+					<p>•客户登录会员平台 i.sf-express.com，点击“注册—企业客户注册“，完成注册登录后即可查看账单、对账付款、在线反馈差异、查看运单图片、下载账单等。</p>
+
+					<p>(注册过程提示用户名已存在，请直接使用已有账户密码登录；如忘记密码，可在登录过程通过“忘记密码“功能找回密码)</p>
+
+					<h3 style="color:#008080">适用对象</h3>
+
+					<h3>中国大陆月结客户</h3>
+
+					<h3 style="color:red">温馨提示</h3>
+					<p>1.如需申请电子账单，请下载电子账单开通表。填写公司名称（全称）、月结账号、对账联系人、对账电话、账单接收邮箱交由我司人员。我司7个工作日为为您开通电子账单。</p>
+
+					<p>2.为了让您享受更优质的服务，如您公司名称（全称）、电话、地址或寄件人/对账人联系方式等信息变更，敬请及时致电我司全国服务热线 95338 或登录官网更新资料。</p>
+				</td>
+		      </tr>
+		    </tbody>
+		  </table>
+		</div>
+	</div> 
 
 </div>
 
@@ -518,37 +630,15 @@
 		if (index=="query_books") {//订单查询
  			$('#find-order').show();
 		}
-		if (index=="query_neets") {//快递订单查询
+		if (index=="query_neets") {//快递网点查询
 			$('#allmap').show();
 		}
-		$('#result-cash').hide();
-		$('#exchange-cash').click(function() {
-			var start_cash=$('#start-cash').children('option:selected').val();
-			var end_cash=$('#end-cash').children('option:selected').val();
-			var number=$('#input-number-cash').val();
-			
-		$.ajax({
-            type: "POST",//方法类型
-            dataType: "json",//预期服务器返回的数据类型
-            url: "http://localhost:8080/springmvc/cash.do" ,//url
-            data: $('#form-cash').serialize(),
-            success: function (result) {	                   
-                if (result=="success") {
-                     alert("SUCCESS");
-                    // window.location.href="../webpage/result/console.html";
-                }
-                ;
-            },
-            error : function(result) {	                	 
-                alert("密码或用户名错误！");
-            }
-        });
-
-
-			$('#result-cash').show();
-			$('#cash-result-number').text('qqq');
-	    });
-	     
+		if (index=="query_time") {//时效查询
+			$('#time-order').show();
+		}
+		if (index=="query_strand") {//收寄标准
+			$('#strand-div').show();
+		}
 	});
 </script>
 </html>

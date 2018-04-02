@@ -53,6 +53,7 @@ public class MainController {
 	public Double cashSelect(HttpServletRequest request){
 		String start = request.getParameter("startcash");
 		String endcash = request.getParameter("endcash");
-		return css.selectRate(start, endcash);
+		double value=css.selectRate(start, endcash);		 
+		return value;
 	}
 }

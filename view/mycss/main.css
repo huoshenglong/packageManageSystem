@@ -47,22 +47,25 @@
 
 
 /*index.html首页样式设计*/
-    #login_button{
+#login_button{
         margin-left: 350px;
     }
-    #logo{
+#logo{
         margin-left: 50px;
         height: 64px;
         width: 64px;
     }
-    .service{
+.service{
         height: 80px;
         /*background-color: #EE2C2C;*/
         /*background:linear-gradient(#4169E1,#1E90FF,#00BFFF);*/
         /*background-color:   #1E90FF;*/
          background:#009688;
     }
-    .service div:hover *{
+.service a{
+    cursor: pointer;
+}
+.service div:hover *{
         color:#FF0000;
     }
 .service_01{
@@ -485,13 +488,16 @@
     margin: 50px;
     height: 300px;
 }
+#cash-result-number{
+    color:#008080;
+    font-size: 1.4em;
+}
  /*sendpack样式结束*/
 
  /*regiest样式开始*/
  #register{
             width: 1000px;
-            height: 800px;
-           
+            height: 800px;          
             margin:auto;
         }
         #reg-left{
