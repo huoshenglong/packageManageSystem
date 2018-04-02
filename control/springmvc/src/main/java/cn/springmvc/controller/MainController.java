@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.springmvc.service.CashService;
 import cn.springmvc.service.UserService;
 
 @Controller
@@ -19,6 +20,10 @@ public class MainController {
 	Date date = new Date();
 	@Autowired
 	public UserService uss;
+	
+	@Autowired
+	public CashService css;
+	
 	@RequestMapping("index")
 	public String index() {
 		System.out.println(date.getTime() + "访问主页");
@@ -31,7 +36,7 @@ public class MainController {
 	
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username+"*********"+password);
+//		System.out.println(username+"*********"+password);
 		boolean result=uss.loginByName(username, password);
 		if (result) {
 			System.out.println("success");
@@ -43,4 +48,11 @@ public class MainController {
 		}	 
 	}
 
+	@RequestMapping("cash")
+	@ResponseBody//将success转换成json传到前台
+	public Double cashSelect(HttpServletRequest request){
+		String start = request.getParameter("startcash");
+		String endcash = request.getParameter("endcash");
+		return css.selectRate(start, endcash);
+	}
 }

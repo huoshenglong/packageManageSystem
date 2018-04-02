@@ -16,8 +16,9 @@
     height: 30px;
     margin-left: 10px;
     border:0px;
+    border-bottom:1px solid gray;
     background: none;
-    color: white;
+   
     font-size: 1em;
 }
 </style>
@@ -29,44 +30,43 @@
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">物流服务</a>
 				<dl class="layui-nav-child"> <!-- 二级菜单 -->
-			      <dd><a href="">快递查询</a></dd>
-			      <dd><a href="">订单查询</a></dd>
-			      <dd><a href="">网点查询</a></dd>
+			      <dd><a id="query-pack">我要寄件</a></dd>
+			      <dd><a id="query-books">订单查询</a></dd>
+			      <dd><a id="query-neets">网点查询</a></dd>
 			    </dl>
 		  </li>
 		  <li class="layui-nav-item">
 		    <a href="javascript:;">服务中心</a>
 		    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-		      <dd><a href="">快递服务</a></dd>
-		      <dd><a href="">冷运服务</a></dd>
-		      <dd><a href="">仓储服务</a></dd>
+		      <dd><a id="express-service">快递服务</a></dd>
+		      <dd><a id="code-service">冷运服务</a></dd>
+		      <dd><a id="storyhouse-servier">仓储服务</a></dd>
 		    </dl>
 		  </li>
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">快购链接</a>
 			<dl class="layui-nav-child"> <!-- 二级菜单 -->
-		      <dd><a href="http://www.sfbest.com/">顺丰商城</a></dd>
-		      <dd><a href="http://www.stomall.com/">申通商城</a></dd>
-		      <dd><a href="https://www.taobao.com/">淘宝商城</a></dd>
+		      <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+		      <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+		      <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
 		    </dl>
 		  </li>
 		   <li class="layui-nav-item">
 		  	<a   id="about">关于我们</a>
 		  </li>
 		  <li class="layui-nav-item" id="login_button">
-		  	<a href="javascript:;" id="login_button_admin">管理员登录</a>
+		  	<a   id="login_button_admin">管理员登录</a>
 		  </li>
 		  <li class="layui-nav-item">
-		  	<a href="javascript:;">会员注册</a>
+		  	<a href="../webpage/register.html">会员注册</a>
 		  </li>
 	</ul>
-
 	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
   <legend>业务办理-信息查询</legend>
 </fieldset>
 <div id="left-chose">
 	<h1 style="border-bottom:1px dashed red;">服务支持</h1>
-	<div class="chose" id="send-btu">
+	<div class="chose" id="send-btu" >
 		··>我要寄件
 	</div>
 	<div class="chose" id="find-btu">
@@ -79,29 +79,25 @@
 		··>服务网点查询 
 	</div>
 	<div class="chose" id="strand-btu">
-		 ··>收寄标准查询 
+		 ··>收寄标准须知 
 	</div>
 	<div class="chose" id="lots">
 		<div id="find-more">
 			<p>··>更多内容查询 </p>
 		</div>
 		<div class="morechose" id="cp1" style="margin-top: 15px;">			 
-		  	<p id="cp">···>理赔</p>
+		  	<p class="cp" id="exchange-query">···>汇率查询</p>
 		  </div>
-		  <div class="morechose" id="cp2">
-		  	<p id="cp">···>汇率查询</p>
+		  <div class="morechose" id="cp2" >
+		  	<p class="cp" id="comment-table">···>常用表格</p>
 		  </div>
 		  <div class="morechose" id="cp3">
-		  	<p id="cp">···>常用表格</p>
+		  	<p class="cp" id="cash-query">···>代收款查询</p>
 		  </div>
-		  <div class="morechose" id="cp4">
-		 	<p id="cp">···>代收款查询</p>
-		  </div>
-
 	</div>
 </div>
 <div id="right-display">
-
+	<!-- 我要寄快递 -->
 	<div id="form-send">
 	 	<form class="layui-form" action="" >
 		  	<div id="sender">
@@ -128,7 +124,7 @@
 			    </div>
 			   <div class="layui-form-item">
 			    <label class="layui-form-label">上门地址：</label>
-			    <div class="layui-input-inline" id="input-select"  >
+			    <div class="layui-input-inline"   >
 			      <select name="quiz1"  >
 			        <option value="">请选择省</option>
 			        <option value="浙江">浙江省</option>
@@ -136,7 +132,7 @@
 			        <option value="你最喜欢的老师">福建省</option>
 			      </select>
 			    </div>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline" >
 			      <select name="quiz2">
 			        <option value="">请选择市</option>
 			        <option value="杭州">杭州</option>
@@ -177,7 +173,7 @@
 			    </div>
 			    <div class="layui-form-item">
 			    <label class="layui-form-label">收件地址：</label>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline"  >
 			      <select name="quiz1">
 			        <option value="">请选择省</option>
 			        <option value="浙江"  >浙江省</option>
@@ -185,7 +181,7 @@
 			        <option value="你最喜欢的老师">福建省</option>
 			      </select>
 			    </div>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline"  >
 			      <select name="quiz2">
 			        <option value="">请选择市</option>
 			        <option value="杭州">杭州</option>
@@ -240,6 +236,7 @@
 		    </div>
 		</form>
 	</div>
+	<!-- 订单查询 -->
 	<div id="find-order">
 		<form class="layui-form layui-form-pane" action="">
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
@@ -257,7 +254,7 @@
 			    	<div id="by-order">
 			    		<div class="layui-form-item layui-form-text">    
 						    <div class="layui-input-block">
-						      <textarea placeholder="最多输入20条运单号，请用'+'号隔开" class="layui-textarea"></textarea>
+						      <textarea placeholder="最多输入20条运单号，请用逗号、空格或回车键隔开" class="layui-textarea"></textarea>
 						    </div>
 						</div>
 						<div class="layui-form-item">
@@ -314,11 +311,12 @@
 			</div>
 		</form>
 	</div>
+	<!-- 时效查询 -->
 	<div id="time-order">
 	 	<form class="layui-form" action="" >
 	        <div class="layui-form-item">
 			    <label class="layui-form-label">始发地：</label>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline"  >
 			      <select name="quiz1">
 			        <option value="">请选择省</option>
 			        <option value="浙江"  >浙江省</option>
@@ -326,7 +324,7 @@
 			        <option value="你最喜欢的老师">福建省</option>
 			      </select>
 			    </div>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline" >
 			      <select name="quiz2">
 			        <option value="">请选择市</option>
 			        <option value="杭州">杭州</option>
@@ -339,7 +337,7 @@
 		    </div>
 		    <div class="layui-form-item">
 			    <label class="layui-form-label">目的地：</label>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline"  >
 			      <select name="quiz1">
 			        <option value="">请选择省</option>
 			        <option value="浙江"  >浙江省</option>
@@ -347,7 +345,7 @@
 			        <option value="你最喜欢的老师">福建省</option>
 			      </select>
 			    </div>
-			    <div class="layui-input-inline" id="input-select">
+			    <div class="layui-input-inline" >
 			      <select name="quiz2">
 			        <option value="">请选择市</option>
 			        <option value="杭州">杭州</option>
@@ -410,13 +408,149 @@
 			<p>3、海外进出口流向时效标准天数是指工作日，不包含收件日，不包括周末和节假日。具体派送时效以目的地邮编为准。如遇偏远地区或郊区、航班延误、清关异常等情形，时效会额外增加。</p>
 		</form>
 	</div>
+	<!-- 网点查询 -->
 	<div id="allmap"></div>
+	<!-- 收寄标准查询 -->
+	<div id="strand-div">
+		<h3 style="color: red">收寄原则：</h3>
+
+		<h4>一、禁止收寄：禁止收取易燃、易爆、易腐蚀、有毒、放射性及违法物品。</h4>
+
+		<h4>二、限制收寄：</h4>
+
+		<p>尺寸和重量：<br>
+		①陆运快件：单件计费重量不超过130KG或三边（长、宽、高）分别不超过2.5米、1.5米、1.5米；
+		<br>
+		②航空快件：单件计费重量不超过80KG或三边（长、宽、高）分别不超过2.5米、1米、0.8米；
+		<br>
+		特殊说明：顺丰时效产品需按照各时效产品的重量及尺寸要求执行。
+		<br>
+		航空限制：原商业包装液体、膏状、粉末类食品可通过航空方式发运，如原包装的奶粉、咖啡粉、保健品、矿泉水等；非商业原包装的其它液体、膏状、粉末类物品需提供《鉴定报告书》在发运机场报备通过后方可发运航空。<br>
+		化工类：除日用化工品外（如牙膏、洗面奶、洗洁精、化妆品），其它化工类物品需提供安全属性证明材料，确认安全后，将证明材料随货寄出。若需要通过航空发运的，需提供《鉴定报告书》在发运机场报备通过后方可发运航空。<br>
+		活体动物类：除大闸蟹、甲鱼、大龙虾外，其它活物体动物禁止收寄。<br>
+		电池类：<br>
+		①航空收寄标准：<br>
+
+		    检测报告：必须提供符合UN38.3测试和1.2米跌落试验相关检查报告；<br>
+
+		    报备：提供检测报告原件向机场安检报备通过后方可发运；<br>
+
+		    包装：必须为商业包装，每台电子产品最多配2块电池，且机电分离，电池须独立密封包装；机电一体的电子产品须关机。<br>
+
+		②电池禁收：禁止收取摩托车、汽车、电动车（含电动单车、三轮车、平衡车）的蓄电池，禁止收取额定能量大于100WH（瓦/小时）的锂电池或充电宝。<br>
+
+		生鲜、时令水果类：为保证物品运输品质，部分时令蔬果类单票不能超过5KG，大闸蟹单票不能超过10KG，如超出需分票寄递，各地如有特殊要求，以当地收派员核实为准。<br>
+		点击查看关于医药类产品寄递的温馨提示</p>
+
+		<h4>三、说明：</h4>
+
+		    <p> 散单客户发至新疆单票快件计费重量不超过1KG。</p>
+	</div>
+	<!-- 汇率查询 -->
+	<div id="exchange">
+		<form class="layui-form" id="form-cash" action="">
+			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+			  <legend>汇率查询</legend>
+			</fieldset>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">兑换币种·></label>
+			    <div class="layui-input-inline">
+			      <select name="startcash" id="start-cash">
+			        <option value="" >请选择币种</option>
+			        <option value="rmb" selected="">人民币</option>
+			        <option value="dollor">美元</option>
+			        <option value="euro">欧元</option>
+			        <option value="hkdollor">港币</option>
+			        <option value="won">韩元</option>
+			        <option value="yen">日元</option>
+			        <option value="pound">英镑</option>
+			      </select>
+			    </div>
+			    <div class="layui-form-mid layui-word-aux" style="margin-left: 30px;">···></div>
+			    <div class="layui-input-inline">
+			      <select name="endcash" id="end-cash">
+			        <option value="">请选择币种</option>
+			        <option value="rmb" >人民币</option>
+			        <option value="dollor" selected="">美元</option>
+			        <option value="euro">欧元</option>
+			        <option value="hkdollor">港币</option>
+			        <option value="won">韩元</option>
+			        <option value="yen">日元</option>
+			        <option value="pound">英镑</option>
+			      </select>
+			    </div>
+			    <div class="layui-form-item">
+				    <label class="layui-form-label">货币金额：</label>
+				    <div class="layui-input-inline">
+				      <input type="text" name="username" lay-verify="required" value="1" autocomplete="off" class="layui-input" style="width: 30px;" id="input-number-cash">
+				    </div>
+			    </div>
+			    
+			    <label class="layui-form-label"></label>
+			    <div id="result-cash">
+				    <label class="layui-form-label">查询结果··></label>
+				    <label class="layui-form-label" id="cash-result-number"></label>
+			    </div>
+	  		</div>
+  		</form>		
+  			<div style="width: 216px; margin-left: 200px;">			     
+			    <button class="layui-btn layui-btn-primary" id="exchange-cash">点击查询</button>
+			</div> 
+	</div>
+  
+	<!-- 常用表格 -->
+	<!-- <div id="com-table"></div> -->
+	<!-- 代收款查询 -->
+	<!-- <div id="cashquery"></div>  -->
+
 </div>
 
 </body>
 <script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script> 
 <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
-<script src="../js/localtion.js" type="text/javascript" charset="utf-8"  ></script> 
+<script src="../js/localtion.js" type="text/javascript" charset="utf-8"  ></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var index=window.location.href.split("=")[1];
+		if (index=="query_pack") {//快递查询
+			$('#form-send').show();
+		}
+		if (index=="query_books") {//订单查询
+ 			$('#find-order').show();
+		}
+		if (index=="query_neets") {//快递订单查询
+			$('#allmap').show();
+		}
+		$('#result-cash').hide();
+		$('#exchange-cash').click(function() {
+			var start_cash=$('#start-cash').children('option:selected').val();
+			var end_cash=$('#end-cash').children('option:selected').val();
+			var number=$('#input-number-cash').val();
+			
+		$.ajax({
+            type: "POST",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "http://localhost:8080/springmvc/cash.do" ,//url
+            data: $('#form-cash').serialize(),
+            success: function (result) {	                   
+                if (result=="success") {
+                     alert("SUCCESS");
+                    // window.location.href="../webpage/result/console.html";
+                }
+                ;
+            },
+            error : function(result) {	                	 
+                alert("密码或用户名错误！");
+            }
+        });
+
+
+			$('#result-cash').show();
+			$('#cash-result-number').text('qqq');
+	    });
+	     
+	});
+</script>
 </html>
 
 

@@ -6,8 +6,21 @@
 	<title>快递管理系统-系统主界面</title>
 	<link rel="stylesheet" href="../layui/css/layui.css">
 	<link rel="stylesheet" href="../mycss/main.css">
-	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
-	 
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" ></script>
+	 <style type="text/css">
+	input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+   	color: white;
+    font-size: 1em;
+}
+</style>
 </head>
 <body> 
  
@@ -17,25 +30,25 @@
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">物流服务</a>
 				<dl class="layui-nav-child"> <!-- 二级菜单 -->
-			      <dd><a href="">快递查询</a></dd>
-			      <dd><a href="">订单查询</a></dd>
-			      <dd><a href="">网点查询</a></dd>
+			      <dd><a id="query-pack">我要寄件</a></dd>
+			      <dd><a id="query-books">订单查询</a></dd>
+			      <dd><a id="query-neets">网点查询</a></dd>
 			    </dl>
 		  </li>
 		  <li class="layui-nav-item">
 		    <a href="javascript:;">服务中心</a>
 		    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-		      <dd><a href="">快递服务</a></dd>
-		      <dd><a href="">冷运服务</a></dd>
-		      <dd><a href="">仓储服务</a></dd>
+		      <dd><a id="express-service">快递服务</a></dd>
+		      <dd><a id="code-service">冷运服务</a></dd>
+		      <dd><a id="storyhouse-servier">仓储服务</a></dd>
 		    </dl>
 		  </li>
 		  <li class="layui-nav-item">
 		  	<a href="javascript:;">快购链接</a>
 			<dl class="layui-nav-child"> <!-- 二级菜单 -->
-		      <dd><a href="http://www.sfbest.com/">顺丰商城</a></dd>
-		      <dd><a href="http://www.stomall.com/">申通商城</a></dd>
-		      <dd><a href="https://www.taobao.com/">淘宝商城</a></dd>
+		      <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+		      <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+		      <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
 		    </dl>
 		  </li>
 		   <li class="layui-nav-item">
@@ -45,7 +58,7 @@
 		  	<a href="javascript:;" id="login_button_admin">管理员登录</a>
 		  </li>
 		  <li class="layui-nav-item">
-		  	<a href="javascript:;">会员注册</a>
+		  	<a href="../webpage/register.html">会员注册</a>
 		  </li>
 	</ul>
  
@@ -60,20 +73,17 @@
 	  </div>
 	</div>
  	<div class="service ">
-                 <div class="service_01"  >
-                 <i class="layui-icon" >&#xe615;<a   id="pack_find">运单追踪</a>
-                 </i></div>             
-                 <div class="service_02" ><i class="layui-icon" >&#xe609; 
-                <a href="">我要寄件</a></i></div>              
-                 <div class="service_03"><i class="layui-icon"  >&#xe65e;
-                <a href="">运费时效查询</a></i></div>         
-                 <div class="service_04"><i class="layui-icon"  >&#xe715;
-                 <a href="">服务网点查询</a></i></div>          
-                <div class="service_05"  ><i class="layui-icon"  >&#xe857; 
-                 <a href="">收寄范围查询</a></i></div>          
-                          
-                 
-           
+         <div class="service_01"  >
+         <i class="layui-icon" >&#xe615;<a id="pack_find">运单追踪</a>
+         </i></div>             
+         <div class="service_02" ><i class="layui-icon" >&#xe609; 
+        <a id="query-pack">我要寄件</a></i></div>              
+         <div class="service_03"><i class="layui-icon"  >&#xe65e;
+        <a id="time-express">运费时效查询</a></i></div>         
+         <div class="service_04"><i class="layui-icon"  >&#xe715;
+         <a id="query-neets">服务网点查询</a></i></div>          
+        <div class="service_05"  ><i class="layui-icon"  >&#xe857; 
+         <a id="scope-express">收寄范围查询</a></i></div>          
     </div>
     <div id="infomation1">
     	<i class="layui-icon" style="margin-left: 10%;" >&#xe630;
@@ -86,25 +96,18 @@
 
 	<div class="search" id="search">
 	<form class="layui-form" id="layui-form1" action="">
-	  <div class="layui-form-item" id="layui-form-item1">
-	    
+	  <div class="layui-form-item" id="layui-form-item1">	    
 	    <div class="layui-input-block">
 	      <input type="text" name="title" id="input_value" required  lay-verify="required" 
-	      placeholder="请输入快递单号或者手机号" autocomplete="off" class="layui-input">
-	      
+	      placeholder="请输入快递单号或者手机号" autocomplete="off" class="layui-input">	      
 	    </div>
-	  </div>
-	 
-	  <div class="layui-form-item" id="layui-form-item1">
-	    
-	    <div class="layui-input-block" id="input_radio">
-	    
+	  </div>	 
+	  <div class="layui-form-item" id="layui-form-item1">	    
+	    <div class="layui-input-block" id="input_radio">	    
 	      <input type="radio" name="sex" id="input_radio_info1" value="快递单号" title="快递单号">
 	      <input type="radio" name="sex" id="input_radio_info2" value="手机号码" title="手机号码"  >
-
 	    </div>
-	  </div>
-	   
+	  </div>	   
 	  <div class="layui-form-item" id="layui-form-item1">
 	    <div class="layui-input-block">
 	      <button class="layui-btn" id="layui-btn"  lay-submit lay-filter="formDemo">立即查找</button>
@@ -117,7 +120,6 @@
   <legend>产品服务</legend>
 </fieldset>
  <div id="introduce">
-
 	<div id="intro1">
 		<div id="mask">
 			<h1 style="margin-top: 40px;">快捷的冷藏服务</h1>
@@ -125,15 +127,13 @@
 		</div>
 		<fieldset class="layui-elem-field layui-field-title" >
 		  <legend>冷运服务</legend>
-		</fieldset>
-		 
+		</fieldset>		 
 		<div class="layui-carousel" id="cold-transportation">
 		  <div carousel-item>
 		    <div><img src="..//images/orange.jpg" alt=""></div>
 		    <div><img src="../images/boluo.jpg" alt=""></div>
 		    <div><img src="../images/shizi.jpg" alt=""></div>
-		    <div><img src="../images/yingtao.jpg" alt=""></div>
-		     
+		    <div><img src="../images/yingtao.jpg" alt=""></div>		     
 		  </div>
 		</div>
 	</div>
@@ -150,8 +150,7 @@
 	    <div><img src="../images/pac2.jpg" alt=""></div>
 	    <div><img src="../images/pac3.jpg" alt=""></div>
 	    <div><img src="../images/pac4.jpg" alt=""></div>
-	    <div><img src="../images/pac5.jpg" alt=""></div>
-	     
+	    <div><img src="../images/pac5.jpg" alt=""></div>	     
 	  </div>
 	</div>
 	</div>
@@ -168,18 +167,15 @@
 	    <div><img src="../images/mav1.jpg" alt=""></div>
 	    <div><img src="../images/mav2.jpg" alt=""></div>
 	    <div><img src="../images/mav3.jpg" alt=""></div>
-	    <div><img src="../images/mav4.jpg" alt=""></div>
-	     
+	    <div><img src="../images/mav4.jpg" alt=""></div>	     
 	  </div>
 	</div>
 	</div>
  </div>
-
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;text-align: center">
   <legend>业务-资讯</legend>
 </fieldset>
 <div id="something">
-
 	<div id="s-left">
 		<fieldset class="layui-elem-field layui-field-title">
   		<legend>寄件须知</legend>
@@ -214,16 +210,14 @@
 	  		</a>
   	    </div>   
 	</div>
-
 	<div id="s-middle"></div>
 	<div id="s-right">
 		<fieldset class="layui-elem-field layui-field-title"  >
   		<legend>行业资讯</legend>
-  		<div id="s-news">
-  			
-<marquee direction=up  scrolldelay="0" scrollamount="3" loop="-1" 
-behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"   
-      onMouseOut="this.start()" width="100%" height="200px">  
+  		<div id="s-news"> 			
+		<marquee direction=up  scrolldelay="0" scrollamount="3" loop="-1" 
+		behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"   
+      	onMouseOut="this.start()" width="100%" height="200px">  
             <div class="news-span"><i class="layui-icon">&#xe63a;:-></i><a  href="http://www.lcn2000.com/jianguan/2955.html" title="">国家邮政局局长：快递实名收寄必须坚持“底线思维”</a></div>
   			<div class="news-span"><i class="layui-icon">&#xe63a;:-></i><a href="http://www.lcn2000.com/zixun/2957.html" title="">
 	  		未来的某一天，快递小哥会变成机器人吗？</a><br></div>
@@ -241,7 +235,6 @@ behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"
   		</div>
 	</div>
 </div>
-
 <hr class="layui-bg-blue">
  	<div id="rights">
 		<h3>
@@ -252,11 +245,7 @@ behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"
 			霍胜龙
 		</h4>
 	</div>
-
- 
- 
- <div id="return-top" title="返回顶部"></div>
-  
+<div id="return-top" title="返回顶部"></div> 
 </body>
 <script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script>
 <script src="../js/indexjs.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -266,7 +255,6 @@ behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"
 		var hh=$("#something").offset().top;
 		$(window).scroll(function(){
 	        var this_scrollTop = $(this).scrollTop();
-
 	        if(this_scrollTop>h3_height ){
 	            $("#intro1").show(2000);
 	            $("#intro2").show(1500);
@@ -277,7 +265,7 @@ behavior="scroll" hspace="20" vspace="10" onMouseOver="this.stop()"
 	        	$("#s-left").slideDown(1500);
 	            $("#s-right").slideDown(2000);
 	        }
-	    });
+	    });  
     });
  </script>
 </html>

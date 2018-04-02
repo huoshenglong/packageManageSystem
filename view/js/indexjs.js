@@ -31,6 +31,9 @@ $(document).ready(function(){
 					</form>
 				</div>
 	`);
+
+
+
 	$("#login_div").hide();
 	$("#intro1",).hide();
 	$("#intro2").hide();
@@ -234,7 +237,7 @@ $(document).ready(function(){
 	                    ;
 	                },
 	                error : function(result) {	                	 
-	                    alert("异常！");
+	                    alert("密码或用户名错误！");
 	                }
 
 
@@ -292,27 +295,29 @@ $(document).ready(function(){
 	   
 
 
-	   //次页面的设计js
+	   //main.html页面的设计js
 	    $('#form-send').hide();
 	    $('#find-order').hide();
 	    $('#time-order').hide();
 	    $('#allmap').hide();
+	    $('#strand-div').hide();
+	    $('#exchange').hide();
 		$('#cp1').hide();
 		$('#cp2').hide();
 		$('#cp3').hide();
-		$('#cp4').hide();
+	 
 		$('#find-more').click(function(){
 			var l_he=$('#lots').height();
 			if (l_he<190) {
-				$('#lots').height(190);
+				$('#lots').height(150);
 			}
-			if (l_he==190) {
+			if (l_he==150) {
 				$('#lots').height(30);
 			}
 			$('#cp1').fadeToggle( );
 			$('#cp2').fadeToggle( );
 			$('#cp3').fadeToggle( );
-			$('#cp4').fadeToggle( );
+			 
 		});
 
 		$('#scope1').mouseenter(function(event) {
@@ -340,38 +345,55 @@ $(document).ready(function(){
 			num=num*1+1*1;
 			$("#right-input-weight").val(num)
 		});
-// send-btu
-// find-btu
-// time-btu
-// neets-btu
-// strand-btu
 		 $('#send-btu').click(function(){
 		 	$('#form-send').show();
 		    $('#find-order').hide();
 		    $('#time-order').hide();
 		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
 		 });
 		 $('#find-btu').click(function(){
 		 	$('#form-send').hide();
 		    $('#find-order').show();
 		    $('#time-order').hide();
 		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
 		 });
 		 $('#time-btu').click(function(){
 		 	$('#form-send').hide();
 		    $('#find-order').hide();
 		    $('#time-order').show();
 		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
 		 });
 		 $('#neets-btu').click(function(){
 		 	$('#form-send').hide();
 		    $('#find-order').hide();
 		    $('#time-order').hide();
 		    $('#allmap').show();
+		    $('#strand-div').hide();
+		    $('#exchange').hide();
 		 });
 		 $('#strand-btu').click(function(){
-		 	
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		    $('#strand-div').show();
+		    $('#exchange').hide();
 		 });
+		 $('#exchange-query').click(function(){
+		 	$('#form-send').hide();
+		    $('#find-order').hide();
+		    $('#time-order').hide();
+		    $('#allmap').hide();
+		    $('#strand-div').hide();
+		    $('#exchange').show();
+		 });
+		 
 	    
 });
 	  
