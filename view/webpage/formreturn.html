@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单填写-格式</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../mycss/main.css">
+  <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+  <script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+  <style type="text/css">
+  input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+   
+    font-size: 1em;
+}
+</style>
+</head>
+<body>
+  <ul class="layui-nav"   lay-filter="" name="ss">
+      <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+      <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">物流服务</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a class="query-pack">我要寄件</a></dd>
+            <dd><a class="query-books">订单查询</a></dd>
+            <dd><a class="query-neets">网点查询</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">服务中心</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+          <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+          <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">快购链接</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+          <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+          <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
+        </dl>
+      </li>
+       <li class="layui-nav-item">
+        <a   id="about">关于我们</a>
+      </li>
+      <li class="layui-nav-item" id="login_button">
+        <a href="javascript:;" id="login_button_admin">管理员登录</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="../webpage/register.html">会员注册</a>
+      </li>
+  </ul>
+ 
+  <div id="formreturn">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>签单返还-注意事项</legend>
+    </fieldset>
+  <div class="layui-form">
+      <table class="layui-table" lay-even="" lay-skin="row">
+        <colgroup>    
+          <col>
+        </colgroup>
+ 
+        <thead>
+          <tr>
+            <th>签单返回-业务介绍</th>            
+          </tr> 
+        </thead>
+        <tbody>
+           <tr>
+            <td>业务介绍</td>         
+          </tr> 
+          <tr>
+            <td>按照寄件方的要求，将收件方签收确认后的送货单或者签收回单，在规定时间内返还给寄件方的服务。</td>         
+          </tr> 
+          <tr>
+            <td>业务特色</td>         
+          </tr> 
+          <tr>
+            <td>将收件方签收确认后的送货单或者签收回单返还给寄件方，为双方提供更全面的快递服务。该业务主要适用于有企业商务文件往来、电子商务过程中有签收回单返回等方面需求的客户。</td>         
+          </tr> 
+          <tr>
+            <td>服务范围</td>         
+          </tr> 
+          <tr>
+            <td>全网络（圆通可到达的所有区域）<br>
+注：更多请至[网点查询]栏目查询</td>         
+          </tr> 
+          <tr>
+            <td>结算方式</td>         
+          </tr> 
+          <tr>
+            <td>可按需要选择寄付、到付、月结。</td>         
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <hr class="layui-bg-blue">
+  <div id="rights">
+    <h3>
+      ©All Rights Received
+    </h3>
+    <h4>
+      软件工程1402 </br>
+      霍胜龙
+    </h4>
+  </div>
+</body>
+ 
+</html>

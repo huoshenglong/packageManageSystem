@@ -38,6 +38,9 @@ $(document).ready(function(){
 	$("#intro1",).hide();
 	$("#intro2").hide();
 	$("#intro3").hide();
+	$("#intro4").hide();
+	$("#intro5").hide();
+	$("#intro6").hide();
 	$("#s-left").hide();
 	$("#s-middle").hide();
 	$("#s-right").hide(); 
@@ -95,7 +98,6 @@ $(document).ready(function(){
 		    ,width: '100%' //设置容器宽度
 		    ,height:'550px'
 		    //,arrow: 'always' //始终显示箭头
-		     
 	  		});
 	  		carousel.render({
 		    elem: '#cold-transportation'
@@ -121,6 +123,35 @@ $(document).ready(function(){
 		    anim:'fade',
 		    indicator:'none'
 	  		});
+
+	  		carousel.render({
+		    elem: '#international-service'
+		    ,width: '100%' //设置容器宽度
+		    ,height:'200px',
+		  
+		    anim:'fade',
+		    indicator:'none'
+	  		});
+
+	  		carousel.render({
+		    elem: '#medicin-service'
+		    ,width: '100%' //设置容器宽度
+		    ,height:'200px',
+		  
+		    anim:'updown',
+		    indicator:'none'
+	  		});
+
+	  		carousel.render({
+		    elem: '#time-define-service'
+		    ,width: '100%' //设置容器宽度
+		    ,height:'200px',
+		  
+		    anim:'fade',
+		    indicator:'none'
+	  		});
+	  		 
+	  		
 
 		 });
 

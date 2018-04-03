@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>仓储服务-服务</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../mycss/main.css">
+  <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+  <script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+  <style type="text/css">
+  input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+    font-size: 1em;
+}
+</style>
+</head>
+<body>
+  <ul class="layui-nav"   lay-filter="" name="ss">
+      <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+      <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">物流服务</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a class="query-pack">我要寄件</a></dd>
+            <dd><a class="query-books">订单查询</a></dd>
+            <dd><a class="query-neets">网点查询</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">服务中心</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+          <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+          <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">快购链接</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+          <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+          <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
+        </dl>
+      </li>
+       <li class="layui-nav-item">
+        <a   id="about">关于我们</a>
+      </li>
+      <li class="layui-nav-item" id="login_button">
+        <a href="javascript:;" id="login_button_admin">管理员登录</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="../webpage/register.html">会员注册</a>
+      </li>
+  </ul>
+  <div id="service-story">
+  </div>
+   
+  <div id="storyservice">
+    <fieldset class="layui-elem-field layui-field-title" style="margin: 20px auto;">
+    <legend>仓储服务-介绍</legend>
+    </fieldset>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>          
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">服务介绍</th> 
+            </tr> 
+          </thead>
+          <tbody >
+             <tr>
+              <td>针对易腐食品类、冻品类商品等，通过各种冷藏/冷冻运输设备和工具进行全程温控运输，为客户提供门到门的配送服务。</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">服务特性</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>全程冷运：所有配送节点均全程温控，杜绝半冷链和脱温。<br>
+
+                新鲜速达：保鲜、保活、保冷、保安全,为客户提供一站式的冷运快速寄递服务。</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+           
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">服务定价</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>同城：首重（1KG）11元起，续重2元/KG起。<br>
+
+                  异地（省内/跨省）：根据具体根据流向确定。<br>
+
+                  提货费：按照冷运零担的提货标准开单计费。<br>
+
+                  个性化包装服务费（始发端裸包必收项）：6元/票。<br>
+
+                  计重规则：包裹重量与体积重量取较大值；体积计费规则：长×宽×高/6000标准。</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+           
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">服务范围</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>中国大陆已开通44个冷仓所在城市（沈阳、大连、哈尔滨、长春、广州、佛山、北京、呼和浩特、天津、廊坊、石家庄、无锡、常州、南京、淮安、苏州、南通、厦门、福州、南昌、青岛、潍坊、济南、烟台、上海、深圳、东莞、惠州、西安、重庆、成都、武汉、长沙、合肥、芜湖、太原、郑州、洛阳、嘉兴、杭州、宁波、金华、温州、绍兴）的互寄。<br>
+              在保障快件新鲜送达的基础上，销售人员会根据托寄物的保鲜时效确定快件的收寄时效与服务范围，具体可咨询当地分公司。</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr class="layui-bg-blue">
+  <div id="rights">
+    <h3>
+      ©All Rights Received
+    </h3>
+    <h4>
+      软件工程1402 </br>
+      霍胜龙
+    </h4>
+  </div>
+</body>
+ 
+</html>

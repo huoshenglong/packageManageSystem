@@ -26,7 +26,7 @@ public class MailUtil {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 //两个参数分别是发送邮件的账户和密码
-                return new PasswordAuthentication("long606186@163.com","这里写你的账号的密码");
+                return new PasswordAuthentication("long606186@163.com","long606186");
             }
         });
 

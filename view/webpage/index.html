@@ -3,24 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Access-Control-Allow-Origin" content="*" />
-	<title>快递管理系统-系统主界面</title>
+	<title>顺利快递</title>
 	<link rel="stylesheet" href="../layui/css/layui.css">
 	<link rel="stylesheet" href="../mycss/main.css">
 	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" ></script>
 	 <style type="text/css">
 	input[type="text"],input[type="password"]{
-    -webkit-web-kit-appear:none ;
-    -moz-web-kit-appear: none;
-    outline: none;
-    height: 30px;
-    margin-left: 10px;
-    border:0px;
-    border-bottom:1px solid gray;
-    background: none;
-   	color: white;
-    font-size: 1em;
-}
-</style>
+	    -webkit-web-kit-appear:none ;
+	    -moz-web-kit-appear: none;
+	    outline: none;
+	    height: 30px;
+	    margin-left: 10px;
+	    border:0px;
+	    border-bottom:1px solid gray;
+	    background: none;
+	   	color: white;
+	    font-size: 1em;
+		}
+	</style>
 </head>
 <body> 
  
@@ -38,9 +38,9 @@
 		  <li class="layui-nav-item">
 		    <a href="javascript:;">服务中心</a>
 		    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-		      <dd><a id="express-service">快递服务</a></dd>
-		      <dd><a id="code-service">冷运服务</a></dd>
-		      <dd><a id="storyhouse-servier">仓储服务</a></dd>
+		      <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+		      <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+		      <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
 		    </dl>
 		  </li>
 		  <li class="layui-nav-item">
@@ -116,96 +116,147 @@
 	  </div>
 	</form>
 	</div>
-<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;text-align: center">
-  <legend>产品服务</legend>
-</fieldset>
- <div id="introduce">
-	<div id="intro1">
-		<div id="mask">
-			<h1 style="margin-top: 40px;">快捷的冷藏服务</h1>
-            <h4>依靠强大的快递运输链及时送达客户手中<br>保证鲜果的绝对新鲜！</h4>
+	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;text-align: center">
+	  <legend>产品服务</legend>
+	</fieldset>
+	<div id="introduce">
+		<div id="intro1">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">快捷的冷藏服务</h1>
+	            <h4>依靠强大的快递运输链及时送达客户手中<br>保证鲜果的绝对新鲜！</h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>冷运服务</legend>
+			</fieldset>		 
+			<div class="layui-carousel" id="cold-transportation">
+			  <div carousel-item>
+			    <div><img src="..//images/orange.jpg" alt=""></div>
+			    <div><img src="../images/boluo.jpg" alt=""></div>
+			    <div><img src="../images/shizi.jpg" alt=""></div>
+			    <div><img src="../images/yingtao.jpg" alt=""></div>		     
+			  </div>
+			</div>
 		</div>
-		<fieldset class="layui-elem-field layui-field-title" >
-		  <legend>冷运服务</legend>
-		</fieldset>		 
-		<div class="layui-carousel" id="cold-transportation">
-		  <div carousel-item>
-		    <div><img src="..//images/orange.jpg" alt=""></div>
-		    <div><img src="../images/boluo.jpg" alt=""></div>
-		    <div><img src="../images/shizi.jpg" alt=""></div>
-		    <div><img src="../images/yingtao.jpg" alt=""></div>		     
-		  </div>
+		<div id="intro2">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">贴心快捷的快递服务</h1>
+	            <h4>依靠自有的运力资源<br>满足客户多样化、个性化的寄件需求！</h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>快递服务</legend>
+			</fieldset>
+			<div class="layui-carousel" id="express">
+			    <div carousel-item>
+				    <div><img src="../images/pac2.jpg" alt=""></div>
+				    <div><img src="../images/pac3.jpg" alt=""></div>
+				    <div><img src="../images/pac4.jpg" alt=""></div>
+				    <div><img src="../images/pac5.jpg" alt=""></div>	     
+		  		</div>
+			</div>
+		</div>
+		<div id="intro3">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">专业的仓储服务</h1>
+	            <h4>依靠强大的仓储能力和运力资源<br>为客户打造一站式物流服务！</h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>仓储服务</legend>
+			</fieldset>
+			<div class="layui-carousel" id="warehousing">
+			  <div carousel-item>
+			    <div><img src="../images/mav1.jpg" alt=""></div>
+			    <div><img src="../images/mav2.jpg" alt=""></div>
+			    <div><img src="../images/mav3.jpg" alt=""></div>
+			    <div><img src="../images/mav4.jpg" alt=""></div>	     
+			  </div>
+			</div>
+		</div>
+		<div id="intro4">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">快捷的国际服务</h1>
+	            <h4>为满足客户紧急物品寄递需求，各环节均以最快速度<br>进行发运、中转和派送的高品质门到门国际快件服务!</h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>国际服务</legend>
+			</fieldset>
+			<div class="layui-carousel" id="international-service">
+			  <div carousel-item>
+			    <div><img src="../images/inter4.png" alt=""></div>
+			    <div><img src="../images/inter3.png" alt=""></div>
+			    <div><img src="../images/inter2.png" alt=""></div>
+			    <div><img src="../images/inter1.png" alt=""></div>	     
+			  </div>
+			</div>
+		</div>
+		<div id="intro5">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">专业的医储服务</h1>
+	            <h4>提供药品、原料药、医疗器械等货物的冷库存储、流通<br>等一体化医药仓储服务。 </h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>医药仓储</legend>
+			</fieldset>
+			<div class="layui-carousel" id="medicin-service">
+			  <div carousel-item>
+			    <div><img src="../images/med2.png" alt=""></div>
+			    <div><img src="../images/med3.png" alt=""></div>
+			    <div><img src="../images/med4.png" alt=""></div>
+			    <div><img src="../images/med1.png" alt=""></div>	     
+			  </div>
+			</div>
+		</div>
+		<div id="intro6">
+			<div id="mask">
+				<h1 style="margin-top: 40px;">定时派送服务</h1>
+	            <h4>针对电商商家推出的服务，商家下单时可指定快件送达时间，<br>我司根据商家时间要求完成派送的增值服务。</h4>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" >
+			  <legend>增值服务</legend>
+			</fieldset>
+			<div class="layui-carousel" id="time-define-service">
+			  <div carousel-item>
+			    <div><img src="../images/timing4.png" alt=""></div>
+			    <div><img src="../images/timing3.png" alt=""></div>
+			    <div><img src="../images/timing2.png" alt=""></div>
+			    <div><img src="../images/timing1.png" alt=""></div>	     
+			  </div>
+			</div>
 		</div>
 	</div>
-	<div id="intro2">
-		<div id="mask">
-			<h1 style="margin-top: 40px;">贴心快捷的快递服务</h1>
-            <h4>依靠自有的运力资源<br>满足客户多样化、个性化的寄件需求！</h4>
-		</div>
-		<fieldset class="layui-elem-field layui-field-title" >
-		  <legend>快递服务</legend>
-		</fieldset>
-		<div class="layui-carousel" id="express">
-	  <div carousel-item>
-	    <div><img src="../images/pac2.jpg" alt=""></div>
-	    <div><img src="../images/pac3.jpg" alt=""></div>
-	    <div><img src="../images/pac4.jpg" alt=""></div>
-	    <div><img src="../images/pac5.jpg" alt=""></div>	     
-	  </div>
-	</div>
-	</div>
-	<div id="intro3">
-		<div id="mask">
-			<h1 style="margin-top: 40px;">专业的仓储服务</h1>
-            <h4>依靠强大的仓储能力和运力资源<br>为客户打造一站式物流服务！</h4>
-		</div>
-		<fieldset class="layui-elem-field layui-field-title" >
-		  <legend>仓储服务</legend>
-		</fieldset>
-		<div class="layui-carousel" id="warehousing">
-	  <div carousel-item>
-	    <div><img src="../images/mav1.jpg" alt=""></div>
-	    <div><img src="../images/mav2.jpg" alt=""></div>
-	    <div><img src="../images/mav3.jpg" alt=""></div>
-	    <div><img src="../images/mav4.jpg" alt=""></div>	     
-	  </div>
-	</div>
-	</div>
- </div>
-<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;text-align: center">
-  <legend>业务-资讯</legend>
-</fieldset>
 <div id="something">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;text-align: center">
+		  <legend>业务-资讯</legend>
+		</fieldset>
 	<div id="s-left">
 		<fieldset class="layui-elem-field layui-field-title">
   		<legend>寄件须知</legend>
   		<div class="s-left-icon">
-	 		<a href="" title="">
+	 		<a href="../webpage/forbid.html"  >
 	  			<i class="layui-icon">&#xe60c;</i><br> 禁寄物品
 	  		</a>
   	    </div> 
   	    <div class="s-left-icon">
-	 		<a href="" title="">
+	 		<a href="../webpage/formformat.html"  >
 	  			<i class="layui-icon">&#xe63c;</i><br> 表单填写
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
-	 		<a href="" title="">
+	 		<a href="../webpage/packing.html" >
 	  			<i class="layui-icon">&#xe64f;</i><br> 包装注意
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
-	 		<a href="" title="">
-	  			<i class="layui-icon">&#xe642;</i><br> 如何签收
+	 		<a  style="cursor: pointer;" class="query-neets"  >
+	  			<i class="layui-icon">&#xe642;</i><br> 网点查询
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
-	 		<a href="" title="">
+	 		<a style="cursor: pointer;" class="select-time" >
 	  			<i class="layui-icon">&#xe60e;</i><br> 时效查询
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
-	 		<a href="" title="">
+	 		<a href="../webpage/formreturn.html" >
 	  			<i class="layui-icon">&#xe65c;</i><br> 签单返回
 	  		</a>
   	    </div>   
@@ -258,7 +309,10 @@
 	        if(this_scrollTop>h3_height ){
 	            $("#intro1").show(2000);
 	            $("#intro2").show(1500);
-	            $("#intro3").show(1000);
+	            $("#intro3").show(500);
+	            $("#intro4").show(4000);
+	            $("#intro5").show(3500);
+	            $("#intro6").show(3000);
 	        }
 	        if (this_scrollTop>hh) {
 	        	$("#s-middle").show(1000);

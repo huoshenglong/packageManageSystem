@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>冷运服务-服务</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../mycss/main.css">
+  <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+  <script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+  <style type="text/css">
+  input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+    font-size: 1em;
+}
+</style>
+</head>
+<body>
+  <ul class="layui-nav"   lay-filter="" name="ss">
+      <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+      <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">物流服务</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a class="query-pack">我要寄件</a></dd>
+            <dd><a class="query-books">订单查询</a></dd>
+            <dd><a class="query-neets">网点查询</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">服务中心</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+          <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+          <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">快购链接</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+          <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+          <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
+        </dl>
+      </li>
+       <li class="layui-nav-item">
+        <a   id="about">关于我们</a>
+      </li>
+      <li class="layui-nav-item" id="login_button">
+        <a href="javascript:;" id="login_button_admin">管理员登录</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="../webpage/register.html">会员注册</a>
+      </li>
+  </ul>
+  <div id="service-codes">
+
+  </div>
+   
+  <div id="codeservice">
+    <fieldset class="layui-elem-field layui-field-title" style="margin: 20px auto;">
+    <legend>冷运服务-核心能力</legend>
+    </fieldset>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>          
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">专业的仓储管理人才</th> 
+            </tr> 
+          </thead>
+          <tbody >
+             <tr>
+              <td>高层管理者：65%来自国内外B2C行业知名企业；<br>
+
+                  基层管理者：具备3年以上仓储管理经验人员占比70%；<br>
+
+                  自有人员：服务2年以上人数占比60%。</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+           
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">先进的信息管理系统</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>国内领先仓库管理系统WMS，支持各品类进销存管理；<br>
+              实时监控仓储运营现场作业进度，及时、准确、快速发货；<br>
+            实时处理客户订单，负责审核、下发，异常订单反馈。</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+           
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">领先的KPI达成</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>收货上架及时率：99.13%；<br>
+
+                  发运及时率：99.94%；<br>
+
+                  发货准确率：99.96%；<br>
+
+                  库存准确率：99.994%</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="div-code-service">
+      <div class="layui-form">
+        <table class="layui-table" lay-even="" lay-skin="row" style="height: 300px;">
+          <colgroup>
+           
+            <col>
+          </colgroup>
+          <thead>
+            <tr >
+            <th style="text-align: center;background-color: #008080;color: white;">强大的高峰应对能力</th> 
+            </tr> 
+          </thead>
+          <tbody>
+             <tr>
+              <td>顺丰仓储具备日均处理40万票，峰值200万票的超强订单处理能力；<br>
+              在非促销期间当日订单履约率为100%，高峰当日订单履约率为98.4%。</td>
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr class="layui-bg-blue">
+  <div id="rights">
+    <h3>
+      ©All Rights Received
+    </h3>
+    <h4>
+      软件工程1402 </br>
+      霍胜龙
+    </h4>
+  </div>
+</body>
+ 
+</html>

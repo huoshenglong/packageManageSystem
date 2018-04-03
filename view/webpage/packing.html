@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单填写-格式</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../mycss/main.css">
+  <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+  <script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+  <style type="text/css">
+  input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+   
+    font-size: 1em;
+}
+</style>
+</head>
+<body>
+ <ul class="layui-nav"   lay-filter="" name="ss">
+      <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+      <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">物流服务</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a class="query-pack">我要寄件</a></dd>
+            <dd><a class="query-books">订单查询</a></dd>
+            <dd><a class="query-neets">网点查询</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">服务中心</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+          <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+          <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">快购链接</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+          <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+          <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
+        </dl>
+      </li>
+       <li class="layui-nav-item">
+        <a   id="about">关于我们</a>
+      </li>
+      <li class="layui-nav-item" id="login_button">
+        <a href="javascript:;" id="login_button_admin">管理员登录</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="../webpage/register.html">会员注册</a>
+      </li>
+  </ul>
+ 
+  <div id="packing">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>包裹包装-注意事项</legend>
+    </fieldset>
+  <div class="layui-form">
+      <table class="layui-table" lay-even="" lay-skin="row">
+        <colgroup>
+     
+          <col>
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th>如何正确使用包装？</th>
+            
+          </tr> 
+        </thead>
+        <tbody>
+           <tr>
+            <td>为了您的快件安全、准确的到达收件方手中，除我们公司的全体员工尽心尽职，把好每一个环节外，您正确选用包装材料、按规范包装也是其中非常重要的一环。</td>
+          
+          </tr>
+          <tr>
+            <td>一、我公司制作封套的适用范围：</td>
+           
+          </tr>
+       	  <tr>
+            <td>1、牛皮纸封套：只允许装纸张（纸制）类物件，厚度限：1.5厘米，重量限：250克以内；<br>
+
+                2、纸制硬封套：只允许装纸张（纸制）类物件，厚度限：2.5厘米，重量限：500克以内；<br>
+
+                3、塑料袋：只允许装衣物类物件和大于上述体积的纸类物件。<br>
+
+                4、注意事项：<br>
+                （1）上述两类纸制封套和塑料袋，所装的物件，四周边总长须小于三类封套的总长，物件一旦装入，封口一定要粘牢。<br>
+                （2）上述两类封套和塑料袋，绝对不能直接装入：如小五金、小电器、光盘、带有棱角和易碎等小物件。</td>
+                        
+          </tr>
+           <tr>
+             <<td>二、物品的包装要求：</td>
+           </tr>
+           <tr>
+             <<td>1、小物品包装好后的尺寸要求：<br>
+              不低于20×20厘米（长×宽）；<br>
+              说明：绝对不能小于"圆通运单"的尺寸，否则将导致运单损坏，运单一旦损坏会导致运单号码正确读取和快件的正确送达。</td>
+           </tr>
+           <tr>
+             <<td>2、易碎品的包装要求：</td>
+           </tr>
+           <tr>
+             <<td>（1）根据物件的大小、重量不同，选定强度不同的外包装（瓦楞纸盒、木制箱等）。<br>
+            （2）物件不能直接放入箱内，必须要在箱底垫上防震材料，并在物件与物件之间、物件与箱子之间填满防震材料，以不晃动为准，然后将箱口封牢。<br>
+            （3）怕倒置的物件，必须用怕倒置物品标出。<br>
+            （4）易碎品，必须用易碎品标出。</td>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <hr class="layui-bg-blue">
+  <div id="rights">
+    <h3>
+      ©All Rights Received
+    </h3>
+    <h4>
+      软件工程1402 </br>
+      霍胜龙
+    </h4>
+  </div>
+</body>
+ 
+</html>

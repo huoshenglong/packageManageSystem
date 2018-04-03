@@ -2,14 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../layui/css/layui.css">
-  <link rel="stylesheet" href="../../mycss/main.css">
-  <script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
-
+  <title>禁寄物品-注意</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../mycss/main.css">
+  <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+  <script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/indexjs.js" type="text/javascript" charset="utf-8"  ></script>
+  <style type="text/css">
+  input[type="text"],input[type="password"]{
+    -webkit-web-kit-appear:none ;
+    -moz-web-kit-appear: none;
+    outline: none;
+    height: 30px;
+    margin-left: 10px;
+    border:0px;
+    border-bottom:1px solid gray;
+    background: none;
+   
+    font-size: 1em;
+}
+</style>
 </head>
 <body>
-  
+  <ul class="layui-nav"   lay-filter="" name="ss">
+      <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
+      <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">物流服务</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a class="query-pack">我要寄件</a></dd>
+            <dd><a class="query-books">订单查询</a></dd>
+            <dd><a class="query-neets">网点查询</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">服务中心</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="../webpage/logistics.html" id="express-service">快递服务</a></dd>
+          <dd><a href="../webpage/codeservice.html" id="code-service">冷运服务</a></dd>
+          <dd><a href="../webpage/storyhouse.html" id="storyhouse-servier">仓储服务</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">快购链接</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+          <dd><a href="http://www.sfbest.com/" target="blank">顺丰商城</a></dd>
+          <dd><a href="http://www.stomall.com/" target="blank">申通商城</a></dd>
+          <dd><a href="https://www.taobao.com/" target="blank">淘宝商城</a></dd>
+        </dl>
+      </li>
+       <li class="layui-nav-item">
+        <a   id="about">关于我们</a>
+      </li>
+      <li class="layui-nav-item" id="login_button">
+        <a href="javascript:;" id="login_button_admin">管理员登录</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="../webpage/register.html">会员注册</a>
+      </li>
+  </ul>
+ 
   <div id="forbid">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend>寄件须知-禁寄物品</legend>
@@ -175,6 +227,16 @@
         </tbody>
       </table>
     </div>
+  </div>
+  <hr class="layui-bg-blue">
+  <div id="rights">
+    <h3>
+      ©All Rights Received
+    </h3>
+    <h4>
+      软件工程1402 </br>
+      霍胜龙
+    </h4>
   </div>
 </body>
  

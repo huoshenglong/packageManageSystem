@@ -257,14 +257,13 @@
 #introduce{
    
     width: 90%;
-    height: 300px;
-    text-align: center;   
-  
+    height: 100%;
+    text-align: center;    
     margin:auto;
+     
 }
-#intro1,#intro2,#intro3{
-    float: left;
-    
+#intro1,#intro2,#intro3,#intro4,#intro5,#intro6{
+    float: left;    
     width: 30%;
     height: 100%;
     margin-left: 30px;
@@ -298,7 +297,7 @@
 #something{
     width: 90%;
     height: 300px;
-    margin: auto;
+    margin: 20px auto;
 }
 #s-left{ 
     width: 30%;
@@ -385,6 +384,36 @@
     margin-top: 55px;
 }
 #intro3:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+#intro4:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+#intro5:hover #mask{
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 400px;
+    margin-left: 5px;
+    z-index: 99;
+    background: rgba(0,0,0,0.5);
+    margin-top: 55px;
+}
+#intro6:hover #mask{
     position: absolute;
     display: block;
     height: 200px;
@@ -525,9 +554,48 @@
 
 
 /*forbid样式开始*/
-#forbid{
+#forbid,#formatform,#packing,#formreturn{
     width: 70%;
     height: 100%;
     margin:auto;
     margin:100px auto;
+}
+
+/*forbid样式结束*/
+ 
+/*冷运仓储服务样式开始*/
+
+#service-codes{
+    height: 300px;
+    width: 100%;
+    background: url(../images/service1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ #div-code-service{
+    height: 300px;
+    width: 400px;  
+    float: left;
+    margin: 50px 100px;
+ }
+ #codeservice{
+    width: 80%;
+    margin:auto;  
+    height: 100%;
+ }
+ #service-story{
+    height: 300px;
+    width: 100%;
+    background: url(../images/story1.png);
+    background-size: 100%;
+    background-repeat: no-repeat
+ }
+ #storyservice{
+    width: 80%;
+    margin:auto;  
+    height: 100%;
+ }
+/*冷运仓储服务样式结束*/
+#format-img{
+    margin-left: 300px;
 }
