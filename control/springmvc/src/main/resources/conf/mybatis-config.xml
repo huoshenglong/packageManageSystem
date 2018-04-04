@@ -6,6 +6,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         <!-- 命名空间 -->
     <typeAliases>
          <typeAlias alias="User" type="cn.springmvc.model.User"/> 
+         <typeAlias alias="City" type="cn.springmvc.model.City"/> 
+         <typeAlias alias="Province" type="cn.springmvc.model.Province"/> 
     </typeAliases>
 	 
     <!-- 映射map -->

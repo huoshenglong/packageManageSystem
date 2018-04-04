@@ -151,11 +151,10 @@ $(document).ready(function(){
 		    indicator:'none'
 	  		});
 	  		 
-	  		
 
 		 });
 
-	   
+	  
 	   $("#about").click(function(){//显示关于框
 		  layer.alert('<center>'+'信息与电气工程学院'+'<br>'+'软件工程1402'+'<br>'+
 		  '霍胜龙'+'<br>'+'</center>', {

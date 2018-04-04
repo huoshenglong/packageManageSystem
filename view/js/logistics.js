@@ -159,4 +159,150 @@ $(document).ready(function(){
 				$('#result-cash').show();
 				
 		    }); 
+	var emaileCode='';
+	$('#get-iden-code').click(function(){//用于邮箱验证
+		var emailnumber=$('#right-input-number').val();		 
+		 $.ajax({
+		 	// email-input-number
+	            type: "POST",//方法类型
+	            dataType: "json",//预期服务器返回的数据类型
+	            url: "http://localhost:8080/springmvc/email.do" ,//url
+	            data:  "emailnum="+emailnumber,
+	            success: function (result) {	            	 
+	             	emaileCode=result;
+	            },
+	            error : function(result) {	                	 
+	                
+	            }
+	        }); 
+	});
+ 
+	layui.use('form',function(){
+			var form=layui.form;
+			form.on('select(f-province)', function(provinceid){			 
+			  console.log(provinceid.value); //得到被选中的值
+			   $.ajax({
+				 
+			        type: "POST",//方法类型
+			        dataType: "json",//预期服务器返回的数据类型
+			        url: "http://localhost:8080/springmvc/city.do" ,//url
+			        data:  "provinceid="+provinceid.value,
+			        success: function (data) {	
+			          
+			         $("#f-select-city-id").empty();     
+			         for (var i = 0; i <= data.length - 1; i++) {
+			         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
+		      
+		         		$("#f-select-city-id").append(options);
+		   
+	 		         }       	 
+			         	
+		         		form.render('select');
+			        },
+			        
+			        error : function(data) {	                	     
+			        }
+		    	});
+			});
+			form.on('select(t-province)', function(provinceid){			 
+			  console.log(provinceid.value); //得到被选中的值
+			   $.ajax({
+				 
+			        type: "POST",//方法类型
+			        dataType: "json",//预期服务器返回的数据类型
+			        url: "http://localhost:8080/springmvc/city.do" ,//url
+			        data:  "provinceid="+provinceid.value,
+			        success: function (data) {	
+			          
+			         $("#t-select-city-id").empty();     
+			         for (var i = 0; i <= data.length - 1; i++) {
+			         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
+		      
+		         		$("#t-select-city-id").append(options);
+		   
+	 		         }       	 
+			         	
+		         		form.render('select');
+			        },
+			        
+			        error : function(data) {	                	     
+			        }
+		    	});
+			});
+			form.on('select(s-province)', function(provinceid){			 
+			  console.log(provinceid.value); //得到被选中的值
+			   $.ajax({
+				 
+			        type: "POST",//方法类型
+			        dataType: "json",//预期服务器返回的数据类型
+			        url: "http://localhost:8080/springmvc/city.do" ,//url
+			        data:  "provinceid="+provinceid.value,
+			        success: function (data) {	
+			          
+			         $("#s-select-city-id").empty();     
+			         for (var i = 0; i <= data.length - 1; i++) {
+			         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
+		      
+		         		$("#s-select-city-id").append(options);
+		   
+	 		         }       	 
+			         	
+		         		form.render('select');
+			        },
+			        
+			        error : function(data) {	                	     
+			        }
+		    	});
+			});
+			form.on('select(e-province)', function(provinceid){			 
+			  console.log(provinceid.value); //得到被选中的值
+			   $.ajax({
+				 
+			        type: "POST",//方法类型
+			        dataType: "json",//预期服务器返回的数据类型
+			        url: "http://localhost:8080/springmvc/city.do" ,//url
+			        data:  "provinceid="+provinceid.value,
+			        success: function (data) {	
+			          
+			         $("#e-select-city-id").empty();     
+			         for (var i = 0; i <= data.length - 1; i++) {
+			         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
+		      
+		         		$("#e-select-city-id").append(options);
+		   
+	 		         }       	 
+			         	
+		         		form.render('select');
+			        },
+			        
+			        error : function(data) {	                	     
+			        }
+		    	});
+			});
+		 $.ajax({
+		 	 
+	        type: "POST",//方法类型
+	        dataType: "json",//预期服务器返回的数据类型
+	        url: "http://localhost:8080/springmvc/province.do" ,//url
+	        // data:  "emailnum="+emailnumber,
+	        success: function (result) {
+	        	 
+	         	for (var i =0 ; i <= result.length - 1; i++) {
+	         		var options="<option value='"+result[i].provinceId+"'>"+result[i].province+"</option>";
+	         		
+	         		$("#f-select-province-id").append(options);
+	         		$("#t-select-province-id").append(options);
+	         		$("#s-select-province-id").append(options);
+	         		$("#e-select-province-id").append(options);
+	         	}
+	   
+	         	 form.render('select');	
+	        },
+	        error : function(result) {	                	     
+	        }
+	    });
+		
+		 
+		});
+ 	
 });

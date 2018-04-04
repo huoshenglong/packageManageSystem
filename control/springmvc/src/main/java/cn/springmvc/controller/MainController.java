@@ -1,15 +1,22 @@
 package cn.springmvc.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.springmvc.model.Province;
 import cn.springmvc.service.CashService;
+import cn.springmvc.service.CityService;
+import cn.springmvc.service.SendEmail;
 import cn.springmvc.service.UserService;
 
 @Controller
@@ -18,12 +25,15 @@ public class MainController {
 
 	HttpServletRequest request = null;
 	Date date = new Date();
+	SendEmail sendEmail=new SendEmail();
 	@Autowired
 	public UserService uss;
 	
 	@Autowired
 	public CashService css;
 	
+	@Autowired
+	public CityService city;
 	@RequestMapping("index")
 	public String index() {
 		System.out.println(date.getTime() + "访问主页");
@@ -39,21 +49,12 @@ public class MainController {
 //		System.out.println(username+"*********"+password);
 		boolean result=uss.loginByName(username, password);
 		if (result) {
-			System.out.println("success");
+			System.out.println("login success");
 			return "success";
 		}else{
-			//request.setAttribute("message","用户名密码错误");
-			System.out.println("faile");
+			System.out.println("login faile");
 			return "faile";
 		}	 
 	}
-
-	@RequestMapping("cash")
-	@ResponseBody//将success转换成json传到前台
-	public Double cashSelect(HttpServletRequest request){
-		String start = request.getParameter("startcash");
-		String endcash = request.getParameter("endcash");
-		double value=css.selectRate(start, endcash);		 
-		return value;
-	}
+ 
 }
