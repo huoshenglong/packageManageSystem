@@ -90,7 +90,8 @@ $(document).ready(function(){
 				  console.log(data.elem); //得到当前的Tab大容器
 				});
 			   laydate.render({
-			    elem: '#senddate'
+			    elem: '#senddate',
+			  
 			  });
 			//显示图片轮播
 			carousel.render({

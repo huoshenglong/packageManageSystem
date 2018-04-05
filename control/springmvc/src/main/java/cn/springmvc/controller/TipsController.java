@@ -1,7 +1,6 @@
 package cn.springmvc.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.ArrayList; 
 import java.util.List;
 import java.util.Random;
 
@@ -17,14 +16,11 @@ import cn.springmvc.model.City;
 import cn.springmvc.model.Province;
 import cn.springmvc.service.CashService;
 import cn.springmvc.service.CityService;
-import cn.springmvc.service.SendEmail;
-import cn.springmvc.service.UserService;
+import cn.springmvc.service.SendEmail; 
 
 @Controller
 @RequestMapping("/")
 public class TipsController {
-
-	HttpServletRequest request = null;
  
 	SendEmail sendEmail=new SendEmail();
  
