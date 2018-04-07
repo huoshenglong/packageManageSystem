@@ -136,7 +136,7 @@ $(document).ready(function(){
 				    dataType: "json", 
 				    data:$('#form1-byphone').serialize();
 				    url: "http://localhost:8080/springmvc/phoneOrNumber.do" , 
-				    success: function (result) {	            	 
+				    success: function (result) {           	 
 				     	 alert(result);
 				    },
 				    error : function(result) {

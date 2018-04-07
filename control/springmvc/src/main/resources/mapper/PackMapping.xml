@@ -32,11 +32,20 @@
       	select * from package_info
       </select>
       
-      <select id="findWaitPack">
+      <select id="findWaitPack" resultMap="PackageResult">
       select * from package_info where p_consignee='0'
       </select>
       
-      <select id="findDispatchPack">
+      <select id="findDispatchPack" resultMap="PackageResult">
       select * from package_info where p_dispatch='0'
       </select>
+      
+      <select id="findPackByPhone" resultMap="PackageResult" parameterType="String">
+      	 select * from package_info where p_sphone=#{phone}
+      </select>
+      
+      <select id="findPackByNumber" resultMap="PackageResult" parameterType="String">
+      	 select * from package_info where p_number=#{number}
+      </select>
+      
 </mapper>
