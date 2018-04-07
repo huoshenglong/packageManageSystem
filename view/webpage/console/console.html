@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>管理界面</title>
+  <link rel="stylesheet" href="../../layui/css/layui.css">
+  <script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" ></script>
+  <script src="../../js/console.js" type="text/javascript" charset="utf-8" ></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="../../images/logo.png" alt="网站logo" title="返回前台" style="height: 56px;width: 56px"></div>
+ 
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台首页</a></li>
+      <li class="layui-nav-item"><a href="">快递管理</a></li>
+      <li class="layui-nav-item"><a href="">员工管理</a></li>
+      <li class="layui-nav-item"><a href="">站点管理</a></li>
+       
+    </ul>
+    <ul class="layui-nav layui-layout-right" style="margin-right: 50px;">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="../../images/user.png" class="layui-nav-img">
+          个人信息
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a id="loginout" href="javascript:;">退出</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+ 
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed" >
+          <a class="" href="javascript:;">快递信息</a>
+          <dl class="layui-nav-child">
+            <dd  style="background-color: #008080;"><a href="javascript:;" id="pack-all-info">所有快递</a></dd>
+            <dd><a id="pack-need-receive">今日揽件<span class="layui-badge" id="need-receive"></span></a></dd>
+            <dd><a href="javascript:;" id="pack-need-delive">等待派送<span class="layui-badge" id="need-delive"></span></a></dd>
+           
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">查询服务</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">当日快递</a></dd> 
+            <dd><a href="javascript:;">通过快递单</a></dd>
+            <dd><a href="javascript:;">通过手机号</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">云市场</a></li>
+        <li class="layui-nav-item"><a href="">发布商品</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <div style="padding: 15px;">
+
+      <!-- 默认读取所有快递信息 -->
+      <div id="read-all-pack-info">
+      	<table class="layui-table" id="idTest" lay-filter="demo">
+         
+        </table>
+      </div> 
+
+    
+    </div>
+  </div>
+  
+  <div class="layui-footer" style="text-align: center;">     
+    Copyright© package.com  All Rights Received By 2018 霍胜龙 软件工程1402 
+  </div>
+</div>
+<script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+<script src="../..//layui/layui.js"></script>
+</body>
+<script>
+  $('#loginout').click(function(event) {
+  window.location.replace("../index.html");
+});
+layui.use(['table','element','laypage'], function(){
+  var table = layui.table,
+  element = layui.element,
+  laypage=layui.laypage;
+
+  table.render({
+    elem: '#idTest'
+    ,height: 560
+    ,width:'100%'
+    ,url: 'http://localhost:8080/springmvc/queryAllInfo.do' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field:'packnumber', width:150, title:'快递单号'}
+      ,{field:'sname', width:80, sort: true, title: '发件人'}
+      ,{field:'sphone', width:120, title: '发件人手机'}
+      ,{field:'saddress', width:160, title: '发件地址'} 
+      ,{field:'rname', width:80, title: '收件人'}
+      ,{field:'rphone', width:120, title: '收件人手机'}
+      ,{field:'raddress', width:160, title: '收件人地址'}
+      ,{field:'thingsType', width:160 , title: '物品类型'}
+      ,{field:'describe', width:180 , title: '备注'}
+      ,{field:'weight', width:40, title: '重量'}
+    ]]
+    ,done: function(res, curr, count){  
+        console.log(res.count+'****'+curr+'****'+count);
+        laypage.render({
+          elem: 'pageDemo' //分页容器的id
+          ,count: 100 //总页数
+          ,skin: '#1E9FFF' //自定义选中色值
+          ,skip: true //开启跳页
+          ,jump: function(obj, first){
+            if(!first){
+              layer.msg('第'+ obj.curr +'页');
+            }
+          }
+        });
+    } 
+  });
+
+ 
+  //监听表格复选框选择
+  table.on('checkbox(demo)', function(obj){
+    console.log(obj)
+  });
+  //监听工具条
+  table.on('tool(demo)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+      layer.msg('ID：'+ data.id + ' 的查看操作');
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.alert('编辑行：<br>'+ JSON.stringify(data.rname))
+    }
+  });
+  
+  var $ = layui.$, active = {
+    getCheckData: function(){ //获取选中数据
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.alert(JSON.stringify(data));
+    }
+    ,getCheckLength: function(){ //获取选中数目
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.msg('选中了：'+ data.length + ' 个');
+    }
+    ,isAll: function(){ //验证是否全选
+      var checkStatus = table.checkStatus('idTest');
+      layer.msg(checkStatus.isAll ? '全选': '未全选')
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+</script>
+</html>

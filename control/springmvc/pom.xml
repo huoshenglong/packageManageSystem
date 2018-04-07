@@ -38,6 +38,13 @@
     <version>2.5</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20090211</version>
+</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-jdbc-driver -->
 <dependency>

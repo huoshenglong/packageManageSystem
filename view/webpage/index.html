@@ -95,22 +95,23 @@
     </div>
 
 	<div class="search" id="search">
-	<form class="layui-form" id="layui-form1" action="">
+	<form class="layui-form" id="form1-byphone"  >
 	  <div class="layui-form-item" id="layui-form-item1">	    
 	    <div class="layui-input-block">
-	      <input type="text" name="title" id="input_value" required  lay-verify="required" 
+	      <input type="text" name="typeValue" id="input_value" required  lay-verify="required" 
 	      placeholder="请输入快递单号或者手机号" autocomplete="off" class="layui-input">	      
 	    </div>
-	  </div>	 
+	  </div>
 	  <div class="layui-form-item" id="layui-form-item1">	    
 	    <div class="layui-input-block" id="input_radio">	    
-	      <input type="radio" name="sex" id="input_radio_info1" value="快递单号" title="快递单号">
-	      <input type="radio" name="sex" id="input_radio_info2" value="手机号码" title="手机号码"  >
+	      <input type="radio" name="choseType" lay-filter="input_radio_info" value="bynumber" title="快递单号">
+	      <input type="radio" name="choseType" lay-filter="input_radio_info" value="byphone" title="寄件手机" >
 	    </div>
 	  </div>	   
 	  <div class="layui-form-item" id="layui-form-item1">
 	    <div class="layui-input-block">
-	      <button class="layui-btn" id="layui-btn"  lay-submit lay-filter="formDemo">立即查找</button>
+	     <input type="button" style="background-color: #008080;color:white;border:none;height:40px;width: 100px;border-radius: 4px;cursor: pointer;" 
+			      	id="query-pack-bytype" value="点击查询">
 	      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 	    </div>
 	  </div>

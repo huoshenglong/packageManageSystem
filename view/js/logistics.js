@@ -301,20 +301,25 @@ $(document).ready(function(){
 	});
 	var emaileCode='';
 	$('#get-iden-code').click(function(){//用于邮箱验证
-		var emailnumber=$('#email-input-number').val();		 
-		 $.ajax({
-		 	// email-input-number
+		var emailnumber=$('#email-input-number').val();	
+		if (emailnumber!="") {	 
+		 $.ajax({ 
 	            type: "POST",//方法类型
 	            dataType: "json",//预期服务器返回的数据类型
-	            url: "http://localhost:8080/springmvc/email.do" ,//url
+	            url: "http://localhost:8080/springmvc/email.do" , 
 	            data:  "emailnum="+emailnumber,
 	            success: function (result) {	            	 
 	             	emaileCode=result;
+	             	alert('请注意查收验证码！');
 	            },
-	            error : function(result) {	                	 
+	            error : function(result) {
 	                
 	            }
 	        }); 
+		}else{
+			alert('请先输入邮箱！');
+		}
+
 	});
     $('#submit-package-button').click(function(){
     	
@@ -341,7 +346,7 @@ $(document).ready(function(){
 					        data: $('#i-want-send-pack').serialize()+"&sendaddress="+sendaddress+"&receiveaddress="+receiveaddress+"&things="+things,
 					        url: "http://localhost:8080/springmvc/addpack.do" ,//url   
 					        success: function (result) {
-					        	alert('您的快递单号为：'+result+'<br>'+'请记下，以便日后查询！');
+					        	alert('您的快递单号为：'+result+'请记下，以便日后查询！');
 					        	//同时将提交按钮设为不可用
 					        	$('#submit-package-button').attr("disabled","disabled");
 					        },

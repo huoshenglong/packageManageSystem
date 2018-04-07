@@ -3,12 +3,6 @@ package cn.springmvc.model;
 public class Package {
 
 	private int id;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	private String sname;
 	private String sphone;
 	private String saddress;
@@ -20,6 +14,12 @@ public class Package {
 	private String describe;
 	private String nowtime;
 	private String packnumber;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getPacknumber() {
 		return packnumber;
 	}
