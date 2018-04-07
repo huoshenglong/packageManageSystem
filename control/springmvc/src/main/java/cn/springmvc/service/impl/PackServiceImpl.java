@@ -1,5 +1,6 @@
 package cn.springmvc.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,20 @@ public class PackServiceImpl implements PackService{
 	public List<Package> selectDispatchPack() {
 		 
 		return pdo.findDispatchPack();
+	}
+	@Override
+	public List<Package> selectPackByPhoneOrNumber(String value,String type) {
+		List<Package> list =new ArrayList<Package>();
+		if (type.equals("bynumber")) {
+			list=pdo.findPackByNumber(value);
+		 
+		}
+		if(type.equals("byphone")){
+		 
+			list=pdo.findPackByPhone(value);
+		 
+		}
+		return list;
 	}
 
  

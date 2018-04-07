@@ -134,13 +134,13 @@ $(document).ready(function(){
 				$.ajax({ 
 				    type: "POST", 
 				    dataType: "json", 
-				    data:$('#form1-byphone').serialize();
+				    data:$('#form1-byphone').serialize(),
 				    url: "http://localhost:8080/springmvc/phoneOrNumber.do" , 
 				    success: function (result) {           	 
-				     	 alert(result);
+				     	 console.log(result);
 				    },
 				    error : function(result) {
-				        
+				        alert('数据请求错误！');
 				    }
 				});
 			});	 

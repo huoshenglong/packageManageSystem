@@ -6,9 +6,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,34 +69,21 @@ public class MainController {
 		return map;
 	}
 	
-	@RequestMapping("queryWaitInfo")
+	@RequestMapping("phoneOrNumber")
 	@ResponseBody
-	public Map<String, Object> queryWaitPackageInfo(){
+	public Map<String, Object> queryPackInfoByPhone(HttpServletRequest request){
+		String type=request.getParameter("choseType");
+		String value=request.getParameter("typeValue");
+		System.out.println(type+"**++**"+value);
 		List<Package> list =new ArrayList<Package>();
-		list= pss.selectAllPackInfo();
-		Map<String, Object> map=new HashMap<String, Object>();		
-		int size=list.size();	 
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pss.selectPackByPhoneOrNumber(value, type);
 		map.put("data", list);
 		map.put("msg", "");
-		map.put("count", size);
+		map.put("count", list.size());
 		map.put("code", "0");
 		return map;
 	}
 	
-	@RequestMapping("queryDispatchInfo")
-	@ResponseBody
-	public Map<String, Object> queryDispatchPackageInfo(){
-		List<Package> list =new ArrayList<Package>();
-		list= pss.selectAllPackInfo();
-		Map<String, Object> map=new HashMap<String, Object>();		
-		int size=list.size();	 
-		map.put("data", list);
-		map.put("msg", "");
-		map.put("count", size);
-		map.put("code", "0");
-		return map;
-	}
-	
-	
- 
+
 }

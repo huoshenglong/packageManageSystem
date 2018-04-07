@@ -1,22 +1,21 @@
- 
- $(document).ready(function(){
+$(document).ready(function(){
    
     //以下是layui得代码
-       layui.use(['layer','element','carousel','form'],function(){
-            var layer=layui.layer,
-            element=layui.element,
-            carousel = layui.carousel,
-            form=layui.form; 
-         });
-       $("#about").click(function(){//显示关于框
-          layer.alert('<center>'+'信息与电气工程学院'+'<br>'+'软件工程1402'+'<br>'+
-          '霍胜龙'+'<br>'+'</center>', {
-              skin: 'layui-layer-molv' //样式类名
-              ,closeBtn: 0,
-              title:'快递管理系统',
-              offset: '200px'
-            });
-           });
+  layui.use(['layer','element','carousel','form'],function(){
+      var layer=layui.layer,
+      element=layui.element,
+      carousel = layui.carousel,
+      form=layui.form; 
+   });
+  $("#about").click(function(){//显示关于框
+    layer.alert('<center>'+'信息与电气工程学院'+'<br>'+'软件工程1402'+'<br>'+
+    '霍胜龙'+'<br>'+'</center>', {
+        skin: 'layui-layer-molv' //样式类名
+        ,closeBtn: 0,
+        title:'快递管理系统',
+        offset: '200px'
+      });
+     });
  
     // 百度地图API功能    
     map = new BMap.Map("allmap");
@@ -26,7 +25,7 @@
     map.addControl(new BMap.NavigationControl());     //左上角，添加默认缩放平移控件 
 
     map.addEventListener("click",function(e){
-     alert(e.point.lng+','+e.point.lat);
+     // alert(e.point.lng+','+e.point.lat);
         var mPoint = new BMap.Point(e.point.lng,e.point.lat);
         var circle = new BMap.Circle(mPoint,3000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.5});
         map.addOverlay(circle);//这里将圆形区域划出

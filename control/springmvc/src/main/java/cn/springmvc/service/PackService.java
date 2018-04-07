@@ -11,4 +11,5 @@ public interface PackService {
 	public List<Package> selectAllPackInfo();//查找所有快递信息
 	public List<Package> selectWaitPackInfo();//查找待揽件快递信息
 	public List<Package> selectDispatchPack();//查找待派件快递信息
+	public List<Package> selectPackByPhoneOrNumber(String value,String type);//通过手机号或快递单查找快递信息
 }
