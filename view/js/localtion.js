@@ -24,8 +24,8 @@ $(document).ready(function(){
      
     map.addControl(new BMap.NavigationControl());     //左上角，添加默认缩放平移控件 
 
-    map.addEventListener("click",function(e){
-     // alert(e.point.lng+','+e.point.lat);
+    map.addEventListener("rightclick",function(e){
+      // alert(e.point.lng+','+e.point.lat);
         var mPoint = new BMap.Point(e.point.lng,e.point.lat);
         var circle = new BMap.Circle(mPoint,3000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.5});
         map.addOverlay(circle);//这里将圆形区域划出

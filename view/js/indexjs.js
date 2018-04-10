@@ -71,8 +71,12 @@ $(document).ready(function(){
 			  console.log(data.elem); //得到当前的Tab大容器
 			});
 		   laydate.render({
-		    elem: '#senddate',
-		  
+		    elem: '#senddate1',
+		   
+		  });
+		   laydate.render({
+		   
+		  	elem: '#senddate2',
 		  });
 		//显示图片轮播
 		carousel.render({
@@ -254,12 +258,14 @@ $(document).ready(function(){
 	            success: function (result) {	                   
 	                if (result=="success") {
 	                    // alert("SUCCESS");
-	                    window.location.href="../webpage/console/console.html";
+	                    window.location.href="../webpage/console/console.html?username="+$('#user_login').val();
+	                }else{
+	                	alert("密码或用户名错误！");
 	                }
 	                ;
 	            },
 	            error : function(result) {	                	 
-	                alert("密码或用户名错误！");
+	                console.log("login infomation"+result);
 	            }
 
 	        });

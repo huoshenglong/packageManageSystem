@@ -1,11 +1,17 @@
 package cn.springmvc.controller;
 
 import java.util.ArrayList; 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
            
+
+
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.springmvc.model.City;
+import cn.springmvc.model.Point;
 import cn.springmvc.model.Province;
 import cn.springmvc.service.CashService;
 import cn.springmvc.service.CityService;
+import cn.springmvc.service.PointService;
 import cn.springmvc.service.SendEmail; 
 
 @Controller
@@ -23,13 +31,15 @@ import cn.springmvc.service.SendEmail;
 public class TipsController {
  
 	SendEmail sendEmail=new SendEmail();
- 
+	
 	@Autowired
 	public CashService css;
 	
 	@Autowired
 	public CityService city;
 	  
+	@Autowired
+	public PointService pos;
 
 	@RequestMapping("cash")
 	@ResponseBody//转换成json传到前台
@@ -79,4 +89,17 @@ public class TipsController {
 		citylist=city.queryCity(provinceId);	  
 		return citylist;
 	}
+	
+	@RequestMapping("packpoint")
+	@ResponseBody//转换成json传到前台
+	public Map<String, Object> selectPoint(){
+		System.out.println("pointget");
+		List<Point> list =new ArrayList<Point>(); 
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pos.selectPoint();
+		map.put("size", list.size());
+		map.put("point", list);
+		return map;
+	}
+	
 }

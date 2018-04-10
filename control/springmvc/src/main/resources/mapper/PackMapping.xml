@@ -28,10 +28,12 @@
       <select id="findWaitPackageDispatch" resultType="String">
        	select count(*) from package_info where p_dispatch='0' and p_consignee='1'
       </select>
-      <select id="findAllPackInfo" resultMap="PackageResult">
-      	select * from package_info
+      <select id="findAllPackInfo" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info limit #{startpage},#{endpage}
       </select>
-      
+      <select id="findPackCount" resultType="java.lang.Integer">
+      	select count(*) from package_info
+      </select>
       <select id="findWaitPack" resultMap="PackageResult">
       select * from package_info where p_consignee='0'
       </select>

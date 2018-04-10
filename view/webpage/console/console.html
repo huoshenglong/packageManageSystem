@@ -4,89 +4,134 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>管理界面</title>
-  <link rel="stylesheet" href="../../layui/css/layui.css">
+  <link rel="stylesheet" href="../../layui/css/layui.css"> 
+  <link rel="stylesheet" href="../../mycss/console.css">
   <script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" ></script>
   <script src="../../js/console.js" type="text/javascript" charset="utf-8" ></script>
-</head>
-<body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
-  <div class="layui-header">
-    <div class="layui-logo"><img src="../../images/logo.png" alt="网站logo" title="返回前台" style="height: 56px;width: 56px"></div>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZWsHXhetH5SOnKEttV6ynmiR4MSKAVBQ"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script> 
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" /> 
  
-    <ul class="layui-nav layui-layout-left">
-      <li class="layui-nav-item"><a href="">控制台首页</a></li>
-      <li class="layui-nav-item"><a href="">快递管理</a></li>
-      <li class="layui-nav-item"><a href="">员工管理</a></li>
-      <li class="layui-nav-item"><a href="">站点管理</a></li>
-       
-    </ul>
-    <ul class="layui-nav layui-layout-right" style="margin-right: 50px;">
-      <li class="layui-nav-item">
-        <a href="javascript:;">
-          <img src="../../images/user.png" class="layui-nav-img">
-          个人信息
+</head>
+<body>
+<div class="layui-layout layui-layout-admin"  >
+  <div class="layui-logo"><img src="../../images/logo.png" alt="网站logo" title="返回前台" style="height: 56px;width: 56px">pack.com</div>
+  <div class="layui-header" id="console-header">
+    
+    <h2 id="console-title">Welcome to pack.com</h2>    
+    <ul class="layui-nav layui-layout-right" style="margin-right: 30px;">
+       <li class="layui-nav-item"  >
+        <a href="javascript:;" style="color:#008080">
+          <img src="../../images/user.png" class="layui-nav-img">欢迎
         </a>
-        <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
-        </dl>
       </li>
-      <li class="layui-nav-item"><a id="loginout" href="javascript:;">退出</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;" id="username" style="color:#008080">
+          
+        </a> 
+        <dl class="layui-nav-child">
+          <dd><a href=" " id="baseInfo">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>                                                                                                                                           
+      </li>
+      <li class="layui-nav-item"><a id="loginout" href="javascript:;" style="color:#008080">
+        <img src="../../images/exit.png" alt="" style="height: 24px;width: 24px; ">
+      退出</a></li>
     </ul>
   </div>
   
-  <div class="layui-side layui-bg-black">
-    <div class="layui-side-scroll">
+  <div class="layui-side layui-bg-black" >
+    <div class="layui-side-scroll" >
  
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed" >
-          <a class="" href="javascript:;">快递信息</a>
-          <dl class="layui-nav-child">
-            <dd  style="background-color: #008080;"><a href="javascript:;" id="pack-all-info">所有快递</a></dd>
-            <dd><a href="javascript:;" id="pack-need-receive">今日揽件<span class="layui-badge" id="need-receive"></span></a></dd>
-            <dd><a href="javascript:;" id="pack-need-delive">等待派送<span class="layui-badge" id="need-delive"></span></a></dd>
-           
-          </dl>
+        <li class="layui-nav-item layui-nav-itemed" style="background-color: white"><a href="javascript:;"><div id="Date"> </div></a></li>
+        <li class="layui-nav-item ">
+          <a class="consolepack" href="javascript:;">
+          
+           快递管理</a>          
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;">查询服务</a>
+          <a href="javascript:;">
+         
+           查询服务
+        </a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;">当日快递</a></dd> 
+            <dd><a href="../../webpage/index.html" target="_mypage">当日快递</a></dd> 
             <dd><a href="javascript:;">通过快递单</a></dd>
             <dd><a href="javascript:;">通过手机号</a></dd>
           </dl>
         </li>
-        <li class="layui-nav-item"><a href="">云市场</a></li>
-        <li class="layui-nav-item"><a href="">发布商品</a></li>
+        <li class="layui-nav-item"><a href="">
+   
+        站点管理</a></li>
+        <li class="layui-nav-item"><a href="">物流管理</a></li>
+        <li class="layui-nav-item"><a href="">信息审核</a></li>
       </ul>
     </div>
   </div>
-  
-  <div class="layui-body">
-    <div style="padding: 15px;">
-
-      <!-- 默认读取所有快递信息 -->
-      <div id="read-all-pack-info">
-      	<table class="layui-table" id="idTest" lay-filter="demo">
-         
-        </table>
-      </div> 
-      
-    
+   <div class="layui-body">
+    <div id="packmanage">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this" id="consoleallpack">所有快递</li>
+        <li>待揽快递<span class="layui-badge" id="need-receive"></span></li>
+        <li>等待派发<span class="layui-badge layui-bg-orange"  id="need-delive"></span></li>
+        <li>商品管理</li>
+        <li>订单管理</li>
+      </ul>
+      <div class="layui-tab-content" style="height: 100px;">
+        <div class="layui-tab-item layui-show">        
+          <table class="layui-table" id="idTest" lay-filter="demo">
+          </table>
+        </div>
+        <div class="layui-tab-item">
+          <div id="allmap"></div>
+        </div>
+        <div class="layui-tab-item"><div class="box" id="clock">
+    <!-- 原点 -->
+    <div class="origin"></div>
+    <!-- 时钟数 -->
+    <div class="dot_box">
+        <div class="dot">6</div>
+        <div class="dot">5</div>
+        <div class="dot">4</div>
+        <div class="dot">3</div>
+        <div class="dot">2</div>
+        <div class="dot">1</div>
+        <div class="dot">12</div>
+        <div class="dot">11</div>
+        <div class="dot">10</div>
+        <div class="dot">9</div>
+        <div class="dot">8</div>
+        <div class="dot">7</div>
+    </div>
+    <!-- 时、分、秒针 -->
+    <div class="clock_line hour_line" id="hour_line"></div>
+    <div class="clock_line minute_line" id="minute_line"></div>
+    <div class="clock_line second_line" id="second_line"></div>
+    <!-- 日期 -->
+    <div class="date_info" id="date_info"></div>
+    <!-- 时间 -->
+    <div class="time_info" >
+        <div class="time" id="hour_time"></div>
+        <div class="time" id="minute_time"></div>
+        <div class="time" id="second_time"></div>
+    </div>
+</div>
+</div>
+        <div class="layui-tab-item">内容4</div>
+        <div class="layui-tab-item">内容5</div>
+      </div>
+    </div>
     </div>
   </div>
-  
+ 
   <div class="layui-footer" style="text-align: center;">     
-    Copyright© package.com  All Rights Received By 2018 霍胜龙 软件工程1402 
+    Copyright©   All Rights Received 2018 霍胜龙 软件工程1402 
   </div>
-</div>
-<script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"  ></script>
+</div> 
 <script src="../..//layui/layui.js"></script>
 </body>
-<script>
-  $('#loginout').click(function(event) {
-  window.location.replace("../index.html");
-});
 
-</script>
 </html>
+ 

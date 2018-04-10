@@ -247,19 +247,14 @@ $(document).ready(function(){
 		        dataType: "json",//预期服务器返回的数据类型
 		        url: "http://localhost:8080/springmvc/city.do" ,//url
 		        data:  "provinceid="+provinceid.value,
-		        success: function (data) {	
-		          
+		        success: function (data) {			          
 		         $("#e-select-city-id").empty();     
 		         for (var i = 0; i <= data.length - 1; i++) {
-		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
-	      
-	         		$("#e-select-city-id").append(options);
-	   
- 		         }       	 
-		         	
+		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";	      
+	         		$("#e-select-city-id").append(options);	   
+ 		         }       	 		         	
 	         		form.render('select');
-		        },
-		        
+		        },		        
 		        error : function(data) {	                	     
 		        }
 	    	});

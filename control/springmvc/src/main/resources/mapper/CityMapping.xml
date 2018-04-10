@@ -11,4 +11,5 @@
      <select id="findCityByProvinceId" parameterType="String" resultType="City">
         select * from cities where provinceid=#{provinceId}
      </select> 
+     
 </mapper>

@@ -34,9 +34,9 @@ public class PackServiceImpl implements PackService{
 		return result; 
 	}
 	@Override
-	public List<Package> selectAllPackInfo() {
+	public List<Package> selectAllPackInfo(int start,int end) {
 		
-		return pdo.findAllPackInfo();
+		return pdo.findAllPackInfo(start,end);
 	}
 	@Override
 	public List<Package> selectWaitPackInfo() {
@@ -61,6 +61,11 @@ public class PackServiceImpl implements PackService{
 		 
 		}
 		return list;
+	}
+	@Override
+	public int queryPackCount() {
+		 
+		return pdo.findPackCount();
 	}
 
  
