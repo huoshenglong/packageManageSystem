@@ -23,10 +23,10 @@
       </insert>
       
       <select id="findWaitPackageConsignee" resultType="String">
-      	select count(*) from package_info where p_consignee='0'
+      	select count(*) from package_info where p_state='0'
       </select>
       <select id="findWaitPackageDispatch" resultType="String">
-       	select count(*) from package_info where p_dispatch='0' and p_consignee='1'
+       	select count(*) from package_info where p_state='1'
       </select>
       <select id="findAllPackInfo" resultMap="PackageResult" parameterType="java.lang.Integer">
       	select * from package_info limit #{startpage},#{endpage}
@@ -34,14 +34,17 @@
       <select id="findPackCount" resultType="java.lang.Integer">
       	select count(*) from package_info
       </select>
-      <select id="findWaitPack" resultMap="PackageResult">
-      select * from package_info where p_consignee='0'
+
+	  <select id="findWaitPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='0' limit #{startpage},#{endpage}
+      </select>
+      <select id="todayWork">
+      
       </select>
       
-      <select id="findDispatchPack" resultMap="PackageResult">
-      select * from package_info where p_dispatch='0'
+      <select id="findDispatchPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='1' limit #{startpage},#{endpage}
       </select>
-      
       <select id="findPackByPhone" resultMap="PackageResult" parameterType="String">
       	 select * from package_info where p_sphone=#{phone}
       </select>

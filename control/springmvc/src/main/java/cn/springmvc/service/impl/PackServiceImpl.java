@@ -34,19 +34,17 @@ public class PackServiceImpl implements PackService{
 		return result; 
 	}
 	@Override
-	public List<Package> selectAllPackInfo(int start,int end) {
-		
+	public List<Package> selectAllPackInfo(int start,int end) {		
 		return pdo.findAllPackInfo(start,end);
 	}
 	@Override
-	public List<Package> selectWaitPackInfo() {
-		 
-		return pdo.findWaitPack();
+	public List<Package> selectWaitPackInfo(int start,int end) {//查找待揽的快递 
+		return pdo.findWaitPack(start,end);
 	}
 	@Override
-	public List<Package> selectDispatchPack() {
+	public List<Package> selectDispatchPack(int start,int end) {//查找待派快递
 		 
-		return pdo.findDispatchPack();
+		return pdo.findDispatchPack(start,end);
 	}
 	@Override
 	public List<Package> selectPackByPhoneOrNumber(String value,String type) {

@@ -12,15 +12,13 @@ import cn.springmvc.service.UserService;
 public class LoginController {
  
 	@Autowired
-	public UserService uss;
-	
+	public UserService uss;	
 	@RequestMapping("login")
 	@ResponseBody
 	public String login(HttpServletRequest request) {
 	
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-//		System.out.println(username+"*********"+password);
 		boolean result=uss.loginByName(username, password);
 		if (result) {
 			System.out.println("login success");

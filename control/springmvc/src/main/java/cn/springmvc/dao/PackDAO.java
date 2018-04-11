@@ -13,8 +13,8 @@ public interface PackDAO {
 	public String findWaitPackageConsignee();
 	public String findWaitPackageDispatch();
 	public List<Package> findAllPackInfo( @Param("startpage")int startpage,@Param("endpage")int endpage);
-	public List<Package> findWaitPack();
-	public List<Package> findDispatchPack();
+	public List<Package> findWaitPack(@Param("startpage")int startpage,@Param("endpage")int endpage);
+	public List<Package> findDispatchPack(@Param("startpage")int startpage,@Param("endpage")int endpage);
 	public List<Package> findPackByPhone(@Param("phone")String value); 
 	public List<Package> findPackByNumber(@Param("number") String value);
 }

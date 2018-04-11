@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.springmvc.service.PackService;
 import cn.springmvc.service.SendEmail;
-import cn.springmvc.service.UserService;
 import cn.springmvc.model.Package;
 
 @Controller
@@ -92,8 +91,7 @@ public class MainController {
 		System.out.println(page+"**++**"+limit);
 		List<Package> list =new ArrayList<Package>();
 		list= pss.selectAllPackInfo(start,end);
-		Map<String, Object> map=new HashMap<String, Object>();		
-		int size=list.size();	 
+		Map<String, Object> map=new HashMap<String, Object>();		 
 		map.put("data", list);
 		map.put("msg", "");
 		map.put("count", count);
@@ -116,6 +114,39 @@ public class MainController {
 		map.put("code", "0");
 		return map;
 	}
+	
+	
+	@RequestMapping("packstate")
+	@ResponseBody
+	public Map<String, Object> query(HttpServletRequest request){
+		int page=Integer.parseInt(request.getParameter("page"));
+		int limit=Integer.parseInt(request.getParameter("limit"));
+		String type=request.getParameter("type");
+		System.out.println(type);
+		int start=(page-1)*limit;
+		int end=page*limit;	
+		String strs[]=pss.queryPackInfo().split("\\+");	 
+		int waitcount=Integer.parseInt(strs[0]);
+		int dispatchcount=Integer.parseInt(strs[1]);
+		Date now = new Date(); 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+		String nowtime = dateFormat.format( now );  
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		if (type.equals("wait")) {
+			list= pss.selectWaitPackInfo(start, end);
+			map.put("count", waitcount);
+		}
+		if (type.equals("dispatch")) {
+			list= pss.selectDispatchPack(start, end);
+			map.put("count", dispatchcount);
+		}				 
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");		
+		return map;
+	}
+	 
 	
 
 }
