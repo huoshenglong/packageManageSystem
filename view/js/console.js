@@ -2,9 +2,7 @@ $(document).ready(function(){
 	var username="";
 	username=window.location.href.split("=")[1];//获取用户名
 	$('#packmanage').hide();
-	$('.consolepack').click(function(){
-		$('#packmanage').show();
-	});
+	
 	$('#username').text(username);
 	$.ajax({ 
 	    type: "POST", 
@@ -137,25 +135,7 @@ d.innerHTML=year+'-'+mon+'-'+da+' '+'星期'+day+' '+h+':'+m+':'+s;  },1000);
 		var table = layui.table,
 		element = layui.element,
 		laypage=layui.laypage; 
-		table.render({
-		elem: '#idTest'
-		,height: 'full-200'
-		,width:'100%'
-		,url: 'http://localhost:8080/springmvc/queryAllInfo.do' //数据接口
-		,page: true //开启分页
-		,cols: [[ //表头
-			{field:'packnumber', width:150, title:'快递单号'}
-			,{field:'sname', width:80, sort: true, title: '发件人'}
-			,{field:'sphone', width:120, title: '发件人手机'}
-			,{field:'saddress', width:160, title: '发件地址'} 
-			,{field:'rname', width:80, title: '收件人'}
-			,{field:'rphone', width:120, title: '收件人手机'}
-			,{field:'raddress', width:160, title: '收件人地址'}
-			,{field:'thingsType', width:160 , title: '物品类型'}
-			,{field:'describe', width:180 , title: '备注'}
-			,{field:'weight', width:40, title: '重量'}
-			]]
-		});
+		
 		
 		//监听表格复选框选择
 		table.on('checkbox(demo)', function(obj){
@@ -194,6 +174,28 @@ d.innerHTML=year+'-'+mon+'-'+da+' '+'星期'+day+' '+h+':'+m+':'+s;  },1000);
 		$('.demoTable .layui-btn').on('click', function(){
 			var type = $(this).data('type');
 			active[type] ? active[type].call(this) : '';
+		});
+		$('.consolepack').click(function(){
+			$('#packmanage').show();
+			table.render({
+			elem: '#idTest'
+			,height: 'full-200'
+			,width:'100%'
+			,url: 'http://localhost:8080/springmvc/queryAllInfo.do' //数据接口
+			,page: true //开启分页
+			,cols: [[ //表头
+				{field:'packnumber', width:150, title:'快递单号'}
+				,{field:'sname', width:80, sort: true, title: '发件人'}
+				,{field:'sphone', width:120, title: '发件人手机'}
+				,{field:'saddress', width:160, title: '发件地址'} 
+				,{field:'rname', width:80, title: '收件人'}
+				,{field:'rphone', width:120, title: '收件人手机'}
+				,{field:'raddress', width:160, title: '收件人地址'}
+				,{field:'thingsType', width:160 , title: '物品类型'}
+				,{field:'describe', width:180 , title: '备注'}
+				,{field:'weight', width:40, title: '重量'}
+				]]
+			});
 		});
 		
 	});
