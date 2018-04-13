@@ -10,12 +10,12 @@
 }
 
 #allmap {
-	width: 100%;
-	height: 600px;
-	border:1px blue solid;
+	width: 950px;
+	height: 500px; 
 	overflow: hidden;
 	margin:0;
 	font-family:"微软雅黑";
+	float:left;
 }
 .layui-side{
 	margin-top: 0;
@@ -44,4 +44,16 @@
 #said-layui-img img{
  	width: 20px;
  	height: 20px;
+}
+#logistic-packInfo{ 
+	height: 500px;
+	width: 300px;
+	float: left;
+	overflow: auto;
+	border-right: 1px solid #008080;
+	margin-right: 40px;
+}
+#logistictop{
+	height: 50px;
+	width: 100%; 
 }

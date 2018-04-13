@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="layui-layout layui-layout-admin"  >
-  <div class="layui-logo"><img src="../../images/logo.png" alt="网站logo" title="返回前台" style="height: 56px;width: 56px">pack.com</div>
+  <div class="layui-logo"><a href=""><img src="../../images/logo.png" alt="网站logo" title="刷新" style="height: 56px;width: 56px"></a>pack.com</div>
   <div class="layui-header" id="console-header">
     
     <h2 id="console-title">Welcome to pack.com</h2>    
@@ -49,14 +49,12 @@
           <a id="console-pack" href="javascript:;"><img src="../../images/box.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;快递管理</a>
         </li>
         <li class="layui-nav-item">
-          <a id="console-query" href="javascript:;"><img src="../../images/original-image.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;查询服务</a>
-        </li>
-        <li class="layui-nav-item">
-          <a id="console-state" href="javascript:;"><img src="../../images/earth.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;站点管理</a>
-        </li>
-        <li class="layui-nav-item">
           <a id="console-logistics" href="javascript:;"><img src="../../images/process.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;物流管理</a>
         </li>
+        <li class="layui-nav-item">
+          <a id="console-query" href="javascript:;"><img src="../../images/original-image.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;查询服务</a>
+        </li>
+        
         <li class="layui-nav-item">
           <a id="console-infomation" href="javascript:;"><img src="../../images/bussiness-card.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;信息审核</a>
         </li>
@@ -73,7 +71,7 @@
           <li class="layui-this" id="consoleallpack">所有快递</li>
           <li id="console-wait-pack">待揽快递<span class="layui-badge layui-bg-green" id="need-receive"></span></li>
           <li id="console-deliver-pack">等待派发<span class="layui-badge "  id="need-delive"></span></li>
-        
+           <li id="console-waitsign-pack">等待签收<span class="layui-badge layui-bg-blue"  id="need-sign"></span></li>
         </ul>
         <div class="layui-tab-content" style="height: 100px;">
           <div class="layui-tab-item layui-show">        
@@ -81,11 +79,15 @@
             </table>
           </div>
           <div class="layui-tab-item">
-          <table class="layui-table" id="wait-receive" lay-filter="demo"> 
+          <table class="layui-table" id="wait-receive" lay-filter="waitpack"> 
           </table>
           </div>
           <div class="layui-tab-item">
-            <table class="layui-table" id="wait-delive" lay-filter="demo">
+            <table class="layui-table" id="wait-delive" lay-filter="dispatch">
+            </table>
+          </div>
+          <div class="layui-tab-item">
+            <table class="layui-table" id="wait-sign" lay-filter="sign">
             </table>
           </div>
         </div>
@@ -113,39 +115,44 @@
         </div>
       </div>   
     </div>
-    <div id="state-div">     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-  <ul class="layui-tab-title">
-    <li class="layui-this">站点审核</li>
-    <li>站点信息</li>
-    <li>添加站点</li>
-    <li>删除站点</li>
-    <li>修改站点</li>
-    <li>查找站点</li>
-  </ul>
-  <div class="layui-tab-content" style="height: 100px;">
-    <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-    <div class="layui-tab-item"></div>
-    <div class="layui-tab-item">内容3</div>
-    <div class="layui-tab-item">内容4</div>
-    <div class="layui-tab-item">内容5</div>
-    <div class="layui-tab-item">内容6</div>
-  </div>
-</div> 
-    </div>
+ 
     <div id="logistics-div">     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
   <ul class="layui-tab-title">
-    <li class="layui-this">物流状态</li>
-    <li>模拟物流</li>
-    <li>物流修改</li> 
+    <li class="layui-this">模拟物流</li>
+    <li>更正物流</li>
+ 
   </ul>
   <div class="layui-tab-content" style="height: 100px;">
-    <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-    <div class="layui-tab-item"> <div id="allmap"></div></div>
+    <div class="layui-tab-item"> 
+      <div id="logistictop">
+        <div class="layui-form-item">
+          <label class="layui-form-label">快递单号：</label>
+          <div class="layui-input-inline">
+            <input type="text" id="pack-number-console" class="layui-input  ">
+          </div>
+          <label class="layui-form-label">发件地址：</label>
+          <div class="layui-input-inline">
+            <input type="text" id="pack-send-console"  class="layui-input ">
+          </div>
+          <label class="layui-form-label">收件地址：</label>
+          <div class="layui-input-inline">
+            <input type="text" id="pack-receive-console" class="layui-input  ">
+          </div>
+          <button class="layui-btn layui-bg-orange" id="pack-get-console" >显示揽件</button>
+           <button class="layui-btn" id="pack-submit-console" >立即提交</button>
+            <span class="layui-badge "  id="need-delive-count"></span>
+        </div>
+      </div>
+      <div id="logistic-packInfo">
+          
+      </div>
+      <div id="allmap"></div>
+    </div>
     <div class="layui-tab-item">内容3</div> 
   </div>
 </div> 
     </div>
-    <div id="infomation-div">      <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <div id="infomation-div"><div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
   <ul class="layui-tab-title">
     <li class="layui-this">所有申请</li>
     <li>审核申请</li>
@@ -184,9 +191,14 @@
   </div>
 </div> 
 <script src="../..//layui/layui.js"></script>
-<script type="text/html" class="barDemo">
-  <a class="layui-btn layui-btn-xs" id="lanjianbtn" lay-event="edit">揽件</a>
+<script type="text/html" class="takePack">
+  <a class="layui-btn layui-btn-xs" id="lanjianbtn" lay-event="del">揽件</a> 
+</script>
+<script type="text/html" class="dispatch"> 
   <a class="layui-btn layui-btn-danger layui-btn-xs" id="paijianbtn" lay-event="del">派件</a>
+</script>
+<script type="text/html" class="waitsignpack"> 
+  <a class="layui-btn   layui-btn-xs layui-bg-blue" id="qianshoubtn" lay-event="del">签收</a>
 </script>
 </body>
 </html>

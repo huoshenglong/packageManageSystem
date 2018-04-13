@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.springmvc.dao.PackDAO">
+	<resultMap type="cn.springmvc.model.Package" id="PackageResult">
+		<id property="id" column="p_id"/>
+		<result property="sname" column="p_sname"/>
+		<result property="sphone" column="p_sphone"/>
+		<result property="saddress" column="p_saddress"/>
+		<result property="rname" column="p_rname"/>
+		<result property="rphone" column="p_rphone"/>
+		<result property="raddress" column="p_raddress"/>
+		<result property="weight" column="p_weight"/>
+		<result property="thingsType" column="p_type"/>
+		<result property="describe" column="p_describ"/>
+		<result property="nowtime" column="p_date"/>
+		<result property="packnumber" column="p_number"/>		
+	</resultMap>
+      <insert id="addPackInfo" parameterType="Package" >
+      	 insert into package_info(p_sname,p_saddress,p_sphone,p_rname,p_raddress,p_rphone,p_type,p_weight,p_date,p_describ,p_number,p_consignee,p_dispatch) 
+      	 values (#{sname},#{saddress},#{sphone},#{rname},#{raddress},#{rphone},#{thingsType},#{weight},#{nowtime},#{describe},#{packnumber},'0','0')
+      </insert>
+      
+      <select id="findWaitPackageConsignee" resultType="String">
+      	select count(*) from package_info where p_state='0'
+      </select>
+      <select id="findWaitPackageDispatch" resultType="String">
+       	select count(*) from package_info where p_state='1'
+      </select>
+      <select id="findWaitSignPack" resultType="String">
+       	select count(*) from package_info where p_state='2'
+      </select>
+      <select id="findAllPackInfo" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info limit #{startpage},#{endpage}
+      </select>
+      <select id="findPackCount" resultType="java.lang.Integer">
+      	select count(*) from package_info
+      </select>
+
+	  <select id="findWaitPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='0' limit #{startpage},#{endpage}
+      	
+      </select>
+
+      <select id="findDispatchPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='1' limit #{startpage},#{endpage}
+      </select>
+      
+      <select id="selectWaitSignPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='2' limit #{startpage},#{endpage}
+      </select>
+      
+      <select id="findPackByPhone" resultMap="PackageResult" parameterType="String">
+      	 select * from package_info where p_sphone=#{phone}
+      </select>
+      
+      <select id="findPackByNumber" resultMap="PackageResult" parameterType="String">
+      	 select * from package_info where p_number=#{number}
+      	
+      </select>
+      
+      <update id="updatePackToWait" parameterType="String">
+      	update package_info set p_state='1' where p_number=#{packnumber}
+      </update> 
+      
+      
+      <update id="updatePackToDispatch" parameterType="String">
+      	update package_info set p_state='2' where p_number=#{packnumber}
+      </update>
+      
+      <update id="createTableByPackNumber" >
+      	create TABLE ${tablename} (id int PRIMARY key,datereg varchar(30),startpoint varchar (30),endpoint varchar(30))
+      </update>
+      
+      
+      
+</mapper>

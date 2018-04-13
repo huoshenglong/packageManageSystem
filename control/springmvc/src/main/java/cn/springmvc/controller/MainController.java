@@ -70,6 +70,7 @@ public class MainController {
 	    pack.setThingsType(thingsType);
 	    pack.setWeight(things_weight);
 	    pack.setPacknumber(packnumber);
+	   
 	    boolean result=pss.addPackInfo(pack);
 	    if (result) { 
 	    	return packnumber;
@@ -88,7 +89,6 @@ public class MainController {
 		int start=(page-1)*limit;
 		int end=page*limit;	
 		int count=pss.queryPackCount();//将快递的数据总量查询
-		System.out.println(page+"**++**"+limit);
 		List<Package> list =new ArrayList<Package>();
 		list= pss.selectAllPackInfo(start,end);
 		Map<String, Object> map=new HashMap<String, Object>();		 
@@ -128,9 +128,7 @@ public class MainController {
 		String strs[]=pss.queryPackInfo().split("\\+");	 
 		int waitcount=Integer.parseInt(strs[0]);
 		int dispatchcount=Integer.parseInt(strs[1]);
-		Date now = new Date(); 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
-		String nowtime = dateFormat.format( now );  
+		int waitsignchcount=Integer.parseInt(strs[2]);
 		List<Package> list =new ArrayList<Package>();
 		Map<String, Object> map=new HashMap<String, Object>();
 		if (type.equals("wait")) {
@@ -140,13 +138,45 @@ public class MainController {
 		if (type.equals("dispatch")) {
 			list= pss.selectDispatchPack(start, end);
 			map.put("count", dispatchcount);
-		}				 
+		}
+		if (type.equals("waitsign")) {
+			list= pss.selectWaitSignPack(start, end);
+			map.put("count", waitsignchcount);
+		}
 		map.put("data", list);
 		map.put("msg", "");		
 		map.put("code", "0");		
 		return map;
 	}
-	 
+	
+	@RequestMapping("updatePackState")
+	@ResponseBody
+	public String updatePackState(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		
+		String type=request.getParameter("type");
+		System.out.println(packnumber+"***+++***"+type);
+		if (pss.updatePackState(packnumber, type)) {
+			return "success";
+		}else{
+			return "faile";
+		}
+	}
+	
+	
+	@RequestMapping("insertlogistic")
+	@ResponseBody
+	public String insertLogistic(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String logistic=request.getParameter("logistic"); 
+		String type=request.getParameter("type");
+		System.out.println(packnumber+"***+"+logistic+"++***"+type);
+		if (pss.addLogisticsInfo(packnumber, logistic, type)) {
+			return "success";
+		}else{
+			return "faile";
+		}
+	}
 	
 
 }

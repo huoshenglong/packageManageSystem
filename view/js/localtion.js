@@ -33,7 +33,7 @@ $(document).ready(function(){
         local.searchNearby('圆通快递',mPoint,3000);
     });//点击显示该地点的经纬度
      
-    map.centerAndZoom(new BMap.Point(121.36132,37.526191), 13);
+    map.centerAndZoom(new BMap.Point(121.36132,37.526191), 12);
     map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
     
     var data_info = [

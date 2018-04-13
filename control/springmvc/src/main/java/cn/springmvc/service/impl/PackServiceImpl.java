@@ -1,6 +1,7 @@
 package cn.springmvc.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,12 @@ public class PackServiceImpl implements PackService{
 	public String queryPackInfo() {
 		String result1="";
 		String result2="";
+		String result3="";
 		result1=pdo.findWaitPackageConsignee();
 		result2=pdo.findWaitPackageDispatch();
-		String result=result1+"+"+result2;
+		result3=pdo.findWaitSignPack();
+		String result=result1+"+"+result2+"+"+result3;
+		System.out.println(result);
 		return result; 
 	}
 	@Override
@@ -45,6 +49,11 @@ public class PackServiceImpl implements PackService{
 	public List<Package> selectDispatchPack(int start,int end) {//查找待派快递
 		 
 		return pdo.findDispatchPack(start,end);
+	}
+	@Override
+	public List<Package> selectWaitSignPack(int start, int end) {//查找待签收快递
+		 
+		return pdo.selectWaitSignPack(start, end);
 	}
 	@Override
 	public List<Package> selectPackByPhoneOrNumber(String value,String type) {
@@ -65,8 +74,40 @@ public class PackServiceImpl implements PackService{
 		 
 		return pdo.findPackCount();
 	}
-
- 
-
+	@Override
+	public boolean updatePackState(String packnumber,String type) {
+		int result=0;
+		if (type.equals("toWait")) {
+			result=pdo.updatePackToWait(packnumber); 
+			if (result>0) {
+				return true;
+			}
+		}
+		if(type.equals("toDispatch")){
+			result=pdo.updatePackToDispatch(packnumber);
+			if (result>0) {
+				return true;
+			}
+		} 
+		return false;
+	}
+	@Override
+	public boolean addLogisticsInfo(String packnumber, String logisticInfo,String type) {
+		if (type.equals("startpoint")) {
+			if (pdo.insertLogisticInfo(packnumber, logisticInfo)>0) {
+				return true;
+			} 
+			
+		}
+		if (type.equals("addinfo")) {
+			if (pdo.updateLogisticInfo(packnumber, logisticInfo)>0) {
+				return true;
+			} 	
+		} 
+		return false;
+	}
+	 
+	 
 	
+	 
 }

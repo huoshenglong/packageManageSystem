@@ -28,6 +28,9 @@
       <select id="findWaitPackageDispatch" resultType="String">
        	select count(*) from package_info where p_state='1'
       </select>
+      <select id="findWaitSignPack" resultType="String">
+       	select count(*) from package_info where p_state='2'
+      </select>
       <select id="findAllPackInfo" resultMap="PackageResult" parameterType="java.lang.Integer">
       	select * from package_info limit #{startpage},#{endpage}
       </select>
@@ -37,20 +40,38 @@
 
 	  <select id="findWaitPack" resultMap="PackageResult" parameterType="java.lang.Integer">
       	select * from package_info where p_state='0' limit #{startpage},#{endpage}
+      	
       </select>
-      <select id="todayWork">
-      
-      </select>
-      
+
       <select id="findDispatchPack" resultMap="PackageResult" parameterType="java.lang.Integer">
       	select * from package_info where p_state='1' limit #{startpage},#{endpage}
       </select>
+      
+      <select id="selectWaitSignPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='2' limit #{startpage},#{endpage}
+      </select>
+      
       <select id="findPackByPhone" resultMap="PackageResult" parameterType="String">
       	 select * from package_info where p_sphone=#{phone}
       </select>
       
       <select id="findPackByNumber" resultMap="PackageResult" parameterType="String">
       	 select * from package_info where p_number=#{number}
+      	
       </select>
+      
+      <update id="updatePackToWait" parameterType="String">
+      	update package_info set p_state='1' where p_number=#{packnumber}
+      </update> 
+          
+      <update id="updatePackToDispatch" parameterType="String">
+      	update package_info set p_state='2' where p_number=#{packnumber}
+      </update>
+       <insert id="insertLogisticInfo" parameterType="String">
+        insert IGNORE into logistics (packnumber,logistics) values(#{packnumber},#{startpoint})
+       </insert>
+      <update id="updateLogisticInfo" parameterType="String">
+       update logistics set logistics=CONCAT_WS('+',logistics,#{logistics}) where packnumber=#{packnumber}
+      </update>
       
 </mapper>
