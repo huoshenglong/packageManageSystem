@@ -8,4 +8,5 @@ public interface UserService {
 
 	public int insertUser(User user);
 	public boolean loginByName(String username,String password);
+	public boolean updateUserInfo(String []str);
 }

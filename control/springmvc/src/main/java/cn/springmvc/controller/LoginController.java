@@ -28,5 +28,24 @@ public class LoginController {
 			return "faile";
 		}	 
 	}
+	@RequestMapping("updateuserinfo")
+	@ResponseBody
+	public String updateInfo(HttpServletRequest request) {
+		String []str=new String[5];
+//		return userDAO.updateUserInfo(phone, email, address, imgurl, username);
+		str[0] = request.getParameter("phone");
+		str[4] = request.getParameter("username");
+		str[1] = request.getParameter("email");
+		str[2] = request.getParameter("address");
+		str[3] = request.getParameter("imgurl"); 
+		boolean result=uss.updateUserInfo(str);
+		if (result) {
+			System.out.println("update success");
+			return "success";
+		}else{
+			System.out.println("update faile");
+			return "faile";
+		}	 
+	}
 	 
 }

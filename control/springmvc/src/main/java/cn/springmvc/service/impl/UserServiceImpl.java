@@ -35,5 +35,15 @@ public class UserServiceImpl implements UserService{
 		}		  
     	return false;
 	}
+	@Override
+	public boolean updateUserInfo(String[] str) {
+		int result= userDAO.updateUserInfo(str[0], str[1], str[2] , str[3], str[4]);
+		if (result>0) {
+			return true;
+		} else {
+			return false;
+		}
+ 		
+	}
 
 }

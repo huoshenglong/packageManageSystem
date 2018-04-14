@@ -372,10 +372,11 @@ $(document).ready(function(){
 				  title:'个人信息',
 				   
 				  skin: 'layui-layer-rim', //加上边框
-				  area: ['400px', '380px'], //宽高
+				  area: ['420px', '370px'], //宽高
 				  content:$('#myinfo')
 				});
 		});
+		var imgurl="";
 		$('#file').on('change',  function(event) {	
 			var file = this.files[0];
 
@@ -393,7 +394,49 @@ $(document).ready(function(){
 		       $("#userinfoimg").attr("src",base64Code);
 		       
 		     }
+		    $.ajax({
+			    url: 'http://localhost:8080/springmvc/fileupload.do',
+			    type: 'POST',
+			    cache: false,
+			    data: new FormData($('#uploadForm')[0]),
+			    processData: false,
+			    contentType: false,
+			    success:function(data){
+			    	imgurl=data.filepath;
+			    	console.log(data);
+			    }
+			}).done(function(res) {
+			}).fail(function(res) {});
 		});
+		
+		$('#submit_btn_info').click(function(event) {
+			var phone=$('#phone-info').val();
+			var username=$('#username-info').text();
+			var email=$('#email-info').val();
+			var address=$('#address-info').val();
+			$.ajax({
+				type:"POST",
+				dataType:"json",
+				url:'http:/localhost:8080/springmvc/updateuserinfo.do',
+				data:{
+					"phone":phone,
+					"username":username,
+					"email":email,
+					"address":address,
+					"imgurl":imgurl
+				},
+				success:function(data){
+
+					console.log(data);
+					layer.close(layer.index);
+					layer.msg('信息修改成功！');
+				}
+			});
+		});
+		
+		
+		
+	 
 		{//div的点击事件，将隐藏的div显示
 			$('#console-pack').click(function(event) {
 				$('#pack-div').show();

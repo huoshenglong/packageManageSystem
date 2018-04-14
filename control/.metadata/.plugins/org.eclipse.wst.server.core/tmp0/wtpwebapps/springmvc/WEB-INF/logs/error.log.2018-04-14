@@ -1,0 +1,166 @@
+2018-04-13 10:48:20 [ localhost-startStop-1:2126 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 16:59:03 [ localhost-startStop-1:2441 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 17:03:38 [ localhost-startStop-1:2535 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:30:31 [ localhost-startStop-1:2117 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:45:00 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1319 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:45:16 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1357 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:53:28 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:717 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:56:15 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:866 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:57:12 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:712 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:57:48 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:832 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:58:01 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:676 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:58:14 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:729 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 19:59:23 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:676 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 20:00:30 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:661 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 20:00:56 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:628 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 20:01:20 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:634 ] - [ ERROR ] maxIdle is deprecated
+2018-04-13 20:02:06 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:737 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 01:30:17 [ localhost-startStop-1:1617 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 01:33:38 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1024 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 01:50:08 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:918 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 02:36:33 [ localhost-startStop-1:1571 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 14:38:12 [ localhost-startStop-1:2349 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:14:01 [ localhost-startStop-1:2112 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:17:12 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:974 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:22:07 [ localhost-startStop-1:1665 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:24:12 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1018 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:26:38 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:792 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:40:06 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1994 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 17:41:17 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:921 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 18:37:04 [ localhost-startStop-1:2232 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 19:14:07 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:928 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 19:14:18 [ localhost-startStop-1:1247 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:05:51 [ localhost-startStop-1:6012 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:11:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1177 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:14:10 [ localhost-startStop-1:2198 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:26:04 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:942 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:26:04 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:952 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:26:05 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1726 ] - [ ERROR ] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CashService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.springmvc.dao.CashDAO cn.springmvc.service.impl.CashServiceImpl.cdo; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.springmvc.dao.CashDAO] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Related cause: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cashDAO' defined in file [E:\PMS\WorkSpace\control\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\springmvc\WEB-INF\classes\cn\springmvc\dao\CashDAO.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [conf/spring-mybatis.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [conf/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: interrupt
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4852)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5313)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3868)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:290)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5670)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.springmvc.dao.CashDAO cn.springmvc.service.impl.CashServiceImpl.cdo; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.springmvc.dao.CashDAO] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 24 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.springmvc.dao.CashDAO] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:988)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 26 more
+Related cause:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cashDAO' defined in file [E:\PMS\WorkSpace\control\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\springmvc\WEB-INF\classes\cn\springmvc\dao\CashDAO.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [conf/spring-mybatis.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [conf/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: interrupt
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getTypeForFactoryBean(AbstractBeanFactory.java:1368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:720)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:356)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:334)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:187)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:897)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4852)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5313)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3868)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:290)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5670)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [conf/spring-mybatis.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [conf/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: interrupt
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 44 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [conf/spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: interrupt
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1482)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 54 more
+Caused by: java.sql.SQLException: interrupt
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:484)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1479)
+	... 61 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireInterruptibly(Unknown Source)
+	at java.util.concurrent.locks.ReentrantLock.lockInterruptibly(Unknown Source)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:482)
+	... 68 more
+2018-04-14 22:26:15 [ localhost-startStop-1:2671 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:41:49 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1181 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:43:35 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1452 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 22:50:21 [ localhost-startStop-1:1697 ] - [ ERROR ] maxIdle is deprecated
+2018-04-14 23:25:48 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1024 ] - [ ERROR ] maxIdle is deprecated

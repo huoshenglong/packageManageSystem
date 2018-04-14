@@ -73,5 +73,6 @@
       <update id="updateLogisticInfo" parameterType="String">
        update logistics set logistics=CONCAT_WS('+',logistics,#{logistics}) where packnumber=#{packnumber}
       </update>
+     
       
 </mapper>

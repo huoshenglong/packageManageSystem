@@ -18,4 +18,6 @@ public interface UserDAO {
 	 * */
 	public User findUserByNameAndPsw(@Param("username") String username,@Param("password") String password);
 	
+	
+	public int updateUserInfo(@Param("phone") String phone,@Param("email") String email,@Param("address") String address,@Param("imgurl") String imgurl,@Param("username") String username);
 }

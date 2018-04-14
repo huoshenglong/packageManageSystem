@@ -60,8 +60,8 @@ public class FileUpLoadController extends HttpServlet {
                 else {  
                     String fileName = item.getName();  
                     long sizeInBytes = item.getSize();  
-                    //System.out.println(fileName);  
-                    //System.out.println(sizeInBytes);  
+                     System.out.println(fileName);  
+                     System.out.println(sizeInBytes);  
   
                     InputStream in = item.getInputStream();  
                     byte[] buffer = new byte[1024];  
@@ -81,6 +81,7 @@ public class FileUpLoadController extends HttpServlet {
   
         } catch (FileUploadException e) {  
             e.printStackTrace();  
-        }   
+       }  
+//        response.sendRedirect("/console.html");
     }  
 }  
