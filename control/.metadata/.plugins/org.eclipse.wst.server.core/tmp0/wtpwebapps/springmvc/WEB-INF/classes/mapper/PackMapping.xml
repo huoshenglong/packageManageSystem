@@ -68,7 +68,7 @@
       	update package_info set p_state='2' where p_number=#{packnumber}
       </update>
        <insert id="insertLogisticInfo" parameterType="String">
-        insert into logistics (packnumber,logistics) values(#{packnumber},#{startpoint})
+        insert IGNORE into logistics (packnumber,logistics) values(#{packnumber},#{startpoint})
        </insert>
       <update id="updateLogisticInfo" parameterType="String">
        update logistics set logistics=CONCAT_WS('+',logistics,#{logistics}) where packnumber=#{packnumber}

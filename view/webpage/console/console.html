@@ -22,7 +22,7 @@
     <ul class="layui-nav layui-layout-right" style="margin-right: 30px;">
        <li class="layui-nav-item"  >
         <a href="javascript:;" style="color:#008080">
-          <img src="../../images/user.png" class="layui-nav-img">欢迎
+          <img src="../../images/user.png" id="userinfoimg" class="layui-nav-img">欢迎
         </a>
       </li>
       <li class="layui-nav-item">
@@ -30,8 +30,8 @@
           
         </a> 
         <dl class="layui-nav-child">
-          <dd><a href=" " id="baseInfo">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="javascript:;" id="baseInfo">基本资料</a></dd>
+          <dd><a href="javascript:;">安全设置</a></dd>
         </dl>                                                                                                                                           
       </li>
       <li class="layui-nav-item"><a id="loginout" href="javascript:;" style="color:#008080">
@@ -201,5 +201,40 @@
   <a class="layui-btn   layui-btn-xs layui-bg-blue" id="qianshoubtn" lay-event="del">签收</a>
 </script>
 </body>
+
+<div id="myinfo">
+  <div id="infoimage">  
+    <img src="../../images/logo.png" id="imgbackage"  >
+      <form enctype="multipart/form-data" id="infoLogoForm">  
+        <input id="file" type="file" />
+      </form>
+    </div> 
+  <div id="linediv">
+    <label class="layui-form-label">用户名：</label> 
+    <label class="layui-form-label" id="username-info" style="margin-left:-45px;color:#008080"></label>
+    </div>
+  <div id="linediv">  
+    <label class="layui-form-label">手机号：</label>
+    <div class="layui-input-inline">
+      <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input" style="width: 170px;">
+    </div>
+    </div>
+  <div id="linediv"> 
+    <label class="layui-form-label">邮箱：</label>
+    <div class="layui-input-inline">
+      <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input" style="width: 170px;">
+    </div>
+    </div>
+  <div id="linediv"> 
+    <div class="layui-input-inline"><label class="layui-form-label">家庭住址：</label>
+      <input type="text" name="username"   placeholder="请手动输入"  class="layui-input" style="width: 270px;">
+    </div>
+  </div>
+  <div id="linediv" style="text-align: center;">
+    <div class="layui-form-item">
+    <button class="layui-btn" lay-submit="">提交信息</button>
+    </div>
+  </div>
+</div>
 </html>
  

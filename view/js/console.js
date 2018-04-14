@@ -3,6 +3,7 @@ $(document).ready(function(){
 		var username="";
 		username=window.location.href.split("=")[1];//获取用户名
 		$('#username').text(username);
+		$('#username-info').text(username);
 		$('#loginout').click(function(event) {		 
 			window.location.replace("../index.html");
 		});
@@ -14,6 +15,7 @@ $(document).ready(function(){
 		$('#logistics-div').hide();
 		$('#state-div').hide();
 		$('#pack-next-console').hide();
+		$('#myinfo').hide();
 		
 	}
 
@@ -364,8 +366,34 @@ $(document).ready(function(){
 			getPackStateWaitSign('#wait-sign','waitsign');						
 			$('#need-sign').hide();	 
 		});
-		 
-		
+		$('#baseInfo').click(function(){
+				layer.open({
+				  type: 1,
+				  title:'个人信息',
+				   
+				  skin: 'layui-layer-rim', //加上边框
+				  area: ['400px', '380px'], //宽高
+				  content:$('#myinfo')
+				});
+		});
+		$('#file').on('change',  function(event) {	
+			var file = this.files[0];
+
+		     //限定上传文件的类型，判断是否是图片类型
+		     if (!/image\/\w+/.test(file.type)) {
+		         alert("只能选择图片");
+		         return false;
+		    }
+		     var reader = new FileReader();
+		     reader.readAsDataURL(file);
+		     reader.onload = function (e) {
+		       base64Code=this.result;
+		        //把得到的base64赋值到img标签显示
+		       $("#imgbackage").attr("src",base64Code);
+		       $("#userinfoimg").attr("src",base64Code);
+		       
+		     }
+		});
 		{//div的点击事件，将隐藏的div显示
 			$('#console-pack').click(function(event) {
 				$('#pack-div').show();

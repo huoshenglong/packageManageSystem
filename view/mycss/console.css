@@ -57,3 +57,34 @@
 	height: 50px;
 	width: 100%; 
 }
+#myinfo{
+	height: 300px;
+	width: 100%; 
+}
+#infoimage{
+	height: 80px;
+	width: 80px;
+	border:1px solid gray;
+	margin:20px 10px 10px 10px;
+	float:right; 
+}
+#linediv{
+	margin-top: 15px;
+}
+#file {
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;  
+	z-index: 999;
+	border:1px solid blue;
+	position: absolute;
+}
+#imgbackage{
+	z-index: -999;
+	position: absolute;
+	height: 80px;
+	width: 80px;
+}
