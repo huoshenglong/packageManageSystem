@@ -121,17 +121,18 @@ li {
     background-color: #FF5722;
 }
 .search{
-    height: 200px;
-    width: 25%;
+    height: 150px;
+    width: 300px;
     border-radius: 10px 10px 0 0;
     z-index: 399;
     position: absolute;
-    top: 415px;
+    top: 465px;
     left: 150px;
     /*background-color: #2F4056;*/
     background-color: rgba(47,64,86,0.8);/*#30B8B0*/
     text-align: center;
 }
+
 .layui-input{
     width: 200px;
   }
@@ -146,11 +147,16 @@ li {
 #input_value{
     margin-top: 20px;
     width: 80%;
-    border-bottom:solid 1px blue;
-    font-size: 1.6em;
+    border-bottom:solid 1px gray;
+    font-size: 1.4em;
+    text-align: center;
 }
 #input_radio{
     color:white;
+}
+#findpackinfo{
+    height: 100%;
+    width: 100%; 
 }
 
 #login_div{
@@ -522,6 +528,10 @@ li {
     color:#008080;
     font-size: 1.4em;
 }
+#showloginfo{ 
+   height: 500px;
+   overflow: auto;
+}
  /*logistics样式结束*/
 
  /*regiest样式开始*/
@@ -600,3 +610,4 @@ li {
 #format-img{
     margin-left: 300px;
 }
+

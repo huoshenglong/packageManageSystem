@@ -12,7 +12,34 @@ public class User {
 	private String password;
 	
 	private double e_number;
-	
+	private String phone;
+	private String email;
+	private String address;
+	private String imgurl;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getImgurl() {
+		return imgurl;
+	}
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
 	public double getE_number() {
 		return e_number;
 	}

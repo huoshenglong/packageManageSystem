@@ -86,11 +86,11 @@
          <a class="select-strand">收寄标准须知</a></i></div>          
     </div>
     <div id="infomation1">
-    	<i class="layui-icon" style="margin-left: 10%;" >&#xe630;
+    	<i class="layui-icon"  style="margin-left: 10%;" >&#xe630;
     	</i> 温馨<br>提醒 
     </div>
     <div id="infomation2">
-    	<i class="layui-icon" style="margin: 10%;" >&#xe60c;
+    	<i class="layui-icon"  style="margin: 10%;" >&#xe60c;
     	</i> 防骗<br>警示 
     </div>
 
@@ -99,20 +99,15 @@
 	  <div class="layui-form-item" id="layui-form-item1">	    
 	    <div class="layui-input-block">
 	      <input type="text" name="typeValue" id="input_value" required  lay-verify="required" 
-	      placeholder="请输入快递单号或者手机号" autocomplete="off" class="layui-input">	      
+	      placeholder="请输入快递单号" autocomplete="off" class="layui-input">	      
 	    </div>
 	  </div>
-	  <div class="layui-form-item" id="layui-form-item1">	    
-	    <div class="layui-input-block" id="input_radio">	    
-	      <input type="radio" name="choseType" lay-filter="input_radio_info" value="bynumber" title="快递单号">
-	      <input type="radio" name="choseType" lay-filter="input_radio_info" value="byphone" title="寄件手机">
-	    </div>
-	  </div>	   
+	   	   <div class="layui-form-item" id="layui-form-item1"></div> 
 	  <div class="layui-form-item" id="layui-form-item1">
 	    <div class="layui-input-block">
-	     <input type="button" style="background-color: #008080;color:white;border:none;height:40px;width: 100px;border-radius: 4px;cursor: pointer;" 
+	     <input type="button" style="background-color: #008080;color:white;border:none;height:40px;width: 100px;border-radius: 4px;cursor: pointer; " 
 			      	id="query-pack-bytype" value="点击查询">
-	      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	      
 	    </div>
 	  </div>
 	</form>
@@ -233,32 +228,32 @@
   		<legend>寄件须知</legend>
   		<div class="s-left-icon">
 	 		<a href="../webpage/forbid.html"  >
-	  			<i class="layui-icon">&#xe60c;</i><br> 禁寄物品
+	  			<i class="layui-icon"  >&#xe60c;</i><br> 禁寄物品
 	  		</a>
   	    </div> 
   	    <div class="s-left-icon">
 	 		<a href="../webpage/formformat.html"  >
-	  			<i class="layui-icon">&#xe63c;</i><br> 表单填写
+	  			<i class="layui-icon" >&#xe63c;</i><br> 表单填写
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
 	 		<a href="../webpage/packing.html" >
-	  			<i class="layui-icon">&#xe64f;</i><br> 包装注意
+	  			<i class="layui-icon" >&#xe64f;</i><br> 包装注意
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
 	 		<a  style="cursor: pointer;" class="query-neets"  >
-	  			<i class="layui-icon">&#xe642;</i><br> 网点查询
+	  			<i class="layui-icon"  >&#xe642;</i><br> 网点查询
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
 	 		<a style="cursor: pointer;" class="select-time" >
-	  			<i class="layui-icon">&#xe60e;</i><br> 时效查询
+	  			<i class="layui-icon"  >&#xe60e;</i><br> 时效查询
 	  		</a>
   	    </div>
   	    <div class="s-left-icon">
 	 		<a href="../webpage/formreturn.html" >
-	  			<i class="layui-icon">&#xe65c;</i><br> 签单返回
+	  			<i class="layui-icon"  >&#xe65c;</i><br> 签单返回
 	  		</a>
   	    </div>   
 	</div>
@@ -298,6 +293,7 @@
 		</h4>
 	</div>
 <div id="return-top" title="返回顶部"></div> 
+<div id="findpackinfo"> </div>
 </body>
 <script src="../layui/layui.js" type="text/javascript" charset="utf-8" ></script>
 <script src="../js/indexjs.js" type="text/javascript" charset="utf-8" async defer></script>

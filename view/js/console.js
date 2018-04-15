@@ -35,6 +35,25 @@ $(document).ready(function(){
 				console.log('快递状态加载失败');		        
 		    }
 		}); 
+		$.ajax({ 
+		    type: "POST", 
+		    dataType: "json", 
+		    url: "http://localhost:8080/springmvc/selectUserInfo.do" , 
+		    data:{
+		    	username:$('#username').text()
+		    },
+		    success: function (result) {	    
+		    $('#phone-info').val(result[0].phone);
+		    $('#email-info').val(result[0].email);
+		    $('#address-info').val(result[0].address);
+		    $('#imgbackage').attr("src",result[0].imgurl); 
+		    $('#userinfoimg').attr("src",result[0].imgurl);
+		    	 
+		    },
+		    error : function(result) {
+				     console.log('用户信息加载错误！');    
+		    }
+		});
 	}
 	{
 		// 加载系统时间
@@ -200,8 +219,9 @@ $(document).ready(function(){
 	var packnumber="";
 	var endpoint="";
 	var page=0;
+	var saddress=""; 
 	$('#pack-get-console').click(function(){
-		$('#pack-get-console').text("下一条");
+		$('#pack-get-console').text('下一条');
 		$('#logistic-packInfo').html("");
 		page+=1;
 		$.ajax({
@@ -217,48 +237,66 @@ $(document).ready(function(){
 				$("#pack-number-console").val(result.data[0].packnumber) ;
 				packnumber=result.data[0].packnumber;
 				$("#pack-send-console").val(result.data[0].saddress);
+				saddress=result.data[0].saddress;
 				$("#pack-receive-console").val(result.data[0].raddress);
-				console.log(result.count);
+				console.log(result.count); 
 				$('#need-delive-count').text('共计'+(result.count-page+1));
 				endpoint=result.data[0].raddress;
 				appendInfo(getNowTime(),result.data[0].saddress);
 				if ((result.count-page+1)==0){
 					$('#pack-get-console').hide();
 				}
-				$.ajax({
+				
+			},
+			error:function(result){
+
+			}
+		});
+		$('#pack-submit-take').click(function(event) {
+			$.ajax({
 					type:"POST",
 					dataType:"json",
 					data:{
-						"packnumber": result.data[0].packnumber,
-						"logistic":getNowTime()+'.'+result.data[0].saddress+'已揽件，正发往下一站...',
+						"packnumber": packnumber,
+						"logistic":getNowTime()+'*'+saddress+'已揽件，正发往下一站...',
 						"type":'startpoint'
 					},
 					url:"http://localhost:8080/springmvc/insertlogistic.do",
 					success:function(result){
+						appendInfo(getNowTime(),saddress+'已揽件，正发往下一站...');
 						 	console.log(result);
 					},
 					error:function(result){
 
 					}
 				});	
-			},
-			error:function(result){
-
-			}
 		});
+		
 		$('#pack-submit-console').click(function(){
 			$.ajax({
 				type:"POST",
 				dataType:"json",
 				data:{
 					"packnumber": packnumber,
-					"logistic":getNowTime()+'.'+endpoint+'正在派件，请耐心等待...',
+					"logistic":getNowTime()+'*'+endpoint+'正在派件，请耐心等待...',
 					"type":'addinfo'
 				},
 				url:"http://localhost:8080/springmvc/insertlogistic.do",
 				success:function(result){
-					 	console.log(result);
-					 	layer.msg('派件成功！');
+					 	console.log(result);					 	
+					 	$.ajax({
+							type:"POST",
+							dataType:"json",
+							data:"packnumber="+packnumber+"&type=toDispatch",
+							url:"http://localhost:8080/springmvc/updatePackState.do",
+							success:function(data){
+								 layer.msg('派件成功！');
+							},
+							faile:function(data){
+
+							}
+						});
+					 	getPoint();
 				},
 				error:function(result){
 
@@ -317,7 +355,7 @@ $(document).ready(function(){
 					dataType:"json",
 					data:{
 						"packnumber": packnumber,
-						"logistic":getNowTime()+'.'+cityinfo+'已揽件，正发往下一站...',
+						"logistic":getNowTime()+'*'+cityinfo+'已揽件，正发往下一站...',
 						"type":'addinfo'
 					},
 					url:"http://localhost:8080/springmvc/insertlogistic.do",
@@ -370,7 +408,6 @@ $(document).ready(function(){
 				layer.open({
 				  type: 1,
 				  title:'个人信息',
-				   
 				  skin: 'layui-layer-rim', //加上边框
 				  area: ['420px', '370px'], //宽高
 				  content:$('#myinfo')
@@ -402,8 +439,8 @@ $(document).ready(function(){
 			    processData: false,
 			    contentType: false,
 			    success:function(data){
-			    	imgurl=data.filepath;
-			    	console.log(data);
+			    	imgurl=data.split('"')[3];
+			    	console.log(data.split('"')[3]);
 			    }
 			}).done(function(res) {
 			}).fail(function(res) {});
@@ -432,11 +469,7 @@ $(document).ready(function(){
 					layer.msg('信息修改成功！');
 				}
 			});
-		});
-		
-		
-		
-	 
+		});	 
 		{//div的点击事件，将隐藏的div显示
 			$('#console-pack').click(function(event) {
 				$('#pack-div').show();

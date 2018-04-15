@@ -38,6 +38,8 @@ $(document).ready(function(){
 	$("#intro4").hide();
 	$("#intro5").hide();
 	$("#intro6").hide();
+	// $("#findpackinfo").hide();
+	
 	$("#s-left").hide();
 	$("#s-middle").hide();
 	$("#s-right").hide(); 
@@ -290,8 +292,69 @@ $(document).ready(function(){
 	$("#return-top").click(function(){//返回顶部事件
 		$("html,body").animate({scrollTop:0}, 500);
 	});
-
-
+	$('#query-pack-bytype').click(function(event) {
+		var number= $('#input_value').val();
+		$('#findpackinfo').html("");
+		$.ajax({
+    		type:"post",
+    		dataType:"json",
+    		url:"http://localhost:8080/springmvc/selectPackLogisticInfo.do",
+    		data:{
+    			"packnumber":number
+    		},
+    		success:function(data){
+    		  console.log(data);
+    		 if (data.length!=0) {
+				var time = data.map(function(item) {
+    				return item.split('*')[0];
+    			});
+    			var point = data.map(function(item) {
+    				return item.split('*')[1];	
+    			}); 
+    			for (var i = 0; i<=time.length-1; i++) { 
+    				 $('#findpackinfo').append(`<ul class="layui-timeline">           
+			          <li class="layui-timeline-item">
+			            <i class="layui-icon layui-timeline-axis" style="font-size: 15px; color: #008080;line-height: 20px;" ></i>
+			            <div class="layui-timeline-content layui-text">
+			              <h3 class="layui-timeline-title">`+time[i]+`</h3>
+			              <p>
+							`+point[i]+` 
+			              </p>
+			            </div>
+			          </li>
+			        </ul>  `);
+    			}	
+    		 }
+    		 if (data.length==0) {
+    		 	$('#findpackinfo').append(`<ul class="layui-timeline">           
+			          <li class="layui-timeline-item">
+			            <i class="layui-icon layui-timeline-axis" style="font-size: 15px; color: #008080;line-height: 20px;" ></i>
+			            <div class="layui-timeline-content layui-text">
+			              <h3 class="layui-timeline-title">提示：</h3>
+			              <p>
+							暂时没有物流信息！ 
+			              </p>
+			            </div>
+			          </li>
+			        </ul>  `);
+    		 }
+    			
+    		},
+    		error:function(data){
+    			console.log('查找快递信息失败！');
+    		}
+    	});
+    	layer.open({
+				  type: 1,
+				  title:'物流信息',				   
+				  skin: 'layui-layer-rim', //加上边框
+				  area: ['420px', '470px'], //宽高
+				  content:$('#findpackinfo')
+				});
+    });
+		
+ 
+ 
 	//传入下一个页面的参数
 	$('.query-pack').click(function(){//我要寄件
 		window.location.href = 'logistics.html?index='+index1;

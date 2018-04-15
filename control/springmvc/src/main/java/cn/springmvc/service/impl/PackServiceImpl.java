@@ -1,7 +1,5 @@
 package cn.springmvc.service.impl;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,20 +53,7 @@ public class PackServiceImpl implements PackService{
 		 
 		return pdo.selectWaitSignPack(start, end);
 	}
-	@Override
-	public List<Package> selectPackByPhoneOrNumber(String value,String type) {
-		List<Package> list =new ArrayList<Package>();
-		if (type.equals("bynumber")) {
-			list=pdo.findPackByNumber(value);
-		 
-		}
-		if(type.equals("byphone")){
-		 
-			list=pdo.findPackByPhone(value);
-		 
-		}
-		return list;
-	}
+ 
 	@Override
 	public int queryPackCount() {
 		 
@@ -106,6 +91,21 @@ public class PackServiceImpl implements PackService{
 		} 
 		return false;
 	}
+	@Override
+	public String selectLogisticInfo(String packnumber) {
+		 try {
+			 String state=pdo.findPackStateByNumber(packnumber);
+			 if (state.equals("0")) {
+				 return "noState";
+			}else{
+				return pdo.findPackLogiByNumber(packnumber);
+			}
+		} catch (Exception e) {
+			return "noState";
+		}
+		 
+	}
+	 
 	 
 	 
 	

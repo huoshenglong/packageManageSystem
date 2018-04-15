@@ -1,5 +1,7 @@
 package cn.springmvc.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserDAO userDAO;
  
+
+	
     @Override
 	public int insertUser(User user) {
 		// TODO Auto-generated method stub
@@ -44,6 +48,12 @@ public class UserServiceImpl implements UserService{
 			return false;
 		}
  		
+	}
+	@Override
+	public List<User> selectUserInfo(String username) {
+	 
+		 
+		return  userDAO.getUserInfo(username);
 	}
 
 }

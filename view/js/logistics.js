@@ -364,5 +364,108 @@ $(document).ready(function(){
 	 
     	
     });
+   
+    $('#select-date').click(function(){
+    	var str=new Array('820000','810000','710000','650000','460000','540000','150000') ;
+    	var sprovince=$('#s-select-province-id').val();
+    	var tprovince=$('#e-select-province-id').val();
+    	var weight=$('#right-input-weight-date').val();
+    	var stand=true;
+    	var data=new Array();
+    	date=$('#senddate2').val().split("-");
+    	var year=date[0];
+    	var month=date[1];
+    	var day=date[2];
+    	for (var i = str.length - 1; i >= 0; i--) {
+			if (sprovince==str[i]||tprovince==str[i]) {
+				stand=false;
+				break;
+			}
+    	} 
+    	if (stand) { 
+    		var cost=(weight*1-1)*5+13; 
+    		day=day*1+3;
+    		if (day*1>30) {
+    			month=month*1+1;
+    			day=3;
+    		}
+    		if (month*1>12) {
+    			year=year*1+1;
+    			month=1;
+    			day=3;
+    		}
+    		$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
+    		$('#aboutcost').text('费用大约为：'+cost);
+    	}
+    	if (!stand) { 
+    		var cost=(weight*1-1)*8+15;
+    		day=day*1+7;
+    		if (day*1>30) {
+    			month=month*1+1;
+    			day=7;
+    		}
+    		if (month*1>12) {
+    			year=year*1+1;
+    			month=1;
+    			day=7;
+    		}
+    		$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
+    		$('#aboutcost').text('费用大约为：'+cost);
+    	}
+    });
+    $('#selectLogistic-btn').click(function(){
+    	$('#showloginfo').text("");
+    	var number=$('#right-input-package').val();
+    	$.ajax({
+    		type:"post",
+    		dataType:"json",
+    		url:"http://localhost:8080/springmvc/selectPackLogisticInfo.do",
+    		data:{
+    			"packnumber":number
+    		},
+    		success:function(data){
+    		  console.log(data);
+    		 if (data.length!=0) {
+				var time = data.map(function(item) {
+    				return item.split('*')[0];
+    			});
+    			var point = data.map(function(item) {
+    				return item.split('*')[1];
+    			}); 
+    			for (var i = 0; i<=time.length-1; i++) { 
+    				 $('#showloginfo').append(`<ul class="layui-timeline">           
+			          <li class="layui-timeline-item">
+			            <i class="layui-icon layui-timeline-axis" style="font-size: 15px; color: #008080;line-height: 20px;" ></i>
+			            <div class="layui-timeline-content layui-text">
+			              <h3 class="layui-timeline-title">`+time[i]+`</h3>
+			              <p>
+							`+point[i]+` 
+			              </p>
+			            </div>
+			          </li>
+			        </ul>  `);
+    			}	
+    		 }
+    		 if (data.length==0) {
+    		 	$('#showloginfo').append(`<ul class="layui-timeline">           
+			          <li class="layui-timeline-item">
+			            <i class="layui-icon layui-timeline-axis" style="font-size: 15px; color: #008080;line-height: 20px;" ></i>
+			            <div class="layui-timeline-content layui-text">
+			              <h3 class="layui-timeline-title">提示：</h3>
+			              <p>
+							暂时没有物流信息！ 
+			              </p>
+			            </div>
+			          </li>
+			        </ul>  `);
+    		 }
+    			
+    		},
+    		error:function(data){
+    			console.log('查找快递信息失败！');
+    		}
+    	});
+    });
+    
 	
 });

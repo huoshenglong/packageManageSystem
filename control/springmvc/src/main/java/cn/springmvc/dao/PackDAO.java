@@ -17,8 +17,9 @@ public interface PackDAO {
 	public List<Package> findWaitPack(@Param("startpage")int startpage,@Param("endpage")int endpage);
 	public List<Package> findDispatchPack(@Param("startpage")int startpage,@Param("endpage")int endpage);
 	public List<Package> selectWaitSignPack(@Param("startpage")int startpage,@Param("endpage")int endpage);	
-	public List<Package> findPackByPhone(@Param("phone")String value); 
-	public List<Package> findPackByNumber(@Param("number") String value);
+	public String findPackStateByNumber(@Param("number") String value);
+	public String findPackLogiByNumber(@Param("number") String value);
+	
 	public int updatePackToWait(@Param("packnumber") String packnumber);
 	public int updatePackToDispatch(@Param("packnumber") String packnumber); 
 	public int insertLogisticInfo(@Param("packnumber")String packnumber,@Param("startpoint")String startpoint);

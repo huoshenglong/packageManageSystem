@@ -98,24 +98,7 @@ public class MainController {
 		map.put("code", "0");
 		return map;
 	}
-	
-	@RequestMapping("phoneOrNumber")
-	@ResponseBody
-	public Map<String, Object> queryPackInfoByPhone(HttpServletRequest request){
-		String type=request.getParameter("choseType");
-		String value=request.getParameter("typeValue");
-		System.out.println(type+"**++**"+value);
-		List<Package> list =new ArrayList<Package>();
-		Map<String, Object> map=new HashMap<String, Object>();
-		list=pss.selectPackByPhoneOrNumber(value, type);
-		map.put("data", list);
-		map.put("msg", "");
-		map.put("count", list.size());
-		map.put("code", "0");
-		return map;
-	}
-	
-	
+
 	@RequestMapping("packstate")
 	@ResponseBody
 	public Map<String, Object> query(HttpServletRequest request){
@@ -178,5 +161,39 @@ public class MainController {
 		}
 	}
 	
+	
+	@RequestMapping("selectPackLogisticInfo")
+	@ResponseBody
+	public List<String> selectPackLogisticInfo(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String result=pss.selectLogisticInfo(packnumber);
+//		noState
+		System.out.println("asdasda+++++");
+		List<String> list =new ArrayList<String>();
+		if (result.equals("noState")) {
+			return list;
+		} else {
+			String []str=result.split("\\+");
+			
+			for (int i = 0; i < str.length; i++) {
+				System.out.println(str[i]);
+				String []info=str[i].split(".");			
+				list.add(str[i]);
+			}		
+			return list;
+		}
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

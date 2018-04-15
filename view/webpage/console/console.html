@@ -123,7 +123,7 @@
  
   </ul>
   <div class="layui-tab-content" style="height: 100px;">
-    <div class="layui-tab-item"> 
+    <div class="layui-tab-item layui-show" > 
       <div id="logistictop">
         <div class="layui-form-item">
           <label class="layui-form-label">快递单号：</label>
@@ -139,7 +139,9 @@
             <input type="text" id="pack-receive-console" class="layui-input  ">
           </div>
           <button class="layui-btn layui-bg-orange" id="pack-get-console" >显示揽件</button>
-           <button class="layui-btn" id="pack-submit-console" >立即提交</button>
+           <button class="layui-btn" id="pack-submit-take" >揽件</button>
+           <button class="layui-btn" id="pack-submit-console">派件</button>
+
             <span class="layui-badge "  id="need-delive-count"></span>
         </div>
       </div>
@@ -204,14 +206,14 @@
 
 <div id="myinfo">
   <div id="infoimage">  
-    <img src="E:\PMS\WorkSpace\files\mmexport1511067553342.jpg" id="imgbackage"  >
+    <img src="../../images/user.png" id="imgbackage"  >
       <form enctype="multipart/form-data" id="uploadForm"  >  
         <input id="file" type="file"  name="fileupload"/> 
       </form>    
     </div> 
    <div id="linediv">
     <label class="layui-form-label">用户名：</label> 
-    <label class="layui-form-label" id="username-info" style="margin-left:-45px;color:#008080"></label>
+    <label class="layui-form-label" id="username-info" style=" color:#008080"></label>
     </div>
   <div id="linediv"  >  
      <label class="layui-form-label" style="margin-left: 0">手机号：</label> 
