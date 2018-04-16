@@ -166,9 +166,7 @@ public class MainController {
 	@ResponseBody
 	public List<String> selectPackLogisticInfo(HttpServletRequest request){
 		String packnumber=request.getParameter("packnumber");
-		String result=pss.selectLogisticInfo(packnumber);
-//		noState
-		System.out.println("asdasda+++++");
+		String result=pss.selectLogisticInfo(packnumber); 
 		List<String> list =new ArrayList<String>();
 		if (result.equals("noState")) {
 			return list;
@@ -184,6 +182,42 @@ public class MainController {
 		}
 		
 	}
+	
+	@RequestMapping("selectByPhoneOrNumber")
+	@ResponseBody
+	public Map<String, Object> selectByPhoneOrNumber(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String phone=request.getParameter("phone");
+		System.out.println(packnumber+"****"+phone);
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pss.selectPackByPhoneOrNumber(packnumber, phone);
+		System.out.println(list);
+		map.put("count", list.size());
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");
+		return map;
+	}
+	
+	@RequestMapping("selectByPhoneOthers")
+	@ResponseBody
+	public Map<String, Object> selectByPhoneOthers(HttpServletRequest request){
+		String sendpoint=request.getParameter("sendpoint");
+		String receivepoint=request.getParameter("receivepoint");
+		String senddate=request.getParameter("senddate");
+		System.out.println(sendpoint+"****"+receivepoint+"***"+senddate);
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pss.selectPackByOthers(sendpoint, receivepoint, senddate);
+		System.out.println(list);
+		map.put("count", list.size());
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");
+		return map;
+	}
+	
 
 }
 

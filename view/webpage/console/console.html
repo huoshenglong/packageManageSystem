@@ -56,7 +56,7 @@
         </li>
         
         <li class="layui-nav-item">
-          <a id="console-infomation" href="javascript:;"><img src="../../images/bussiness-card.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;信息审核</a>
+          <a id="console-infomation" href="javascript:;"><img src="../../images/bussiness-card.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;修改信息</a>
         </li>
         <li class="layui-nav-item">
           <a id="console-employee" href="javascript:;"><img src="../../images/personal-center.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;员工信息</a>
@@ -68,7 +68,7 @@
     <div id="pack-div">
       <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-          <li class="layui-this" id="consoleallpack">所有快递</li>
+          <li class="layui-this" id="consoleallpack">所有快递</li> 
           <li id="console-wait-pack">待揽快递<span class="layui-badge layui-bg-green" id="need-receive"></span></li>
           <li id="console-deliver-pack">等待派发<span class="layui-badge "  id="need-delive"></span></li>
            <li id="console-waitsign-pack">等待签收<span class="layui-badge layui-bg-blue"  id="need-sign"></span></li>
@@ -93,33 +93,75 @@
         </div>
       </div>
     </div>
-    <div id="query-div">   
+    <div id="query-div"> 
       <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-        <ul class="layui-tab-title">
-          <li class="layui-this">今日工作</li>
-          <li>某日工作</li>
-          <li>单号查询</li>
-          <li>手机查询</li> 
-        </ul>
-        <div class="layui-tab-content" style="height: 100px;">
-          <div class="layui-tab-item layui-show">
-            <table class="layui-table" id="today-work" lay-filter="demo"> 
-            </table>
-          </div>
-          <div class="layui-tab-item">
-            <table class="layui-table" id="today-work" lay-filter="demo"> 
-            </table>
-          </div>
-          <div class="layui-tab-item">内容2</div>
-          <div class="layui-tab-item">内容3</div> 
+  <ul class="layui-tab-title">
+    <li class="layui-this">基本查询</li>
+    <li>条件查询</li>
+ 
+   
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <div class="layui-tab-item layui-show">
+   <div id="queryplane">
+      <div class="layui-form-item">
+        <label class="layui-form-label">快递单号：</label>
+        <div class="layui-input-inline">
+        <input type="text" id="select-number" lay-verify="required" placeholder="可模糊查询" class="layui-input">
         </div>
-      </div>   
+        <label class="layui-form-label">手机号：</label>
+        <div class="layui-input-inline">
+        <input type="text" id="select-phone" lay-verify="required" placeholder="请输入" class="layui-input">
+        </div>
+          
+        <div class="layui-input-inline">
+        <button class="layui-btn" id="select-button">点击查询</button>
+        </div>
+      </div>
+       
+    </div>  
+    <hr class="layui-bg-green">
+     <div id="selecttable">
+       <table class="layui-table" id="search-result" lay-filter="searchresult">
+        </table>
+     </div>  
+    </div>
+    <div class="layui-tab-item">
+  <div id="queryplane">
+      <div class="layui-form-item">
+        <label class="layui-form-label">发件地址：</label>
+        <div class="layui-input-inline">
+        <input type="text" id="select-saddress" lay-verify="required" placeholder="模糊查询" class="layui-input">
+        </div>
+        <label class="layui-form-label">收件地址：</label>
+        <div class="layui-input-inline">
+        <input type="text" id="select-raddress" lay-verify="required" placeholder="模糊查询" class="layui-input">
+        </div>
+        <label class="layui-form-label">发件日期：</label>
+        <div class="layui-input-inline">
+        <input type="text"  id="senddate" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+        <button class="layui-btn" id="select-condition" >点击查询</button>
+        </div>
+      </div>
+       
+    </div>  
+    <hr class="layui-bg-green">
+     <div id="selecttable">
+       <table class="layui-table" id="search-result-others" lay-filter="searchresult">
+        </table>
+     </div> 
+    </div>
+     
+  </div>
+</div> 
+ 
     </div>
  
     <div id="logistics-div">     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
   <ul class="layui-tab-title">
     <li class="layui-this">模拟物流</li>
-    <li>更正物流</li>
  
   </ul>
   <div class="layui-tab-content" style="height: 100px;">
@@ -150,22 +192,37 @@
       </div>
       <div id="allmap"></div>
     </div>
-    <div class="layui-tab-item">内容3</div> 
+ 
   </div>
 </div> 
     </div>
     <div id="infomation-div"><div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
   <ul class="layui-tab-title">
-    <li class="layui-this">所有申请</li>
-    <li>审核申请</li>
-    <li>管理申请</li> 
-    <li>查找申请</li>
+    <li class="layui-this">信息修改</li>
+    <li>订单退订</li>
+  
   </ul>
   <div class="layui-tab-content" style="height: 100px;">
-    <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-    <div class="layui-tab-item">内容2</div>
-    <div class="layui-tab-item">内容3</div> 
-    <div class="layui-tab-item">内容4</div> 
+    <div class="layui-tab-item layui-show">
+       <table class="layui-table" lay-data="{url:'http://localhost:8080/springmvc/queryAllInfo.do', id:'changelogitic',page:true}" lay-filter="changelogitic">
+        <thead>
+          <tr>
+            <th lay-data="{type:'checkbox'}">ID</th>
+          
+            <th lay-data="{field:'packnumber', width:150  }">快递单号</th>
+            <th lay-data="{field:'sname', width:80, sort: true,   edit: 'text', minWidth: 150}">发件人</th>
+            <th lay-data="{field:'sphone', width:120,edit: 'text'}">发件人手机</th>
+            <th lay-data="{field:'saddress', width:200,edit: 'text'}">发件人地址</th>
+            <th lay-data="{field:'rname', width:80, edit: 'text'}">收件人</th>
+            <th lay-data="{field:'rphone', width:120, edit: 'text'}">收件人手机</th>
+            <th lay-data="{field:'raddress', width:200,  edit: 'text'}">收件人地址</th>
+            <th lay-data="{field:'thingsType', width:200 , edit: 'text'}">物品类型</th>
+             <th lay-data="{field:'weight', width:80 ,edit: 'text'}">重量</th> 
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="layui-tab-item">内容2</div> 
   </div>
 </div> 
     </div>

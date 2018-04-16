@@ -93,3 +93,15 @@
 	border-radius: 50px;
  
 }
+#queryplane{ 
+	height: 60px;
+	width: 100%;
+	margin-top: 20px;
+}
+#selecttable{  
+	width: 100%; 
+}
+#search-btn{
+	float: right;
+	margin-right: 80px;
+}

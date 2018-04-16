@@ -59,9 +59,37 @@
       <select id="findPackStateByNumber" resultType="String" parameterType="String">
       	 select p_state from package_info where p_number=#{number}     	
       </select>     
+       <!-- 按快递单号码查询快递信息 -->
+      <select id="findPackInfoByPhoneOrNumber" resultMap="PackageResult" parameterType="String">
+      	select * from package_info 
+      	 <where>
+      	 	<if test="packnumber!= null and packnumber!=''">
+	            and p_number  LIKE  "%"#{packnumber}"%"
+	        </if>
+	        <if test="phone!= null and phone!=''">
+	            and p_sphone=#{phone}
+	        </if>
+      	</where>	
+      </select> 
+      <!-- 按发件地址、收件地址、发件日期查询快递信息 -->
+      <select id="findPackInfoByOtherWays" resultMap="PackageResult" parameterType="String">
+      	select * from package_info 
+      	 <where>
+      	 	<if test="sendpoint!= null and sendpoint!=''">
+      	 	and p_saddress LIKE  "%"#{sendpoint}"%"
+	            
+	        </if>
+	        <if test="receivepoint!= null and receivepoint!=''">
+	            and p_raddress  LIKE  "%"#{receivepoint}"%"
+	        </if>
+	        <if test="senddate!= null and senddate!=''">
+	            and p_date=#{senddate}
+	        </if>
+      	</where>	
+      </select> 
        <!-- 按快递单号码查询快递物流信息 -->
       <select id="findPackLogiByNumber"  resultType="String" parameterType="String">
-      	 select logistics from logistics where packnumber=#{number}     	
+      	 select logistics from logistics where packnumber=#{number}
       </select>  
       <!-- 揽件 -->     
       <update id="updatePackToWait" parameterType="String">

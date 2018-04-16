@@ -1,0 +1,16 @@
+2018-04-16 09:17:10 [ localhost-startStop-1:1848 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 15:41:02 [ localhost-startStop-1:8462 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:40:37 [ localhost-startStop-1:2755 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:49:35 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1197 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:50:11 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:788 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:53:31 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:861 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:54:30 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:697 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 20:55:28 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:664 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:04:10 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:641 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:05:54 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:700 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:06:30 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:749 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:10:23 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:697 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:30:27 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:764 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 21:30:41 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:775 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 22:03:13 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:801 ] - [ ERROR ] maxIdle is deprecated
+2018-04-16 22:20:04 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:811 ] - [ ERROR ] maxIdle is deprecated

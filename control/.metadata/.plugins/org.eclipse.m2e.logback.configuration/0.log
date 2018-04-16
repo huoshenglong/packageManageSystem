@@ -1526,3 +1526,147 @@
 2018-04-15 23:38:23,669 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
 2018-04-15 23:38:23,770 [Worker-90] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2018-04-15 23:38:23,943 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 09:09:29,737 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 09:09:29,988 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 09:09:30,223 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 09:09:30,234 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 16:47:44,987 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 16:47:45,145 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 16:47:45,162 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 16:47:45,168 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 16:47:56,240 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 16:47:56,247 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 16:47:56,250 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 16:47:56,256 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:42:45,413 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:42:45,589 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 17:42:45,592 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:42:45,597 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:43:50,123 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:43:50,131 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 17:43:50,135 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:43:50,141 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:45:52,021 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:45:52,029 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 17:45:52,033 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:45:52,041 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:46:00,808 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:46:00,816 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 17:46:00,819 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:46:00,825 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:49:27,789 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:29,161 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 17:49:29,182 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:29,187 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:49:38,258 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:38,267 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 17:49:38,271 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:38,278 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 17:49:54,006 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:54,014 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 17:49:54,017 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 17:49:54,027 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 19:55:11,197 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 19:55:11,603 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 19:55:11,722 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 19:55:11,776 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 19:56:01,494 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 19:56:01,504 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 19:56:01,507 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 19:56:01,515 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:29:28,978 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:29:29,005 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 20:29:29,010 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:29:29,043 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:29:44,080 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:29:44,090 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 20:29:44,096 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:29:44,106 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:49:21,199 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:49:21,454 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 20:49:21,458 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:49:21,467 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:50:07,622 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:50:07,640 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 20:50:07,645 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:50:07,659 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:53:21,998 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:53:22,334 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 20:53:22,345 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:53:22,365 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:54:19,759 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:54:19,933 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 20:54:19,938 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:54:19,969 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 20:55:21,574 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:55:21,758 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 20:55:21,763 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 20:55:21,770 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:04:00,436 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:04:00,566 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 21:04:00,570 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:04:00,575 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:05:37,337 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:05:37,583 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 21:05:37,585 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:05:37,591 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:06:22,826 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:06:22,982 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 21:06:23,002 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:06:23,008 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:10:14,728 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:10:14,920 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 21:10:14,923 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:10:14,928 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:30:19,326 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:30:19,531 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 21:30:19,534 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:30:19,542 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 21:30:34,398 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:30:34,407 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-16 21:30:34,410 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 21:30:34,420 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 22:03:04,571 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 22:03:04,770 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 22:03:04,776 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 22:03:04,782 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-16 22:19:58,925 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 22:19:59,081 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-16 22:19:59,084 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-16 22:19:59,101 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 00:50:41,544 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:50:41,848 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-17 00:50:41,929 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:50:41,946 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 00:51:23,813 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:51:23,826 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-17 00:51:23,833 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:51:23,840 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 00:53:13,812 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:53:13,840 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-17 00:53:13,846 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:53:13,856 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 00:53:49,679 [Worker-90] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:53:49,686 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-17 00:53:49,688 [Worker-90] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 00:53:49,695 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 01:00:30,910 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:00:30,922 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-17 01:00:30,924 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:00:30,935 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 01:04:19,569 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:04:19,723 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-17 01:04:19,731 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:04:19,746 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 01:11:34,543 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:11:34,672 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2018-04-17 01:11:34,675 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:11:34,686 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 01:14:06,096 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:14:06,122 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-17 01:14:06,127 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:14:06,139 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources
+2018-04-17 01:17:21,962 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:17:22,112 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-04-17 01:17:22,120 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-04-17 01:17:22,135 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\PMS\WorkSpace\control\springmvc\src\test\resources

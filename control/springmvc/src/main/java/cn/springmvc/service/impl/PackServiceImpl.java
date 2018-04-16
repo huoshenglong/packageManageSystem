@@ -105,6 +105,17 @@ public class PackServiceImpl implements PackService{
 		}
 		 
 	}
+	@Override
+	public List<Package> selectPackByPhoneOrNumber(String packnumber,String phone) {
+		System.out.println(packnumber+"****"+phone);
+		return pdo.findPackInfoByPhoneOrNumber(packnumber, phone);
+	}
+	@Override
+	public List<Package> selectPackByOthers(String sendpoint,
+			String receivepoint, String senddate) {
+		 System.out.println(sendpoint+receivepoint+senddate);
+		return pdo.findPackInfoByOtherWays(sendpoint, receivepoint, senddate);
+	}
 	 
 	 
 	 

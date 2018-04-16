@@ -50,4 +50,22 @@ public interface PackService {
 	 * 查找物流信息
 	 * */
 	public String selectLogisticInfo(String packnumber);
+	
+	/*
+	 * 通过手机号和快递单号查询快递信息
+	 * 
+	 * */
+	public List<Package> selectPackByPhoneOrNumber(String packnumber,String phone);
+	
+	/*
+	 * 通过发件地址、收件地址、发件日期查询
+	 * */
+	public List<Package> selectPackByOthers(String sendpoint,String receivepoint,String senddate);
+	
+	
+	
+	
+	
+	
+	
 }

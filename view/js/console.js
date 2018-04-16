@@ -86,16 +86,27 @@ $(document).ready(function(){
 	};
 
     
-	layui.use(['table','element','laypage'], function(){
+	layui.use(['table','element','laypage','laydate'], function(){
 		var $ = layui.$;
 		var table = layui.table,
 		element = layui.element,
-		laypage=layui.laypage; 		
+		laypage=layui.laypage,
+		laydate=layui.laydate; 		
 		//监听表格复选框选择
 		table.on('checkbox(demo)', function(obj){
 			console.log(obj);
 
 		});
+		 table.on('edit(changelogitic)', function(obj){
+
+		    var value = obj.value //得到修改后的值
+		    ,data = obj.data //得到所在行所有键值
+		    ,field = obj.field; //得到字段
+		    layer.msg('[ID: '+ data.packnumber +'] ' + field + ' 字段更改为：'+ value);
+		  });
+		 laydate.render({
+		    elem: '#senddate'
+		  });
 		//监听工具条
 		
 		$('.demoTable .layui-btn').on('click', function(){
@@ -215,6 +226,24 @@ $(document).ready(function(){
 
 				}
 			}); 
+		});
+		table.on('tool(waitsignpack)', function(obj){
+			var data = obj.data;
+			console.log(data.packnumber);
+			// $.ajax({
+			// 	type:"POST",
+			// 	dataType:"json",
+			// 	data:"packnumber="+data.packnumber,
+			// 	url:"http://localhost:8080/springmvc/updatePackState.do",
+			// 	success:function(data){
+			// 		console.log(data);
+			// 		obj.del(); 
+		 // 			layer.msg('快递已签收！');
+			// 	},
+			// 	faile:function(data){
+
+			// 	}
+			// }); 
 		});
 	var packnumber="";
 	var endpoint="";
@@ -469,7 +498,68 @@ $(document).ready(function(){
 					layer.msg('信息修改成功！');
 				}
 			});
-		});	 
+		});	
+		function selectInfoByNumber(packurl){
+			table.render({
+				elem: '#search-result'
+				,height:'500px'
+				,width:'100%'
+				,url: packurl //数据接口
+				//,page: true //开启分页
+				,cols: [[ //表头
+				{field:'packnumber', width:150, title:'快递单号'}
+				,{field:'sname', width:80, sort: true, title: '发件人'}
+				,{field:'sphone', width:120, title: '发件人手机'}
+				,{field:'saddress', width:160, title: '发件地址'} 
+				,{field:'rname', width:80, title: '收件人'}
+				,{field:'rphone', width:120, title: '收件人手机'}
+				,{field:'raddress', width:160, title: '收件人地址'}
+				,{field:'thingsType', width:160 , title: '物品类型'}
+				,{field:'nowtime', width:180 , title: '发件时间'}
+				,{field:'weight', width:40, title: '重量'}
+				]]
+			});
+
+		};
+		function selectInfoByOthers(packurl){
+			table.render({
+				elem: '#search-result-others'
+				,height:'full-200'
+				,width:'100%'
+				,url: packurl //数据接口
+				//,page: true //开启分页
+				,cols: [[ //表头
+				{field:'packnumber', width:150, title:'快递单号'}
+				,{field:'sname', width:80, sort: true, title: '发件人'}
+				,{field:'sphone', width:120, title: '发件人手机'}
+				,{field:'saddress', width:160, title: '发件地址'} 
+				,{field:'rname', width:80, title: '收件人'}
+				,{field:'rphone', width:120, title: '收件人手机'}
+				,{field:'raddress', width:160, title: '收件人地址'}
+				,{field:'thingsType', width:160 , title: '物品类型'}
+				,{field:'nowtime', width:180 , title: '发件时间'}
+				,{field:'weight', width:40, title: '重量'}
+				]]
+			});
+
+		};
+		$('#select-button').click(function(event) {
+			var packnumber=$('#select-number').val();
+			var phone=$('#select-phone').val();
+
+			var packurl='http:/localhost:8080/springmvc/selectByPhoneOrNumber.do?packnumber='+packnumber+'&phone='+phone;
+			selectInfoByNumber(packurl);
+		});
+		$('#select-condition').click(function(event) {
+			
+			var saddress=$('#select-saddress').val();
+			var raddress=$('#select-raddress').val();
+			var nowdate=$('#senddate').val();
+			var packurl='http:/localhost:8080/springmvc/selectByPhoneOthers.do?sendpoint='+saddress+'&receivepoint='+raddress+'&senddate='+nowdate;
+			selectInfoByOthers(packurl);
+		});
+
+
 		{//div的点击事件，将隐藏的div显示
 			$('#console-pack').click(function(event) {
 				$('#pack-div').show();
