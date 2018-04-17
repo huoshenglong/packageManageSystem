@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.springmvc.dao.PackDAO">
+	<resultMap type="cn.springmvc.model.Package" id="PackageResult">
+		<id property="id" column="p_id"/>
+		<result property="sname" column="p_sname"/>
+		<result property="sphone" column="p_sphone"/>
+		<result property="saddress" column="p_saddress"/>
+		<result property="rname" column="p_rname"/>
+		<result property="rphone" column="p_rphone"/>
+		<result property="raddress" column="p_raddress"/>
+		<result property="weight" column="p_weight"/>
+		<result property="thingsType" column="p_type"/>
+		<result property="describe" column="p_describ"/>
+		<result property="nowtime" column="p_date"/>
+		<result property="packnumber" column="p_number"/>		
+	</resultMap>
+	
+	 <!-- 提交快递表单 -->
+      <insert id="addPackInfo" parameterType="Package" >
+      	 insert into package_info(p_sname,p_saddress,p_sphone,p_rname,p_raddress,p_rphone,p_type,p_weight,p_date,p_describ,p_number,p_consignee,p_dispatch) 
+      	 values (#{sname},#{saddress},#{sphone},#{rname},#{raddress},#{rphone},#{thingsType},#{weight},#{nowtime},#{describe},#{packnumber},'0','0')
+      </insert>
+       <!-- 查找未签收的快递数量 -->
+      <select id="findWaitPackageConsignee" resultType="String">
+      	select count(*) from package_info where p_state='0'
+      </select>
+       <!-- 查找待派发的快递的数量 -->
+      <select id="findWaitPackageDispatch" resultType="String">
+       	select count(*) from package_info where p_state='1'
+      </select>
+       <!-- 查找等待签收的快递数量 -->
+      <select id="findWaitSignPack" resultType="String">
+       	select count(*) from package_info where p_state='2'
+      </select>
+       <!-- 查找所有的快递信息 -->
+      <select id="findAllPackInfo" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info limit #{startpage},#{endpage}
+      </select>
+       <!-- 查找所有快递总数 -->
+      <select id="findPackCount" resultType="java.lang.Integer">
+      	select count(*) from package_info
+      </select>
+ 		<!-- 查找待揽快件的信息并分页 -->
+	  <select id="findWaitPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='0' limit #{startpage},#{endpage}	
+      </select>
+		 <!-- 查找待派发的快递信息并分页 -->
+      <select id="findDispatchPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='1' limit #{startpage},#{endpage}
+      </select>
+       <!-- 查找待签收快递信息并分页 -->
+      <select id="selectWaitSignPack" resultMap="PackageResult" parameterType="java.lang.Integer">
+      	select * from package_info where p_state='2' limit #{startpage},#{endpage}
+      </select>      
+       <!-- 按快递单号码查询快递状态 -->
+      <select id="findPackStateByNumber" resultType="String" parameterType="String">
+      	 select p_state from package_info where p_number=#{number}     	
+      </select>     
+       <!-- 按快递单号码查询快递信息 -->
+      <select id="findPackInfoByPhoneOrNumber" resultMap="PackageResult" parameterType="String">
+      	select * from package_info 
+      	 <where>
+      	 	<if test="packnumber!= null and packnumber!=''">
+	            and p_number  LIKE  "%"#{packnumber}"%"
+	        </if>
+	        <if test="phone!= null and phone!=''">
+	            and p_sphone=#{phone}
+	        </if>
+      	</where>	
+      </select> 
+      <!-- 按发件地址、收件地址、发件日期查询快递信息 -->
+      <select id="findPackInfoByOtherWays" resultMap="PackageResult" parameterType="String">
+      	select * from package_info 
+      	 <where>
+      	 	<if test="sendpoint!= null and sendpoint!=''">
+      	 	and p_saddress LIKE  "%"#{sendpoint}"%"
+	            
+	        </if>
+	        <if test="receivepoint!= null and receivepoint!=''">
+	            and p_raddress  LIKE  "%"#{receivepoint}"%"
+	        </if>
+	        <if test="senddate!= null and senddate!=''">
+	            and p_date=#{senddate}
+	        </if>
+      	</where>	
+      </select> 
+       <!-- 按快递单号码查询快递物流信息 -->
+      <select id="findPackLogiByNumber"  resultType="String" parameterType="String">
+      	 select logistics from logistics where packnumber=#{number}
+      </select>  
+      <!-- 揽件 -->     
+      <update id="updatePackToWait" parameterType="String">
+      	update package_info set p_state='1' where p_number=#{packnumber}
+      </update> 
+        <!-- 派件 -->   
+      <update id="updatePackToDispatch" parameterType="String">
+      	update package_info set p_state='2' where p_number=#{packnumber}
+      </update>
+       <!-- 插入快递物流信息的初始状态 -->
+       <insert id="insertLogisticInfo" parameterType="String">
+        insert IGNORE into logistics (packnumber,logistics) values(#{packnumber},#{startpoint})
+       </insert>
+        <!-- 追加快递的物流信息 -->
+      <update id="updateLogisticInfo" parameterType="String">
+       update logistics set logistics=CONCAT_WS('+',logistics,#{logistics}) where packnumber=#{packnumber}
+      </update>
+      
+      <delete id="deletePackInfo" parameterType="String">
+       delete from package_info where p_number=#{packnumber}
+      </delete>
+            
+</mapper>

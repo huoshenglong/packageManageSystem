@@ -55,5 +55,10 @@ public class UserServiceImpl implements UserService{
 		 
 		return  userDAO.getUserInfo(username);
 	}
+	@Override
+	public int updatePswByUsername(String username, String psw) {
+		 
+		return userDAO.updatePsw(username, psw);
+	}
 
 }

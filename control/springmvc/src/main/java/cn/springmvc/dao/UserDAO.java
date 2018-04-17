@@ -27,4 +27,6 @@ public interface UserDAO {
 	
 	public int updateUserInfo(@Param("phone") String phone,@Param("email") String email,@Param("address") String address,@Param("imgurl") String imgurl,@Param("username") String username);
 
+	
+	public int updatePsw(@Param("username") String username,@Param("psw") String psw);
 }

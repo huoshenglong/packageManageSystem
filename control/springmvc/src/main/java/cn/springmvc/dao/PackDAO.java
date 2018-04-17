@@ -1,13 +1,15 @@
 package cn.springmvc.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
 import cn.springmvc.model.Package;
 
 public interface PackDAO {
-
+	Map<String, String> map=new HashMap<String, String>();
 	public int addPackInfo(Package pack);
 	public int findPackCount();
 	public String findWaitPackageConsignee();
@@ -28,4 +30,10 @@ public interface PackDAO {
 	public List<Package> findPackInfoByPhoneOrNumber(@Param("packnumber") String packnumber,@Param("phone") String phone);
 	
 	public List<Package> findPackInfoByOtherWays(@Param("sendpoint") String sendpoint,@Param("receivepoint") String receivepoint,@Param("senddate") String senddate);
+
+	public int deletePackInfo(@Param("packnumber") String packnumber);
+	public int deleteLogisticInfo(@Param("packnumber") String packnumber);
+	
+	public int updatePackInfo(@Param("packnumber") String packnumber,@Param("field") String field,@Param("value") String value);
+
 }

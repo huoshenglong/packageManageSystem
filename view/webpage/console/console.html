@@ -31,7 +31,7 @@
         </a> 
         <dl class="layui-nav-child">
           <dd><a href="javascript:;" id="baseInfo">基本资料</a></dd>
-          <dd><a href="javascript:;">安全设置</a></dd>
+          <dd><a href="javascript:;" id="passwords">安全设置</a></dd>
         </dl>                                                                                                                                           
       </li>
       <li class="layui-nav-item"><a id="loginout" href="javascript:;" style="color:#008080">
@@ -58,9 +58,7 @@
         <li class="layui-nav-item">
           <a id="console-infomation" href="javascript:;"><img src="../../images/bussiness-card.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;修改信息</a>
         </li>
-        <li class="layui-nav-item">
-          <a id="console-employee" href="javascript:;"><img src="../../images/personal-center.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;员工信息</a>
-        </li>
+         
       </ul>
     </div>
   </div>
@@ -111,7 +109,7 @@
         </div>
         <label class="layui-form-label">手机号：</label>
         <div class="layui-input-inline">
-        <input type="text" id="select-phone" lay-verify="required" placeholder="请输入" class="layui-input">
+        <input type="text" id="select-phone" lay-verify="required" placeholder="发件人手机号" class="layui-input">
         </div>
           
         <div class="layui-input-inline">
@@ -204,45 +202,41 @@
   </ul>
   <div class="layui-tab-content" style="height: 100px;">
     <div class="layui-tab-item layui-show">
-       <table class="layui-table" lay-data="{url:'http://localhost:8080/springmvc/queryAllInfo.do', id:'changelogitic',page:true}" lay-filter="changelogitic">
+       <table class="layui-table" lay-data="{url:'http://localhost:8080/springmvc/packstate.do?type=wait', id:'changelogitic',page:true}" lay-filter="changelogitic">
         <thead>
-          <tr>
-            <th lay-data="{type:'checkbox'}">ID</th>
-          
-            <th lay-data="{field:'packnumber', width:150  }">快递单号</th>
-            <th lay-data="{field:'sname', width:80, sort: true,   edit: 'text', minWidth: 150}">发件人</th>
-            <th lay-data="{field:'sphone', width:120,edit: 'text'}">发件人手机</th>
-            <th lay-data="{field:'saddress', width:200,edit: 'text'}">发件人地址</th>
-            <th lay-data="{field:'rname', width:80, edit: 'text'}">收件人</th>
-            <th lay-data="{field:'rphone', width:120, edit: 'text'}">收件人手机</th>
-            <th lay-data="{field:'raddress', width:200,  edit: 'text'}">收件人地址</th>
-            <th lay-data="{field:'thingsType', width:200 , edit: 'text'}">物品类型</th>
-             <th lay-data="{field:'weight', width:80 ,edit: 'text'}">重量</th> 
+          <tr> 
+            <th lay-data="{field:'packnumber', width:160 ,sort: true }">快递单号</th>
+            <th lay-data="{field:'sname', width:120,   edit: 'text' }">发件人</th>
+            <th lay-data="{field:'sphone', width:170,edit: 'text'}">发件人手机</th>
+            <th lay-data="{field:'saddress', width:280,edit: 'text'}">发件人地址</th>
+            <th lay-data="{field:'rname', width:120, edit: 'text'}">收件人</th>
+            <th lay-data="{field:'rphone', width:170, edit: 'text'}">收件人手机</th>
+            <th lay-data="{field:'raddress', width:280,  edit: 'text'}">收件人地址</th>
           </tr>
         </thead>
       </table>
     </div>
-    <div class="layui-tab-item">内容2</div> 
+    <div class="layui-tab-item">
+    <table class="layui-table" lay-data="{url:'http://localhost:8080/springmvc/packstate.do?type=wait', id:'cancel',page:true}" lay-filter="cancel">
+        <thead>
+          <tr> 
+            <th lay-data="{field:'packnumber', width:160 ,sort: true }">快递单号</th>
+            <th lay-data="{field:'sname', width:120,   edit: 'text' }">发件人</th>
+            <th lay-data="{field:'sphone', width:170,edit: 'text'}">发件人手机</th>
+            <th lay-data="{field:'saddress', width:240,edit: 'text'}">发件人地址</th>
+            <th lay-data="{field:'rname', width:120, edit: 'text'}">收件人</th>
+            <th lay-data="{field:'rphone', width:170, edit: 'text'}">收件人手机</th>
+            <th lay-data="{field:'raddress', width:240,  edit: 'text'}">收件人地址</th>
+            <th lay-data="{fixed: 'right', width:80, toolbar: '.delete'}">操作选项</th>
+          
+          </tr>
+        </thead>
+      </table>
+    </div> 
   </div>
 </div> 
     </div>
-    <div id="employee-div">      <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-  <ul class="layui-tab-title">
-    <li class="layui-this">所有员工</li>
-    <li>添加员工</li>
-    <li>更新信息</li>
-    <li>解雇员工</li>
-    <li>查找信息</li>
-  </ul>
-  <div class="layui-tab-content" style="height: 100px;">
-    <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-    <div class="layui-tab-item">内容2</div>
-    <div class="layui-tab-item">内容3</div>
-    <div class="layui-tab-item">内容4</div>
-    <div class="layui-tab-item">内容5</div>
-  </div>
-</div> 
-    </div>
+     
   </div>
  
   <div class="layui-footer" style="text-align: center;">     
@@ -259,6 +253,10 @@
 <script type="text/html" class="waitsignpack"> 
   <a class="layui-btn   layui-btn-xs layui-bg-blue" id="qianshoubtn" lay-event="del">签收</a>
 </script>
+<script type="text/html" class="delete"> 
+  <a class="layui-btn   layui-btn-xs layui-bg-blue" id="cancel" lay-event="del">退单</a>
+</script>
+
 </body>
 
 <div id="myinfo">
@@ -295,6 +293,35 @@
     </div>
   </div>
   
+</div>
+
+
+<div id="changepsw">
+     <div class="layui-form-item">
+    <label class="layui-form-label">原密码：</label>
+    <div class="layui-input-inline">
+      <input type="password" id="oldpsw" lay-verify="required" placeholder="请输入"  class="layui-input">
+    </div>
+  </div>  
+  <div class="layui-form-item">
+    <label class="layui-form-label">新密码：</label>
+    <div class="layui-input-inline">
+      <input type="password" id="newpsw" lay-verify="required" placeholder="请输入" class="layui-input">
+    </div>
+  </div>  
+  <div class="layui-form-item">
+    <label class="layui-form-label">确认密码：</label>
+    <div class="layui-input-inline">
+      <input type="password" id="confirmpsw" lay-verify="required" placeholder="请输入"   class="layui-input">
+
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn"  id="sublit-psw">立即提交</button>
+      
+    </div>
+  </div>
 </div>
 </html>
  

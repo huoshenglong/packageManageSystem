@@ -116,6 +116,21 @@ public class PackServiceImpl implements PackService{
 		 System.out.println(sendpoint+receivepoint+senddate);
 		return pdo.findPackInfoByOtherWays(sendpoint, receivepoint, senddate);
 	}
+	@Override
+	public boolean deletePackInfo(String packnumber) {
+		int result1=pdo.deletePackInfo(packnumber);
+		pdo.deleteLogisticInfo(packnumber);
+		if (result1>0) {
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public int updatePackInfo(String packnumber, String field, String value) {
+		 
+		return pdo.updatePackInfo(packnumber, field, value);
+	}
+
 	 
 	 
 	 

@@ -13,4 +13,7 @@
          <select id="getUserInfo" parameterType="String" resultType="User">
           	select * from users_table where username = #{username}
          </select>
+         <update id="updatePsw" parameterType="String">
+         	update users_table set password=#{psw} where username=#{username}
+         </update>
 </mapper>

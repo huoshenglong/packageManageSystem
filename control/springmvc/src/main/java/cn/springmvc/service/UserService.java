@@ -12,4 +12,6 @@ public interface UserService {
 	public boolean loginByName(String username,String password);
 	public boolean updateUserInfo(String []str);
 	public List<User> selectUserInfo(String username);
+	
+	public int updatePswByUsername(String username,String psw);
 }

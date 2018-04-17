@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	{//登录和退出的动作
 		var username="";
+		var credential="";
 		username=window.location.href.split("=")[1];//获取用户名
 		$('#username').text(username);
 		$('#username-info').text(username);
@@ -16,7 +17,7 @@ $(document).ready(function(){
 		$('#state-div').hide();
 		$('#pack-next-console').hide();
 		$('#myinfo').hide();
-		
+		$('#changepsw').hide();
 	}
 
 	{//加载显示快递的状态
@@ -48,7 +49,7 @@ $(document).ready(function(){
 		    $('#address-info').val(result[0].address);
 		    $('#imgbackage').attr("src",result[0].imgurl); 
 		    $('#userinfoimg').attr("src",result[0].imgurl);
-		    	 
+		    credential=result[0].password;
 		    },
 		    error : function(result) {
 				     console.log('用户信息加载错误！');    
@@ -103,6 +104,19 @@ $(document).ready(function(){
 		    ,data = obj.data //得到所在行所有键值
 		    ,field = obj.field; //得到字段
 		    layer.msg('[ID: '+ data.packnumber +'] ' + field + ' 字段更改为：'+ value);
+		    $.ajax({
+		    	type:'POST',
+		    	dataType:'json',
+		    	url:'http://localhost:8080/springmvc/updatePackInfo.do',
+		    	data:{
+		    		"packnumber":data.packnumber,
+		    		"field":field,
+		    		"value":value
+		    	},
+		    	success:function(result){
+
+		    	},
+		    });
 		  });
 		 laydate.render({
 		    elem: '#senddate'
@@ -227,23 +241,41 @@ $(document).ready(function(){
 				}
 			}); 
 		});
-		table.on('tool(waitsignpack)', function(obj){
+		table.on('tool(sign)', function(obj){
 			var data = obj.data;
 			console.log(data.packnumber);
-			// $.ajax({
-			// 	type:"POST",
-			// 	dataType:"json",
-			// 	data:"packnumber="+data.packnumber,
-			// 	url:"http://localhost:8080/springmvc/updatePackState.do",
-			// 	success:function(data){
-			// 		console.log(data);
-			// 		obj.del(); 
-		 // 			layer.msg('快递已签收！');
-			// 	},
-			// 	faile:function(data){
+			$.ajax({
+				type:"POST",
+				dataType:"json",
+				data:"packnumber="+data.packnumber,
+				url:"http://localhost:8080/springmvc/deletePack.do",
+				success:function(data){
+					console.log(data);
+					obj.del(); 
+		 			layer.msg('快递已签收！');
+				},
+				faile:function(data){
 
-			// 	}
-			// }); 
+				}
+			}); 
+		});
+		table.on('tool(cancel)', function(obj){
+			var data = obj.data;
+			console.log(data.packnumber);
+			$.ajax({
+				type:"POST",
+				dataType:"json",
+				data:"packnumber="+data.packnumber,
+				url:"http://localhost:8080/springmvc/deletePack.do",
+				success:function(data){
+					console.log(data);
+					obj.del(); 
+		 			layer.msg('订单已取消！');
+				},
+				faile:function(data){
+
+				}
+			}); 
 		});
 	var packnumber="";
 	var endpoint="";
@@ -432,6 +464,51 @@ $(document).ready(function(){
 		$('#console-waitsign-pack').on('click',  function(event) {			 
 			getPackStateWaitSign('#wait-sign','waitsign');						
 			$('#need-sign').hide();	 
+		});
+		$('#passwords').click(function(event) {
+		
+			layer.open({
+				  type: 1,
+				  title:'修改密码',
+				  skin: 'layui-layer-rim', //加上边框
+				  area: ['370px', '330px'], //宽高
+				  content:$('#changepsw')
+				});
+			
+		});
+		$('#oldpsw').blur(function(event) {
+
+			 var oldpsw=$('#oldpsw').val();
+			 if (oldpsw!=credential) {
+			 	alert('原密码错误！');
+			 	$('#oldpsw').val("");
+			 }
+			 
+		});
+		$('#sublit-psw').click(function(event) {
+			
+			var newpsw=$('#newpsw').val();
+			var submitpsw=$('#confirmpsw').val();
+			if (newpsw!=submitpsw) {
+				alert('两次密码输入不一致！');
+			}
+			if (newpsw==submitpsw) {
+				$.ajax({
+			    url: 'http://localhost:8080/springmvc/changePsw.do',
+			    type: 'POST',
+			    cache: false,
+			    data:{
+			    	"username":username,
+			    	"psw":newpsw
+			    },
+			    success:function(data){ 
+			    	console.log(data);
+			    	layer.close(layer.index);
+					layer.msg('密码修改成功！');
+			    }
+			}) ;
+		  
+			}
 		});
 		$('#baseInfo').click(function(){
 				layer.open({

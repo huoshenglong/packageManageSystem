@@ -174,8 +174,7 @@ public class MainController {
 			String []str=result.split("\\+");
 			
 			for (int i = 0; i < str.length; i++) {
-				System.out.println(str[i]);
-				String []info=str[i].split(".");			
+				System.out.println(str[i]); 		
 				list.add(str[i]);
 			}		
 			return list;
@@ -218,6 +217,52 @@ public class MainController {
 		return map;
 	}
 	
+	
+	@RequestMapping("deletePack")
+	@ResponseBody
+	public String deletePack(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber"); 
+		boolean result=pss.deletePackInfo(packnumber);
+		if (result) {
+			return "delete success";
+		}
+		return "delete faile";
+	}
+	
+	
+	@RequestMapping("updatePackInfo")
+	@ResponseBody
+	public String updatePackInfo(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber"); 
+		String field=request.getParameter("field"); 
+		String value=request.getParameter("value");
+		if (field.equals("sname")) {
+			field="p_sname";
+		}
+		if (field.equals("sphone")) {
+			field="p_sphone";
+		}
+		if (field.equals("saddress")) {
+			field="p_saddress";
+		}
+		if (field.equals("rname")) {
+			field="p_rname";
+		}
+		if (field.equals("rphone")) {
+			field="p_rphone";
+		}
+		if (field.equals("raddress")) {
+			field="p_raddress";
+		}
+		 
+		System.out.println(packnumber+field+value);
+		int result=pss.updatePackInfo(packnumber,field,value);
+		if (result>0) {
+			System.out.println("updatesccess");
+			return "update success";
+		}
+		return "update faile";
+	}
 
 }
 

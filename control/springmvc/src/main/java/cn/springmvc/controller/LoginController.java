@@ -60,5 +60,18 @@ public class LoginController {
 		list=uss.selectUserInfo(username);
 		return list;	 
 	}
+	
+	@RequestMapping("changePsw")
+	@ResponseBody
+	public String updatePsw(HttpServletRequest request) { 
+		String username = request.getParameter("username");   
+		String psw = request.getParameter("psw");  
+		int result=uss.updatePswByUsername(username, psw);
+		if (result>0) {
+			return "updetepsw success";
+		}
+		return "updetepswfaile";	 
+	}
+	
 	 
 }

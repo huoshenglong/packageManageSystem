@@ -107,6 +107,16 @@
       <update id="updateLogisticInfo" parameterType="String">
        update logistics set logistics=CONCAT_WS('+',logistics,#{logistics}) where packnumber=#{packnumber}
       </update>
+      <!-- 修改快递信息 -->
+       <update id="updatePackInfo" parameterType="String"  >
+        update package_info set ${field}=#{value} where p_number=#{packnumber}
+    	</update>
       
+      <delete id="deletePackInfo" parameterType="String">
+       delete from package_info where p_number=#{packnumber}
+      </delete>
+      <delete id="deleteLogisticInfo" parameterType="String">
+       delete from logistics where packnumber=#{packnumber}
+      </delete>
             
 </mapper>
