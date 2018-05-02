@@ -433,7 +433,8 @@ $(document).ready(function(){
 		    type: "POST", 
 		    dataType: "json", 
 		    url: "http://localhost:8080/springmvc/packpoint.do" , 
-		    success: function (result) {	          
+		    success: function (result) {	
+		    // console.log(result);          
 	     		for(var i=0;i<result.size;i++){
 			        var marker = new BMap.Marker(new BMap.Point(result.point[i].longitude,result.point[i].latitude));  // 创建标注
 			        var content = result.point[i].discription;
