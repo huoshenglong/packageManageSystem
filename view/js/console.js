@@ -440,7 +440,7 @@ $(document).ready(function(){
 			        var content = result.point[i].discription;
 			        // console.log(content);
 			        map.addOverlay(marker);// 将标注添加到地图中
-			        addClickHandler(content,marker);
+			       addClickHandler(content,marker);
 
 			    }
 			    function addClickHandler(content,marker){
