@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../mycss/main.css"> 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZWsHXhetH5SOnKEttV6ynmiR4MSKAVBQ"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/verification.js"></script>
     <title>快递服务-主页面</title>
 <style type="text/css">
 	input[type="text"],input[type="password"]{
@@ -97,8 +98,8 @@
 </div>
 <div id="right-display">
 	<!-- 我要寄快递 -->
-	<div id="form-send">
-	 	<form class="layui-form"  id="i-want-send-pack" >
+	<div id="form-send" class="send-btu-div">
+	 	<form class="layui-form"  class="i-want-send-pack" >
 		  	<div id="sender">
 		  		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
 		  		<legend>寄件人信息</legend>
@@ -224,7 +225,7 @@
 		</form>
 	</div>
 	<!-- 订单查询 -->
-	<div id="find-order"> 
+	<div id="find-order" class="find-btu-div"> 
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
 			  <legend>快递订单查询</legend>
 			</fieldset>
@@ -257,7 +258,7 @@
 		 
 	</div>
 	<!-- 时效查询 -->
-	<div id="time-order">
+	<div id="time-order" class="time-btu-div">
 		<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>运单时效查询</legend>
 	 	<form class="layui-form"   style="margin-top: 50px;">
@@ -343,10 +344,10 @@
 		
 	</div>
 	<!-- 网点查询 -->
-	<div id="allmap">
+	<div id="allmap" class="neets-btu-div">
 	</div>
 	<!-- 收寄标准查询 -->
-	<div id="strand-div">
+	<div id="strand-div" class="strand-btu-div">
 		<h3 style="color: red">收寄原则：</h3>
 
 		<h4>一、禁止收寄：禁止收取易燃、易爆、易腐蚀、有毒、放射性及违法物品。</h4>
@@ -382,7 +383,7 @@
 		    <p> 散单客户发至新疆单票快件计费重量不超过1KG。</p>
 	</div>
 	<!-- 汇率查询 -->
-	<div id="exchange">
+	<div id="exchange" class="cp1-div">
 		<form class="layui-form" id="form-cash" action="">
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 			  <legend>汇率查询</legend>
@@ -433,7 +434,7 @@
 			</div> 		 
 	</div>
 	<!-- 常用表格 -->
-	<div id="com-table">
+	<div id="com-table" class="cp2-div">
 		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
 	  		<legend>相关表格-下载</legend>
 		</fieldset>
@@ -504,7 +505,7 @@
 		<p>在您下载表格并填写相关内容后，请回传至相应服务区域传真号码查询。</p>
 	</div>
 	<!-- 代收款查询 -->
-	<div id="cashquery">
+	<div id="cashquery" class="cp3-div">
 		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 		  <legend>代收款-服务</legend>
 		</fieldset>

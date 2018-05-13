@@ -1,0 +1,3 @@
+2018-05-07 11:02:58 [ localhost-startStop-1:2118 ] - [ ERROR ] maxIdle is deprecated
+2018-05-07 11:03:54 [ localhost-startStop-1:1298 ] - [ ERROR ] maxIdle is deprecated
+2018-05-07 11:05:05 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1006 ] - [ ERROR ] maxIdle is deprecated

@@ -103,22 +103,19 @@ li {
 #infomation1,#infomation2{
     height: 78px;
     width: 60px;
-    position: absolute;
-    /*background:linear-gradient(#5D8CE9,#344E82,#26395F);*/
+    position: absolute; 
     background-color: #FF5722;
     z-index: 200;
     right:0;
-    top:270px;
+    top:220px;
     margin:2px;
     float: right;
-     color:white;
-     text-align: center;
-     cursor:pointer;
+    color:white;
+    text-align: center;
+    cursor:pointer;
 }  
 #infomation2{
-    top: 350px;
-    /*background:linear-gradient(#26395F,#344E82,#5D8CE9);*/
-    background-color: #FF5722;
+    top: 300px; 
 }
 .search{
     height: 150px;
@@ -126,9 +123,8 @@ li {
     border-radius: 10px 10px 0 0;
     z-index: 399;
     position: absolute;
-    top: 465px;
-    left: 150px;
-    /*background-color: #2F4056;*/
+    top: 365px;
+    left: 150px; 
     background-color: rgba(47,64,86,0.8);/*#30B8B0*/
     text-align: center;
 }
@@ -264,15 +260,14 @@ li {
 #introduce{
    
     width: 90%;
-    height: 100%;
+    height: 520px;
     text-align: center;    
-    margin:auto;
-     
+    margin:auto; 
+    overflow: hidden;
 }
 #intro1,#intro2,#intro3,#intro4,#intro5,#intro6{
     float: left;    
     width: 30%;
-    height: 100%;
     margin-left: 30px;
 }
  
@@ -280,20 +275,13 @@ li {
     position: fixed;
     width: 40px;
     height: 40px;
-    bottom: 40px;
+    bottom: 150px;
     right: 30px;
     background-image:url(..//images/top1.png);
     background-size: 100%;
     cursor: pointer;
 }
 #return-top:hover{
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    bottom: 40px;
-    right: 30px; 
-    cursor: pointer;
-    background-size: 100%;
     background-image:url(..//images/top2.png);
 }
 #introduce .layui-carousel img {

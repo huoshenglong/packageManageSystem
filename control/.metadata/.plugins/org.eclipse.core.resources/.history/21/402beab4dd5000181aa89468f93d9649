@@ -1,5 +1,0 @@
-package cn.springmvc.interceptor;
-
-public class Interceptor {
-
-}

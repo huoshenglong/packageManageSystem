@@ -1,19 +1,7 @@
 $(document).ready(function(){
- //logistics.html页面的设计js
-    $('#form-send').hide();
-    $('#find-order').hide();
-    $('#time-order').hide();
-    $('#allmap').hide();
-    $('#strand-div').hide();
-    $('#exchange').hide();
-    $('#result-cash').hide();
-    $('#com-table').hide();
-    $('#cashquery').hide();
-    
-	$('#cp1').hide();
-	$('#cp2').hide();
-	$('#cp3').hide();
  
+	$('#right-display >div').hide();
+	$('.morechose').hide();
 	$('#find-more').click(function(){
 		var l_he=$('#lots').height();
 		if (l_he<190) {
@@ -53,88 +41,14 @@ $(document).ready(function(){
 		num=num*1+1*1;
 		$("#right-input-weight").val(num)
 	});
-	 $('#send-btu').click(function(){
-	 	$('#form-send').show();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#find-btu').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').show();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#time-btu').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').show();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#neets-btu').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').show();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#strand-btu').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').show();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#exchange-query').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').show();
-	    $('#com-table').hide();
-	    $('#cashquery').hide();
-	 });
-	 $('#comment-table').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').show();
-	    $('#cashquery').hide();
-	 });
-
-	 $('#cash-query').click(function(){
-	 	$('#form-send').hide();
-	    $('#find-order').hide();
-	    $('#time-order').hide();
-	    $('#allmap').hide();
-	    $('#strand-div').hide();
-	    $('#exchange').hide();
-	    $('#com-table').hide();
-	    $('#cashquery').show();
-	 });
-
+	$("#left-chose > div").click(function(){
+	    $(`.${this.id}-div`).show();
+	    $(`.${this.id}-div`).siblings('div').hide();
+	});
+	$("#lots >div").click(function(){
+	    $(`.${this.id}-div`).show();
+	    $(`.${this.id}-div`).siblings('div').hide();
+	});
 	$('#exchange-cash').click(function() {
 		var start_cash=$('#start-cash').children('option:selected').val();
 		var end_cash=$('#end-cash').children('option:selected').val();
@@ -163,119 +77,55 @@ $(document).ready(function(){
 
 	layui.use('form',function(){
 		var form=layui.form;
-		form.on('select(f-province)', function(provinceid){			 
+		function getCity(cityIdTarg,provinceid){
+			$.ajax({
+			    type: "POST",//方法类型
+			    dataType: "json",//预期服务器返回的数据类型
+			    url: "http://localhost:8080/springmvc/city.do" ,//url
+			    data:  "provinceid="+provinceid.value,
+			    success: function (data) {
+			     $("#"+cityIdTarg).empty();
+			     for (var i = 0; i <= data.length - 1; i++) {
+			     	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";	      
+			 		$("#"+cityIdTarg).append(options);	   
+			         }
+			 		form.render('select');
+			    },
+			    error : function(data) {             	     
+			    }
+			});
+		};
+		function transCity(provinceid){
+			var cityId=	provinceid.elem.id.split("-");
+			cityId=cityId[0]+'-'+cityId[1]+'-'+'city'+'-'+cityId[3];
 		 
-		   $.ajax({
-			 
-		        type: "POST",//方法类型
-		        dataType: "json",//预期服务器返回的数据类型
-		        url: "http://localhost:8080/springmvc/city.do" ,//url
-		        data:  "provinceid="+provinceid.value,
-		        success: function (data) {	
-		          
-		         $("#f-select-city-id").empty();     
-		         for (var i = 0; i <= data.length - 1; i++) {
-		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
-	      
-	         		$("#f-select-city-id").append(options);
-	   
- 		         }       	 
-		         	
-	         		form.render('select');
-		        },
-		        
-		        error : function(data) {	                	     
-		        }
-	    	});
+			return cityId;
+		};
+		form.on('select(f-province)', function(provinceid){		 		 
+			getCity(transCity(provinceid),provinceid);
 		});
-		form.on('select(t-province)', function(provinceid){			 
-	 
-		   $.ajax({
-			 
-		        type: "POST",//方法类型
-		        dataType: "json",//预期服务器返回的数据类型
-		        url: "http://localhost:8080/springmvc/city.do" ,//url
-		        data:  "provinceid="+provinceid.value,
-		        success: function (data) {	
-		          
-		         $("#t-select-city-id").empty();     
-		         for (var i = 0; i <= data.length - 1; i++) {
-		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
-	      
-	         		$("#t-select-city-id").append(options);
-	   
- 		         }       	 
-		         	
-	         		form.render('select');
-		        },
-		        
-		        error : function(data) {	                	     
-		        }
-	    	});
+		form.on('select(t-province)', function(provinceid){	
+			getCity(transCity(provinceid),provinceid);
 		});
-		form.on('select(s-province)', function(provinceid){			 
-		  console.log(provinceid.value); //得到被选中的值
-		   $.ajax({
-			 
-		        type: "POST",//方法类型
-		        dataType: "json",//预期服务器返回的数据类型
-		        url: "http://localhost:8080/springmvc/city.do" ,//url
-		        data:  "provinceid="+provinceid.value,
-		        success: function (data) {	
-		          
-		         $("#s-select-city-id").empty(); 
-
-		         for (var i = 0; i <= data.length - 1; i++) {
-		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";
-	      
-	         		$("#s-select-city-id").append(options);
-	   
- 		         }       	 
-		         	
-	         		form.render('select');
-		        },
-		        
-		        error : function(data) {	                	     
-		        }
-	    	});
+		form.on('select(s-province)', function(provinceid){	
+			getCity(transCity(provinceid),provinceid);;
 		});
-		form.on('select(e-province)', function(provinceid){			 
-		  console.log(provinceid.value); //得到被选中的值
-		   $.ajax({
-			 
-		        type: "POST",//方法类型
-		        dataType: "json",//预期服务器返回的数据类型
-		        url: "http://localhost:8080/springmvc/city.do" ,//url
-		        data:  "provinceid="+provinceid.value,
-		        success: function (data) {			          
-		         $("#e-select-city-id").empty();     
-		         for (var i = 0; i <= data.length - 1; i++) {
-		         	var options="<option value='"+data[i].cityId+"'>"+data[i].city+"</option>";	      
-	         		$("#e-select-city-id").append(options);	   
- 		         }       	 		         	
-	         		form.render('select');
-		        },		        
-		        error : function(data) {	                	     
-		        }
-	    	});
+		form.on('select(e-province)', function(provinceid){	
+			getCity(transCity(provinceid),provinceid);
 		});
-		$.ajax({
-		 	 
+  
+		$.ajax({		 	 
 	        type: "POST",//方法类型
 	        dataType: "json",//预期服务器返回的数据类型
 	        url: "http://localhost:8080/springmvc/province.do" ,//url
-	        // data:  "emailnum="+emailnumber,
-	        success: function (result) {
-	        	 
+	        success: function (result) { 
 	         	for (var i =0 ; i <= result.length - 1; i++) {
-	         		var options="<option value='"+result[i].provinceId+"'>"+result[i].province+"</option>";
-	         		
+	         		var options="<option value='"+result[i].provinceId+"'>"+result[i].province+"</option>";	         		
 	         		$("#f-select-province-id").append(options);
 	         		$("#t-select-province-id").append(options);
 	         		$("#s-select-province-id").append(options);
 	         		$("#e-select-province-id").append(options);
-	         	}
-	   		 
+	         	} 
 	         	form.render('select');	
 	        },
 	        error : function(result) {	                	     
@@ -283,17 +133,6 @@ $(document).ready(function(){
 	    });		
 	});
 	// 快递表单验证
-	$('#email-input-number').blur(function(event) {	 
-		var reg =  /\w+[@]{1}\w+[.]\w+/; 
-	    var value=$('#email-input-number').val();	 
-	    if (reg.test(value)==false) {
-				layer.tips('邮箱格式不正确！', '#email-input-number', {
-				  tips: [2, '#EE2C2C'],
-				  time: 5000
-				});
-			}
-
-	});
 	var emaileCode='';
 	$('#get-iden-code').click(function(){//用于邮箱验证
 		var emailnumber=$('#email-input-number').val();	
@@ -303,12 +142,11 @@ $(document).ready(function(){
 	            dataType: "json",//预期服务器返回的数据类型
 	            url: "http://localhost:8080/springmvc/email.do" , 
 	            data:  "emailnum="+emailnumber,
-	            success: function (result) {	            	 
+	            success: function (result) {
 	             	emaileCode=result;
 	             	alert('请注意查收验证码！');
 	            },
 	            error : function(result) {
-	                
 	            }
 	        }); 
 		}else{
@@ -345,7 +183,7 @@ $(document).ready(function(){
 					        	//同时将提交按钮设为不可用
 					        	$('#submit-package-button').attr("disabled","disabled");
 					        },
-					        error : function(result) {	                	 
+					        error : function(result) {
 					            console.log(result);
 					        }
 				    	});
@@ -393,9 +231,7 @@ $(document).ready(function(){
     			year=year*1+1;
     			month=1;
     			day=3;
-    		}
-    		$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
-    		$('#aboutcost').text('费用大约为：'+cost);
+    		} 
     	}
     	if (!stand) { 
     		var cost=(weight*1-1)*8+15;
@@ -409,9 +245,10 @@ $(document).ready(function(){
     			month=1;
     			day=7;
     		}
-    		$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
-    		$('#aboutcost').text('费用大约为：'+cost);
+    		
     	}
+    	$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
+    	$('#aboutcost').text('费用大约为：'+cost);
     });
     $('#selectLogistic-btn').click(function(){
     	$('#showloginfo').text("");

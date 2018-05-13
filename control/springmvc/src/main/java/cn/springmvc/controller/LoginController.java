@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,9 @@ import cn.springmvc.service.UserService;
 public class LoginController {
  
 	@Autowired
-	public UserService uss;	
+	public UserService uss;	 
+	
+	HttpSession session;
 	@RequestMapping("login")
 	@ResponseBody
 	public String login(HttpServletRequest request) {
@@ -28,12 +30,29 @@ public class LoginController {
 		boolean result=uss.loginByName(username, password);
 		if (result) {
 			System.out.println("login success");
+			session=request.getSession();
+			session.setAttribute("username", username);
 			return "success";
 		}else{
 			System.out.println("login faile");
 			return "faile";
 		}	 
 	}
+	
+	@RequestMapping("loginState")
+	@ResponseBody
+	public String loginState(HttpServletRequest request){
+		String username=null;
+		try {
+			username=session.getAttribute("username").toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		System.out.println(username);
+		return username;
+	}
+	
+	
 	@RequestMapping("updateuserinfo")
 	@ResponseBody
 	public String updateInfo(HttpServletRequest request) {

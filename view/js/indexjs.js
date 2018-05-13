@@ -10,7 +10,6 @@ $(document).ready(function(){
 					<div id="info">			 
 					 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
 					 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value=""></label>		 
-					  
 						 <br> <br>  
 					 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value=""></label>
 					 	<br>
@@ -32,14 +31,10 @@ $(document).ready(function(){
 		</div>
 	`);
 	$("#login_div").hide();
-	$("#intro1",).hide();
-	$("#intro2").hide();
-	$("#intro3").hide();
+	 
 	$("#intro4").hide();
 	$("#intro5").hide();
 	$("#intro6").hide();
-	// $("#findpackinfo").hide();
-	
 	$("#s-left").hide();
 	$("#s-middle").hide();
 	$("#s-right").hide(); 
@@ -82,56 +77,20 @@ $(document).ready(function(){
 		  });
 		//显示图片轮播
 		carousel.render({
-	    elem: '#test1'
+	    elem: '#maincarousel'
 	    ,width: '100%' //设置容器宽度
-	    ,height:'550px'
+	    ,height:'450px'
 	    //,arrow: 'always' //始终显示箭头
   		});
-  		carousel.render({
-	    elem: '#cold-transportation'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',	    
-	    anim:'updown',
-	    indicator:'none'
-  		});
-  		carousel.render({
-	    elem: '#warehousing'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',	    
-	    anim:'updown',
-	    indicator:'none'
-  		});
-  		carousel.render({
-	    elem: '#express'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',	  
-	    anim:'fade',
-	    indicator:'none'
-  		});
-
-  		carousel.render({
-	    elem: '#international-service'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',	  
-	    anim:'fade',
-	    indicator:'none'
-  		});
-
-  		carousel.render({
-	    elem: '#medicin-service'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',	  
-	    anim:'updown',
-	    indicator:'none'
-  		});
-
-  		carousel.render({
-	    elem: '#time-define-service'
-	    ,width: '100%' //设置容器宽度
-	    ,height:'200px',
-	    anim:'fade',
-	    indicator:'none'
-  		});
+  		for (var i = 1; i<=6; i++) {
+  			carousel.render({
+		    elem: '#carousel'+i
+		    ,width: '100%' //设置容器宽度
+		    ,height:'200px',
+		    anim:'updown',
+		    indicator:'none'
+	  		});
+  		}
   		form.on('radio(input_radio_info)', function (data) {
 			alert(data.value);//判断单选框的选中值
 			var inputvalue=$('#input_value').val();

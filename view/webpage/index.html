@@ -62,7 +62,7 @@
 		  </li>
 	</ul>
  
-	<div class="layui-carousel" id="test1">
+	<div class="layui-carousel" id="maincarousel">
 	  <div carousel-item>
 	    <div><img src="../images/1.png" alt=""></div>
 	    <div><img src="../images/2.png" alt=""></div>
@@ -123,8 +123,8 @@
 			</div>
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>冷运服务</legend>
-			</fieldset>		 
-			<div class="layui-carousel" id="cold-transportation">
+			</fieldset>
+			<div class="layui-carousel" id="carousel1">
 			  <div carousel-item>
 			    <div><img src="..//images/orange.jpg" alt=""></div>
 			    <div><img src="../images/boluo.jpg" alt=""></div>
@@ -141,7 +141,7 @@
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>快递服务</legend>
 			</fieldset>
-			<div class="layui-carousel" id="express">
+			<div class="layui-carousel" id="carousel2">
 			    <div carousel-item>
 				    <div><img src="../images/pac2.jpg" alt=""></div>
 				    <div><img src="../images/pac3.jpg" alt=""></div>
@@ -158,7 +158,7 @@
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>仓储服务</legend>
 			</fieldset>
-			<div class="layui-carousel" id="warehousing">
+			<div class="layui-carousel" id="carousel3"  >
 			  <div carousel-item>
 			    <div><img src="../images/mav1.jpg" alt=""></div>
 			    <div><img src="../images/mav2.jpg" alt=""></div>
@@ -175,7 +175,7 @@
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>国际服务</legend>
 			</fieldset>
-			<div class="layui-carousel" id="international-service">
+			<div class="layui-carousel" id="carousel4"  >
 			  <div carousel-item>
 			    <div><img src="../images/inter4.png" alt=""></div>
 			    <div><img src="../images/inter3.png" alt=""></div>
@@ -192,7 +192,7 @@
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>医药仓储</legend>
 			</fieldset>
-			<div class="layui-carousel" id="medicin-service">
+			<div class="layui-carousel" id="carousel5"  >
 			  <div carousel-item>
 			    <div><img src="../images/med2.png" alt=""></div>
 			    <div><img src="../images/med3.png" alt=""></div>
@@ -209,7 +209,7 @@
 			<fieldset class="layui-elem-field layui-field-title" >
 			  <legend>增值服务</legend>
 			</fieldset>
-			<div class="layui-carousel" id="time-define-service">
+			<div class="layui-carousel" id="carousel6"  >
 			  <div carousel-item>
 			    <div><img src="../images/timing4.png" alt=""></div>
 			    <div><img src="../images/timing3.png" alt=""></div>
@@ -304,9 +304,7 @@
 		$(window).scroll(function(){
 	        var this_scrollTop = $(this).scrollTop();
 	        if(this_scrollTop>h3_height ){
-	            $("#intro1").show(2000);
-	            $("#intro2").show(1500);
-	            $("#intro3").show(500);
+	         
 	            $("#intro4").show(4000);
 	            $("#intro5").show(3500);
 	            $("#intro6").show(3000);
