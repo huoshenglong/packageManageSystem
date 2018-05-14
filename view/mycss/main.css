@@ -1,8 +1,7 @@
 公共css样式开始*/
-*{margin: 0;padding: 0;}
-.body{ margin: 0 auto;  }
+*{margin: 0;padding: 0;} 
 body{
- background-image: url(../images/background.jpg);
+ /*background-image: url(../images/backkk.jpg);*/
  background-size: 100%;
  background-repeat: no-repeat;
  
@@ -47,6 +46,11 @@ li {
 
 
 /*index.html首页样式设计*/
+#menutop{
+    height: 200px;
+    width: 100%;
+    border:1px solid blue;
+}
 #login_button{
         margin-left: 350px;
     }
@@ -103,7 +107,7 @@ li {
 #infomation1,#infomation2{
     height: 78px;
     width: 60px;
-    position: absolute; 
+    position: fixed; 
     background-color: #FF5722;
     z-index: 200;
     right:0;
@@ -273,10 +277,10 @@ li {
  
 #return-top{
     position: fixed;
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     bottom: 150px;
-    right: 30px;
+    right: 20px;
     background-image:url(..//images/top1.png);
     background-size: 100%;
     cursor: pointer;
@@ -321,8 +325,7 @@ li {
 #s-right{
     width: 60%;
     height: 280px;
-    float: left;
-   
+    float: left; 
     margin: 10px 5px 0 20px;
 }
 #s-middle{

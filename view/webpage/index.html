@@ -23,8 +23,7 @@
 	</style>
 </head>
 <body> 
- 
-	<ul class="layui-nav"   lay-filter="" name="ss">
+ <ul class="layui-nav"   lay-filter="" name="ss">
 		  <a href="index.html" title="返回首页"><img src="../images/logo.png" id="logo" > </a>
 		  <li class="layui-nav-item  layui-this "><a href="index.html">首页</a></li>
 		  <li class="layui-nav-item">
@@ -61,7 +60,6 @@
 		  	<a href="../webpage/register.html">会员注册</a>
 		  </li>
 	</ul>
- 
 	<div class="layui-carousel" id="maincarousel">
 	  <div carousel-item>
 	    <div><img src="../images/1.png" alt=""></div>
@@ -304,17 +302,17 @@
 		$(window).scroll(function(){
 	        var this_scrollTop = $(this).scrollTop();
 	        if(this_scrollTop>h3_height ){
-	         
-	            $("#intro4").show(4000);
-	            $("#intro5").show(3500);
-	            $("#intro6").show(3000);
+	            $("#intro4").show(2000);
+	            $("#intro5").show(1500);
+	            $("#intro6").show(1000);
 	        }
 	        if (this_scrollTop>hh) {
 	        	$("#s-middle").show(1000);
 	        	$("#s-left").slideDown(1500);
 	            $("#s-right").slideDown(2000);
 	        }
-	    });  
-    });
+	    }); 
+
+	});
  </script>
 </html>

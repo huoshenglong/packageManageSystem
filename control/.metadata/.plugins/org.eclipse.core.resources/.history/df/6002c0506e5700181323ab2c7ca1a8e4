@@ -1,21 +1,13 @@
 package cn.springmvc.dao;
- 
-import java.util.List;
- 
+
 import org.apache.ibatis.annotations.Param;
 
 import cn.springmvc.model.Package;
-/*
- * 
- * */
+
 public interface PackDAO {
-	//添加快递信息
+	
 	public int addPackInfo(Package pack);
-	
-	//获取快递总数
 	public int findPackCount();
-	
-	//查找等待签收快递
 	public String findWaitPackageConsignee();
 	public String findWaitPackageDispatch();
 	public String findWaitSignPack();

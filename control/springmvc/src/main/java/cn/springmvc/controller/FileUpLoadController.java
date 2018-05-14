@@ -68,9 +68,9 @@ public class FileUpLoadController extends HttpServlet {
                     int len = 0;    
                     fileName = "E:\\PMS\\WorkSpace\\files\\" + fileName;//文件最终上传的位置                     
                     String filepath="{\"filepath\":\""+fileName+"\"}";
-                    response.getWriter().write(filepath);                    
-                    System.out.println(fileName);  //输出文件名                                      
-                    OutputStream out = new FileOutputStream(fileName);    
+                    response.getWriter().write(filepath);
+                    System.out.println(fileName);  //输出文件名
+                    OutputStream out = new FileOutputStream(fileName);
                     while ((len = in.read(buffer)) != -1) {  
                         out.write(buffer, 0, len);  
                     }    
