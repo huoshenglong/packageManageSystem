@@ -1,7 +1,8 @@
 package cn.springmvc.dao;
- 
+  
 import java.util.List;
  
+
 import org.apache.ibatis.annotations.Param;
 
 import cn.springmvc.model.Package;
@@ -34,5 +35,5 @@ public interface PackDAO {
 	public int deletePackInfo(@Param("packnumber") String packnumber);
 	public int deleteLogisticInfo(@Param("packnumber") String packnumber);
 	public int updatePackInfo(@Param("packnumber") String packnumber,@Param("field") String field,@Param("value") String value);
-
+	public int insertHistory(@Param("packnumber") String packnumber,@Param("username") String username,@Param("date") String date);
 }

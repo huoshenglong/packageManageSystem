@@ -1,8 +1,7 @@
 package cn.springmvc.service;
- 
+  
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+ 
 
 import cn.springmvc.model.Package;
 
@@ -65,10 +64,12 @@ public interface PackService {
 	public List<Package> selectPackByOthers(String sendpoint,String receivepoint,String senddate);
 	
 	/*
-	 * 快递签收后，将信息删除
+	 * 快递签收后，将信息删除,并将记录保存到历史记录表中
 	 * */
 	
 	public boolean deletePackInfo(String packnumber);
+	
+	public int keepHistory(String packnum,String emplname,String date);
 	
 	/*
 	 * 修改快递单信息

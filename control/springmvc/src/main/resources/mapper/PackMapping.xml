@@ -118,5 +118,9 @@
       <delete id="deleteLogisticInfo" parameterType="String">
        delete from logistics where packnumber=#{packnumber}
       </delete>
+      
+      <insert id="insertHistory" parameterType="String">
+      insert into history(empl_name,pack_num,date) values(#{username},#{packnumber},#{date})
+      </insert>
             
 </mapper>

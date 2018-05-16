@@ -247,7 +247,11 @@ $(document).ready(function(){
 			$.ajax({
 				type:"POST",
 				dataType:"json",
-				data:"packnumber="+data.packnumber,
+				data:{
+					"packnumber":data.packnumber,
+					"username":$('#username').text()
+				},
+				
 				url:"http://localhost:8080/springmvc/deletePack.do",
 				success:function(data){
 					console.log(data);

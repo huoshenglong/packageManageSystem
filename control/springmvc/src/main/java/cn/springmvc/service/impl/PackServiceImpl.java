@@ -130,6 +130,11 @@ public class PackServiceImpl implements PackService{
 		 
 		return pdo.updatePackInfo(packnumber, field, value);
 	}
+	@Override
+	public int keepHistory(String packnum, String emplname, String date) {
+		return pdo.insertHistory(packnum, emplname, date);
+		 
+	}
 
 	 
 	 
