@@ -9,9 +9,9 @@ $(document).ready(function(){
 					<label id="view_title">管理员登录</label>
 					<div id="info">			 
 					 	<label class="info_input"><img src="../images/user.png" alt="用户名" title="用户名">
-					 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value=""></label>		 
+					 		<input id="user_login" type="text"  required  lay-verify="required" name="username" placeholder="在此输入用户名"  autofocus="autofocus" value="" style="color:white"></label>		 
 						 <br> <br>  
-					 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value=""></label>
+					 	<label class="info_input"><img src="../images/psw.png" alt="密码" title="密码"><input id="psw_login" type="password"  lay-verify="pass" placeholder="在此输入密码"   name="password" value="" style="color:white"></label>
 					 	<br>
 					  <br>
 						<label for="iden_code">验证码： </label><label id="iden_code"> </label>
@@ -218,12 +218,10 @@ $(document).ready(function(){
 				// contentType: "application/json; charset=utf-8",
 	            success: function (result) {	                   
 	                if (result=="success") {
-	                    // alert("SUCCESS");
 	                    window.location.href="../webpage/console/console.html?username="+$('#user_login').val();
 	                }else{
 	                	alert("密码或用户名错误！");
-	                }
-	                ;
+	                };
 	            },
 	            error : function(result) {	                	 
 	                console.log("login infomation"+result);
@@ -253,6 +251,7 @@ $(document).ready(function(){
 	});
 	$('#query-pack-bytype').click(function(event) {
 		var number= $('#input_value').val();
+		console.log(number);
 		$('#findpackinfo').html("");
 		$.ajax({
     		type:"post",

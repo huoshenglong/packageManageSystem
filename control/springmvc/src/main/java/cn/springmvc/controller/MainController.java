@@ -50,6 +50,7 @@ public class MainController {
 		String receiveaddress = request.getParameter("receiveaddress"); //收件地址
 		String thingsType = request.getParameter("things");//物品类型
 		String describe = request.getParameter("describe");//备注
+		System.out.println(sender_name+sender_phone+sendaddress+receive_name+receive_phone+things_weight+receiveaddress+thingsType+describe+"***++");
 		Date now = new Date(); 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");//可以方便地修改日期格式
 		String nowtime = dateFormat.format( now ); //这里将当前的系统时间一同保存，作为寄件时间
@@ -84,8 +85,10 @@ public class MainController {
 	@RequestMapping("queryAllInfo")
 	@ResponseBody
 	public Map<String, Object> queryAllPackageInfo(HttpServletRequest request){
+		
 		int page=Integer.parseInt(request.getParameter("page"));
 		int limit=Integer.parseInt(request.getParameter("limit"));
+		System.out.println(page+limit+"*****");
 		int start=(page-1)*limit;
 		int end=page*limit;	
 		int count=pss.queryPackCount();//将快递的数据总量查询
@@ -146,14 +149,15 @@ public class MainController {
 		}
 	}
 	
-	
+	int count=0;
 	@RequestMapping("insertlogistic")
 	@ResponseBody
 	public String insertLogistic(HttpServletRequest request){
+		count++;
 		String packnumber=request.getParameter("packnumber");
 		String logistic=request.getParameter("logistic"); 
 		String type=request.getParameter("type");
-		System.out.println(packnumber+"***+"+logistic+"++***"+type);
+		System.out.println(packnumber+"***+"+logistic+"++***"+type+count);
 		if (pss.addLogisticsInfo(packnumber, logistic, type)) {
 			return "success";
 		}else{
@@ -166,6 +170,7 @@ public class MainController {
 	@ResponseBody
 	public List<String> selectPackLogisticInfo(HttpServletRequest request){
 		String packnumber=request.getParameter("packnumber");
+		System.out.println("快递单号是"+packnumber);
 		String result=pss.selectLogisticInfo(packnumber); 
 		List<String> list =new ArrayList<String>();
 		if (result.equals("noState")) {

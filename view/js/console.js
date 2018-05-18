@@ -286,7 +286,7 @@ $(document).ready(function(){
 	var page=0;
 	var saddress=""; 
 	$('#pack-get-console').click(function(){
-		$('#pack-get-console').text('下一条');
+		// $('#pack-get-console').text('下一条');
 		$('#logistic-packInfo').html("");
 		page+=1;
 		$.ajax({
@@ -299,6 +299,7 @@ $(document).ready(function(){
 			},
 			url:"http://localhost:8080/springmvc/packstate.do",
 			success:function(result){
+				
 				$("#pack-number-console").val(result.data[0].packnumber) ;
 				packnumber=result.data[0].packnumber;
 				$("#pack-send-console").val(result.data[0].saddress);
@@ -317,7 +318,7 @@ $(document).ready(function(){
 
 			}
 		});
-		$('#pack-submit-take').click(function(event) {
+		$('#pack-submit-take').click(function() {
 			$.ajax({
 					type:"POST",
 					dataType:"json",
@@ -329,7 +330,7 @@ $(document).ready(function(){
 					url:"http://localhost:8080/springmvc/insertlogistic.do",
 					success:function(result){
 						appendInfo(getNowTime(),saddress+'已揽件，正发往下一站...');
-						 	console.log(result);
+						console.log(result);
 					},
 					error:function(result){
 

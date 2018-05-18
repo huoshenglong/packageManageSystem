@@ -20,8 +20,8 @@
 	
 	 <!-- 提交快递表单 -->
       <insert id="addPackInfo" parameterType="Package" >
-      	 insert into package_info(p_sname,p_saddress,p_sphone,p_rname,p_raddress,p_rphone,p_type,p_weight,p_date,p_describ,p_number,p_consignee,p_dispatch) 
-      	 values (#{sname},#{saddress},#{sphone},#{rname},#{raddress},#{rphone},#{thingsType},#{weight},#{nowtime},#{describe},#{packnumber},'0','0')
+      	 insert into package_info(p_sname,p_saddress,p_sphone,p_rname,p_raddress,p_rphone,p_type,p_weight,p_date,p_describ,p_number,p_state) 
+      	 values (#{sname},#{saddress},#{sphone},#{rname},#{raddress},#{rphone},#{thingsType},#{weight},#{nowtime},#{describe},#{packnumber},'0')
       </insert>
        <!-- 查找未签收的快递数量 -->
       <select id="findWaitPackageConsignee" resultType="String">

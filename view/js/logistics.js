@@ -164,6 +164,7 @@ $(document).ready(function(){
     	var r_city=$('#t-select-city-id').children('option:selected').text();
     	var r_add_detail=$('#receive-right-input-address').val();
     	var receiveaddress=r_province+r_city+r_add_detail;
+
     	var things="";  
 		$("input:checkbox[name='thingsType']:checked").each(function() { // 获取物品类型
 		  things+=$(this).val()+',';  // 每一个被选中项的值
@@ -176,10 +177,10 @@ $(document).ready(function(){
 						$.ajax({
 					        type: "POST",//方法类型
 					        dataType: "json",//预期服务器返回的数据类型
-					        data: $('#i-want-send-pack').serialize()+"&sendaddress="+sendaddress+"&receiveaddress="+receiveaddress+"&things="+things,
+					        data:$('#i-want-send-pack').serialize()+"&sendaddress="+sendaddress+"&receiveaddress="+receiveaddress+"&things="+things,
 					        url: "http://localhost:8080/springmvc/addpack.do" ,//url   
 					        success: function (result) {
-					        	alert('您的快递单号为：'+result+'请记下，以便日后查询！');
+					        	alert('您的快递单号为：'+result+'\n请记下，以便日后查询！');
 					        	//同时将提交按钮设为不可用
 					        	$('#submit-package-button').attr("disabled","disabled");
 					        },
@@ -248,11 +249,13 @@ $(document).ready(function(){
     		
     	}
     	$('#abouttime').text('大约'+year+'-'+month+'-'+day+'左右可到达！');
-    	$('#aboutcost').text('费用大约为：'+cost);
+    	$('#aboutcost').text('费用大约为：'+cost+"元");
     });
     $('#selectLogistic-btn').click(function(){
     	$('#showloginfo').text("");
+    	var right='/^\d{15}$/';
     	var number=$('#right-input-package').val();
+    	 
     	$.ajax({
     		type:"post",
     		dataType:"json",

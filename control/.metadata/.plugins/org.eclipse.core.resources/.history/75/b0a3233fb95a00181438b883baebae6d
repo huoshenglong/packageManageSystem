@@ -1,0 +1,287 @@
+package cn.springmvc.controller;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.springmvc.service.PackService;
+import cn.springmvc.service.SendEmail;
+import cn.springmvc.model.Package;
+
+@Controller
+@RequestMapping("/")
+public class MainController { 
+	SendEmail sendEmail=new SendEmail();
+	Package pack=new Package();
+	
+	@Autowired
+	public PackService pss;
+	
+	@RequestMapping("packState")
+	@ResponseBody
+	public String queryPackState(){
+		String result="";
+		result=pss.queryPackInfo();	
+		if (result!="") {
+			return result;
+		}
+		return "nowait";
+	}
+	
+	@RequestMapping("addpack") 
+	@ResponseBody
+	public String addPackInfo(HttpServletRequest request){
+		String sender_name = request.getParameter("sender_name");//发件人姓名
+		String sender_phone = request.getParameter("sender_phone");	//发件人电话
+		String sendaddress = request.getParameter("sendaddress");//发件地址
+		String receive_name = request.getParameter("receive_name");//收件人姓名
+		String receive_phone = request.getParameter("receive_phone");//收件人电话
+		String things_weight = request.getParameter("things_weight");//物品重量
+		String receiveaddress = request.getParameter("receiveaddress"); //收件地址
+		String thingsType = request.getParameter("things");//物品类型
+		String describe = request.getParameter("describe");//备注
+		System.out.println(sender_name+sender_phone+sendaddress+receive_name+receive_phone+things_weight+receiveaddress+thingsType+describe+"***++");
+		Date now = new Date(); 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");//可以方便地修改日期格式
+		String nowtime = dateFormat.format( now ); //这里将当前的系统时间一同保存，作为寄件时间
+		Random  d = new Random();
+		String packnumber = "";
+		for(int i=0;i<15;i++){//随机生成一个15位的单号
+			int num = d.nextInt(10);
+			packnumber += num+"";
+		}
+	    pack.setDescribe(describe);
+	    pack.setNowtime(nowtime);
+	    pack.setRaddress(receiveaddress);
+	    pack.setRname(receive_name);
+	    pack.setRphone(receive_phone);
+	    pack.setSaddress(sendaddress);	   
+	    pack.setSname(sender_name);
+	    pack.setSphone(sender_phone);
+	    pack.setThingsType(thingsType);
+	    pack.setWeight(things_weight);
+	    pack.setPacknumber(packnumber);
+	   
+	    boolean result=pss.addPackInfo(pack);
+	    if (result) { 
+	    	return packnumber;
+		} else {
+			return "faile";
+		}
+	     
+	}
+	
+	
+	@RequestMapping("queryAllInfo")
+	@ResponseBody
+	public Map<String, Object> queryAllPackageInfo(HttpServletRequest request){
+		System.out.println(page+limit+"*****");
+		int page=Integer.parseInt(request.getParameter("page"));
+		int limit=Integer.parseInt(request.getParameter("limit"));
+		int start=(page-1)*limit;
+		int end=page*limit;	
+		int count=pss.queryPackCount();//将快递的数据总量查询
+		List<Package> list =new ArrayList<Package>();
+		list= pss.selectAllPackInfo(start,end);
+		Map<String, Object> map=new HashMap<String, Object>();		 
+		map.put("data", list);
+		map.put("msg", "");
+		map.put("count", count);
+		map.put("code", "0");
+		return map;
+	}
+
+	@RequestMapping("packstate")
+	@ResponseBody
+	public Map<String, Object> query(HttpServletRequest request){
+		int page=Integer.parseInt(request.getParameter("page"));
+		int limit=Integer.parseInt(request.getParameter("limit"));
+		String type=request.getParameter("type");
+		System.out.println(type);
+		int start=(page-1)*limit;
+		int end=page*limit;	
+		String strs[]=pss.queryPackInfo().split("\\+");	 
+		int waitcount=Integer.parseInt(strs[0]);
+		int dispatchcount=Integer.parseInt(strs[1]);
+		int waitsignchcount=Integer.parseInt(strs[2]);
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		if (type.equals("wait")) {
+			list= pss.selectWaitPackInfo(start, end);
+			map.put("count", waitcount);
+		}
+		if (type.equals("dispatch")) {
+			list= pss.selectDispatchPack(start, end);
+			map.put("count", dispatchcount);
+		}
+		if (type.equals("waitsign")) {
+			list= pss.selectWaitSignPack(start, end);
+			map.put("count", waitsignchcount);
+		}
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");		
+		return map;
+	}
+	
+	@RequestMapping("updatePackState")
+	@ResponseBody
+	public String updatePackState(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		
+		String type=request.getParameter("type");
+		System.out.println(packnumber+"***+++***"+type);
+		if (pss.updatePackState(packnumber, type)) {
+			return "success";
+		}else{
+			return "faile";
+		}
+	}
+	
+	
+	@RequestMapping("insertlogistic")
+	@ResponseBody
+	public String insertLogistic(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String logistic=request.getParameter("logistic"); 
+		String type=request.getParameter("type");
+		System.out.println(packnumber+"***+"+logistic+"++***"+type);
+		if (pss.addLogisticsInfo(packnumber, logistic, type)) {
+			return "success";
+		}else{
+			return "faile";
+		}
+	}
+	
+	
+	@RequestMapping("selectPackLogisticInfo")
+	@ResponseBody
+	public List<String> selectPackLogisticInfo(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String result=pss.selectLogisticInfo(packnumber); 
+		List<String> list =new ArrayList<String>();
+		if (result.equals("noState")) {
+			return list;
+		} else {
+			String []str=result.split("\\+");
+			
+			for (int i = 0; i < str.length; i++) {
+				System.out.println(str[i]); 		
+				list.add(str[i]);
+			}		
+			return list;
+		}
+		
+	}
+	
+	@RequestMapping("selectByPhoneOrNumber")
+	@ResponseBody
+	public Map<String, Object> selectByPhoneOrNumber(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber");
+		String phone=request.getParameter("phone");
+		System.out.println(packnumber+"****"+phone);
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pss.selectPackByPhoneOrNumber(packnumber, phone);
+		System.out.println(list);
+		map.put("count", list.size());
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");
+		return map;
+	}
+	
+	@RequestMapping("selectByPhoneOthers")
+	@ResponseBody
+	public Map<String, Object> selectByPhoneOthers(HttpServletRequest request){
+		String sendpoint=request.getParameter("sendpoint");
+		String receivepoint=request.getParameter("receivepoint");
+		String senddate=request.getParameter("senddate");
+		System.out.println(sendpoint+"****"+receivepoint+"***"+senddate);
+		List<Package> list =new ArrayList<Package>();
+		Map<String, Object> map=new HashMap<String, Object>();
+		list=pss.selectPackByOthers(sendpoint, receivepoint, senddate);
+		System.out.println(list);
+		map.put("count", list.size());
+		map.put("data", list);
+		map.put("msg", "");		
+		map.put("code", "0");
+		return map;
+	}
+	
+	
+	@RequestMapping("deletePack")
+	@ResponseBody
+	public String deletePack(HttpServletRequest request){
+		Date now = new Date(); 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+		String nowtime = dateFormat.format( now );  
+		String packnumber=request.getParameter("packnumber"); 
+		System.out.println(packnumber);
+		String username=request.getParameter("username");
+		System.out.println(username);
+		pss.keepHistory(packnumber, username, nowtime);
+		boolean result=pss.deletePackInfo(packnumber);
+		if (result) {
+			return "delete success";
+		}
+		return "delete faile";
+	}
+	
+	
+	@RequestMapping("updatePackInfo")
+	@ResponseBody
+	public String updatePackInfo(HttpServletRequest request){
+		String packnumber=request.getParameter("packnumber"); 
+		String field=request.getParameter("field"); 
+		String value=request.getParameter("value");
+		if (field.equals("sname")) {
+			field="p_sname";
+		}
+		if (field.equals("sphone")) {
+			field="p_sphone";
+		}
+		if (field.equals("saddress")) {
+			field="p_saddress";
+		}
+		if (field.equals("rname")) {
+			field="p_rname";
+		}
+		if (field.equals("rphone")) {
+			field="p_rphone";
+		}
+		if (field.equals("raddress")) {
+			field="p_raddress";
+		}
+		 
+		System.out.println(packnumber+field+value);
+		int result=pss.updatePackInfo(packnumber,field,value);
+		if (result>0) {
+			System.out.println("updatesccess");
+			return "update success";
+		}
+		return "update faile";
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
